@@ -1,0 +1,988 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1D53DF61-3C9F-4F8B-A9C5-DB45EF2B9CB3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WindowsFormsApplication1</RootNamespace>
+    <AssemblyName>SISVIG</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>false</MapFileExtensions>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationVersion>1.0.1.%2a</ApplicationVersion>
+    <UseApplicationTrust>true</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>5F36B445D1F5DA84187351997827EF2CF1D82913</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>WindowsFormsApplication1.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>false</DelaySign>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>NewIcon64.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Qios.DevSuite.Components, Version=4.0.0.20, Culture=neutral, PublicKeyToken=3cc53827b79c92fa, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telerik.WinControls, Version=2011.3.11.1219, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
+    <Reference Include="Telerik.WinControls.GridView, Version=2011.3.11.1219, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.RichTextBox, Version=2011.3.11.1219, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Office2010Blue, Version=2011.3.11.1219, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.UI, Version=2011.3.11.1219, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="TelerikCommon, Version=2011.3.11.1219, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AgregarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarUsuario.Designer.cs">
+      <DependentUpon>AgregarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="biblioteca\Convertir.cs" />
+    <Compile Include="biblioteca\Mensaje.cs" />
+    <Compile Include="biblioteca\MyRadMessageLocalizationProvider.cs" />
+    <Compile Include="biblioteca\ProcessController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Configuracion\FrmBarrios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracion\FrmBarrios.Designer.cs">
+      <DependentUpon>FrmBarrios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracion\FrmDelitos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracion\FrmDelitos.Designer.cs">
+      <DependentUpon>FrmDelitos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracion\FrmJuzgados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracion\FrmJuzgados.Designer.cs">
+      <DependentUpon>FrmJuzgados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Db.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Db.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogos\Citas\DialogNuevaCita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogos\Citas\DialogNuevaCita.Designer.cs">
+      <DependentUpon>DialogNuevaCita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogos\Citas\FrmMostrarCitas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogos\Citas\FrmMostrarCitas.Designer.cs">
+      <DependentUpon>FrmMostrarCitas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogos\DialogBarrios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogos\DialogBarrios.Designer.cs">
+      <DependentUpon>DialogBarrios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogos\DialogCapacitacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogos\DialogCapacitacion.Designer.cs">
+      <DependentUpon>DialogCapacitacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogos\DialogConexion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogos\DialogConexion.Designer.cs">
+      <DependentUpon>DialogConexion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogos\DialogEditContra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogos\DialogEditContra.Designer.cs">
+      <DependentUpon>DialogEditContra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogos\DialogEditContraUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogos\DialogEditContraUser.Designer.cs">
+      <DependentUpon>DialogEditContraUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogos\DialogEditInforme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogos\DialogEditInforme.Designer.cs">
+      <DependentUpon>DialogEditInforme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogos\DialogElegirSistema.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogos\DialogElegirSistema.Designer.cs">
+      <DependentUpon>DialogElegirSistema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogos\DialogModificarAgresor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogos\DialogModificarAgresor.Designer.cs">
+      <DependentUpon>DialogModificarAgresor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogos\DialogModificarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogos\DialogModificarUsuario.Designer.cs">
+      <DependentUpon>DialogModificarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogos\DialogModificarVictima.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogos\DialogModificarVictima.Designer.cs">
+      <DependentUpon>DialogModificarVictima.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogos\DialogosPsiTrs\DialogAllCapacitaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogos\DialogosPsiTrs\DialogAllCapacitaciones.Designer.cs">
+      <DependentUpon>DialogAllCapacitaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogos\DialogShowFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogos\DialogShowFile.Designer.cs">
+      <DependentUpon>DialogShowFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogos\DialogSintesisHechos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogos\DialogSintesisHechos.Designer.cs">
+      <DependentUpon>DialogSintesisHechos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogos\DialogUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogos\DialogUsuarios.Designer.cs">
+      <DependentUpon>DialogUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogos\DialogUsuariosInvestigadoras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogos\DialogUsuariosInvestigadoras.Designer.cs">
+      <DependentUpon>DialogUsuariosInvestigadoras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogos\FrmChooseDelegacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogos\FrmChooseDelegacion.Designer.cs">
+      <DependentUpon>FrmChooseDelegacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Direccion\FrmDictamenesForense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Direccion\FrmDictamenesForense.Designer.cs">
+      <DependentUpon>FrmDictamenesForense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Direccion\FrmReportInvestigadoras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Direccion\FrmReportInvestigadoras.Designer.cs">
+      <DependentUpon>FrmReportInvestigadoras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Direccion\FrmReportPsicologas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Direccion\FrmReportPsicologas.Designer.cs">
+      <DependentUpon>FrmReportPsicologas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Direccion\FrmReportTrabajosSocial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Direccion\FrmReportTrabajosSocial.Designer.cs">
+      <DependentUpon>FrmReportTrabajosSocial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Direccion\FrmVictimas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Direccion\FrmVictimas.Designer.cs">
+      <DependentUpon>FrmVictimas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fiscal\FrmExpedientesFiscales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fiscal\FrmExpedientesFiscales.Designer.cs">
+      <DependentUpon>FrmExpedientesFiscales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fiscal\FrmExpedientesPoliciales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fiscal\FrmExpedientesPoliciales.Designer.cs">
+      <DependentUpon>FrmExpedientesPoliciales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fiscal\FrmFiscal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fiscal\FrmFiscal.Designer.cs">
+      <DependentUpon>FrmFiscal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fiscal\FrmMostrarEstadosExpedienteMP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fiscal\FrmMostrarEstadosExpedienteMP.Designer.cs">
+      <DependentUpon>FrmMostrarEstadosExpedienteMP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fiscal\FrmMostrarExpedientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fiscal\FrmMostrarExpedientes.Designer.cs">
+      <DependentUpon>FrmMostrarExpedientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fiscal\FrmMostrarMisExpedientesFiscales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fiscal\FrmMostrarMisExpedientesFiscales.Designer.cs">
+      <DependentUpon>FrmMostrarMisExpedientesFiscales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConfig.Designer.cs">
+      <DependentUpon>FrmConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMostrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMostrar.Designer.cs">
+      <DependentUpon>FrmMostrar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Informes\FrmInfCasosRelevantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Informes\FrmInfCasosRelevantes.Designer.cs">
+      <DependentUpon>FrmInfCasosRelevantes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Informes\FrmInfInformesSociales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Informes\FrmInfInformesSociales.Designer.cs">
+      <DependentUpon>FrmInfInformesSociales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Informes\FrmInfValoracionesPsicologicas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Informes\FrmInfValoracionesPsicologicas.Designer.cs">
+      <DependentUpon>FrmInfValoracionesPsicologicas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Informes\FrmInfVictimasAtendidasXivestigadoras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Informes\FrmInfVictimasAtendidasXivestigadoras.Designer.cs">
+      <DependentUpon>FrmInfVictimasAtendidasXivestigadoras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Investigadoras\FrmAgregarVictima.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Investigadoras\FrmAgregarVictima.Designer.cs">
+      <DependentUpon>FrmAgregarVictima.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Investigadoras\FrmAgregarVictima2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Investigadoras\FrmAgregarVictima2.Designer.cs">
+      <DependentUpon>FrmAgregarVictima2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Investigadoras\FrmAgresor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Investigadoras\FrmAgresor.Designer.cs">
+      <DependentUpon>FrmAgresor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Investigadoras\FrmDiligencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Investigadoras\FrmDiligencias.Designer.cs">
+      <DependentUpon>FrmDiligencias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Investigadoras\FrmEntrevistaUnica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Investigadoras\FrmEntrevistaUnica.Designer.cs">
+      <DependentUpon>FrmEntrevistaUnica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Investigadoras\FrmModificarExpediente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Investigadoras\FrmModificarExpediente.Designer.cs">
+      <DependentUpon>FrmModificarExpediente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Investigadoras\FrmMostrarEstudiosSociales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Investigadoras\FrmMostrarEstudiosSociales.Designer.cs">
+      <DependentUpon>FrmMostrarEstudiosSociales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Investigadoras\FrmMostrarExpedientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Investigadoras\FrmMostrarExpedientes.Designer.cs">
+      <DependentUpon>FrmMostrarExpedientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Investigadoras\FrmMostrarValoraciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Investigadoras\FrmMostrarValoraciones.Designer.cs">
+      <DependentUpon>FrmMostrarValoraciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Investigadoras\FrmMostrarVictimas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Investigadoras\FrmMostrarVictimas.Designer.cs">
+      <DependentUpon>FrmMostrarVictimas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JefaComisaria\FrmAgregarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JefaComisaria\FrmAgregarUsuario.Designer.cs">
+      <DependentUpon>FrmAgregarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JefaComisaria\FrmReportInvestigadoras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JefaComisaria\FrmReportInvestigadoras.Designer.cs">
+      <DependentUpon>FrmReportInvestigadoras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JefaComisaria\FrmReportPsicologas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JefaComisaria\FrmReportPsicologas.Designer.cs">
+      <DependentUpon>FrmReportPsicologas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JefaComisaria\FrmReportTrabajadorasSocial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JefaComisaria\FrmReportTrabajadorasSocial.Designer.cs">
+      <DependentUpon>FrmReportTrabajadorasSocial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JefaComisaria\FrmVictimas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JefaComisaria\FrmVictimas.Designer.cs">
+      <DependentUpon>FrmVictimas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MedicoForense\FrmExpediente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MedicoForense\FrmExpediente.Designer.cs">
+      <DependentUpon>FrmExpediente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MedicoForense\FrmMostrarDictamenesRealizados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MedicoForense\FrmMostrarDictamenesRealizados.Designer.cs">
+      <DependentUpon>FrmMostrarDictamenesRealizados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MedicoForense\FrmNuevaValoracion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MedicoForense\FrmNuevaValoracion.Designer.cs">
+      <DependentUpon>FrmNuevaValoracion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="FrmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPrincipal.Designer.cs">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Propiedades.cs" />
+    <Compile Include="psicologa\FrmInformePsicologico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="psicologa\FrmInformePsicologico.Designer.cs">
+      <DependentUpon>FrmInformePsicologico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="psicologa\FrmMostrarConsejeria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="psicologa\FrmMostrarConsejeria.Designer.cs">
+      <DependentUpon>FrmMostrarConsejeria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="psicologa\FrmMostrarEntrevistaCompl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="psicologa\FrmMostrarEntrevistaCompl.Designer.cs">
+      <DependentUpon>FrmMostrarEntrevistaCompl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="psicologa\FrmNewConsejeria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="psicologa\FrmNewConsejeria.Designer.cs">
+      <DependentUpon>FrmNewConsejeria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="psicologa\FrmNewEntrevistaCompl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="psicologa\FrmNewEntrevistaCompl.Designer.cs">
+      <DependentUpon>FrmNewEntrevistaCompl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="psicologa\FrmValoraciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="psicologa\FrmValoraciones.Designer.cs">
+      <DependentUpon>FrmValoraciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="psicologa\FrmValoracionPsico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="psicologa\FrmValoracionPsico.Designer.cs">
+      <DependentUpon>FrmValoracionPsico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="TrabajadoraSocial\FrmEstudiosSociales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TrabajadoraSocial\FrmEstudiosSociales.Designer.cs">
+      <DependentUpon>FrmEstudiosSociales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TrabajadoraSocial\FrmInformeTrabajoSocial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TrabajadoraSocial\FrmInformeTrabajoSocial.Designer.cs">
+      <DependentUpon>FrmInformeTrabajoSocial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TrabajadoraSocial\FrmTrabajoSocial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TrabajadoraSocial\FrmTrabajoSocial.Designer.cs">
+      <DependentUpon>FrmTrabajoSocial.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Configuracion\FrmBarrios.resx">
+      <DependentUpon>FrmBarrios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracion\FrmDelitos.resx">
+      <DependentUpon>FrmDelitos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracion\FrmJuzgados.resx">
+      <DependentUpon>FrmJuzgados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogos\Citas\DialogNuevaCita.resx">
+      <DependentUpon>DialogNuevaCita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogos\Citas\FrmMostrarCitas.resx">
+      <DependentUpon>FrmMostrarCitas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogos\DialogBarrios.resx">
+      <DependentUpon>DialogBarrios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogos\DialogCapacitacion.resx">
+      <DependentUpon>DialogCapacitacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogos\DialogConexion.resx">
+      <DependentUpon>DialogConexion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogos\DialogEditContraUser.resx">
+      <DependentUpon>DialogEditContraUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogos\DialogEditInforme.resx">
+      <DependentUpon>DialogEditInforme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogos\DialogElegirSistema.resx">
+      <DependentUpon>DialogElegirSistema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogos\DialogModificarAgresor.resx">
+      <DependentUpon>DialogModificarAgresor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogos\DialogModificarVictima.resx">
+      <DependentUpon>DialogModificarVictima.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogos\DialogosPsiTrs\DialogAllCapacitaciones.resx">
+      <DependentUpon>DialogAllCapacitaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogos\DialogShowFile.resx">
+      <DependentUpon>DialogShowFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogos\DialogSintesisHechos.resx">
+      <DependentUpon>DialogSintesisHechos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogos\DialogUsuarios.resx">
+      <DependentUpon>DialogUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogos\DialogUsuariosInvestigadoras.resx">
+      <DependentUpon>DialogUsuariosInvestigadoras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogos\FrmChooseDelegacion.resx">
+      <DependentUpon>FrmChooseDelegacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Direccion\FrmDictamenesForense.resx">
+      <DependentUpon>FrmDictamenesForense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Direccion\FrmReportInvestigadoras.resx">
+      <DependentUpon>FrmReportInvestigadoras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Direccion\FrmReportPsicologas.resx">
+      <DependentUpon>FrmReportPsicologas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Direccion\FrmReportTrabajosSocial.resx">
+      <DependentUpon>FrmReportTrabajosSocial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Direccion\FrmVictimas.resx">
+      <DependentUpon>FrmVictimas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fiscal\FrmExpedientesFiscales.resx">
+      <DependentUpon>FrmExpedientesFiscales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fiscal\FrmExpedientesPoliciales.resx">
+      <DependentUpon>FrmExpedientesPoliciales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fiscal\FrmFiscal.resx">
+      <DependentUpon>FrmFiscal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fiscal\FrmMostrarEstadosExpedienteMP.resx">
+      <DependentUpon>FrmMostrarEstadosExpedienteMP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fiscal\FrmMostrarExpedientes.resx">
+      <DependentUpon>FrmMostrarExpedientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fiscal\FrmMostrarMisExpedientesFiscales.resx">
+      <DependentUpon>FrmMostrarMisExpedientesFiscales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informes\FrmInfCasosRelevantes.resx">
+      <DependentUpon>FrmInfCasosRelevantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informes\FrmInfInformesSociales.resx">
+      <DependentUpon>FrmInfInformesSociales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informes\FrmInfValoracionesPsicologicas.resx">
+      <DependentUpon>FrmInfValoracionesPsicologicas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informes\FrmInfVictimasAtendidasXivestigadoras.resx">
+      <DependentUpon>FrmInfVictimasAtendidasXivestigadoras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informes\RpCasosRelevantes.rdlc" />
+    <EmbeddedResource Include="Informes\RpInformesSociales.rdlc" />
+    <EmbeddedResource Include="Informes\RpValoracionesPsicologicas.rdlc" />
+    <EmbeddedResource Include="Informes\RpVictimasAtendidasXinvestigadoras.rdlc" />
+    <EmbeddedResource Include="Investigadoras\FrmAgregarVictima2.resx">
+      <DependentUpon>FrmAgregarVictima2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Investigadoras\FrmDiligencias.resx">
+      <DependentUpon>FrmDiligencias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Investigadoras\FrmEntrevistaUnica.resx">
+      <DependentUpon>FrmEntrevistaUnica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Investigadoras\FrmModificarExpediente.resx">
+      <DependentUpon>FrmModificarExpediente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Investigadoras\FrmMostrarEstudiosSociales.resx">
+      <DependentUpon>FrmMostrarEstudiosSociales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Investigadoras\FrmMostrarExpedientes.resx">
+      <DependentUpon>FrmMostrarExpedientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Investigadoras\FrmMostrarValoraciones.resx">
+      <DependentUpon>FrmMostrarValoraciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Investigadoras\FrmMostrarVictimas.resx">
+      <DependentUpon>FrmMostrarVictimas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JefaComisaria\FrmAgregarUsuario.resx">
+      <DependentUpon>FrmAgregarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JefaComisaria\FrmReportInvestigadoras.resx">
+      <DependentUpon>FrmReportInvestigadoras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JefaComisaria\FrmReportPsicologas.resx">
+      <DependentUpon>FrmReportPsicologas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JefaComisaria\FrmReportTrabajadorasSocial.resx">
+      <DependentUpon>FrmReportTrabajadorasSocial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JefaComisaria\FrmVictimas.resx">
+      <DependentUpon>FrmVictimas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MedicoForense\FrmExpediente.resx">
+      <DependentUpon>FrmExpediente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MedicoForense\FrmMostrarDictamenesRealizados.resx">
+      <DependentUpon>FrmMostrarDictamenesRealizados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MedicoForense\FrmNuevaValoracion.resx">
+      <DependentUpon>FrmNuevaValoracion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="psicologa\FrmInformePsicologico.resx">
+      <DependentUpon>FrmInformePsicologico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="psicologa\FrmMostrarConsejeria.resx">
+      <DependentUpon>FrmMostrarConsejeria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="psicologa\FrmMostrarEntrevistaCompl.resx">
+      <DependentUpon>FrmMostrarEntrevistaCompl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="psicologa\FrmNewConsejeria.resx">
+      <DependentUpon>FrmNewConsejeria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="psicologa\FrmNewEntrevistaCompl.resx">
+      <DependentUpon>FrmNewEntrevistaCompl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="psicologa\FrmValoraciones.resx">
+      <DependentUpon>FrmValoraciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="psicologa\FrmValoracionPsico.resx">
+      <DependentUpon>FrmValoracionPsico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TrabajadoraSocial\FrmEstudiosSociales.resx">
+      <DependentUpon>FrmEstudiosSociales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TrabajadoraSocial\FrmInformeTrabajoSocial.resx">
+      <DependentUpon>FrmInformeTrabajoSocial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TrabajadoraSocial\FrmTrabajoSocial.resx">
+      <DependentUpon>FrmTrabajoSocial.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Db.dbml.layout">
+      <DependentUpon>Db.dbml</DependentUpon>
+    </None>
+    <EmbeddedResource Include="AgregarUsuario.resx">
+      <DependentUpon>AgregarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogos\DialogEditContra.resx">
+      <DependentUpon>DialogEditContra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogos\DialogModificarUsuario.resx">
+      <DependentUpon>DialogModificarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmConfig.resx">
+      <DependentUpon>FrmConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMostrar.resx">
+      <DependentUpon>FrmMostrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Investigadoras\FrmAgregarVictima.resx">
+      <DependentUpon>FrmAgregarVictima.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Investigadoras\FrmAgresor.resx">
+      <DependentUpon>FrmAgresor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="FrmPrincipal.resx">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Db.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Db.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\DataSources\DbDataContext.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1354672599_user4.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\users_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1354672865_preferences-system-login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1354672608_user_female.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1354673387_users_mixed_gender_race.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\police_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\police24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\supportWoman24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\userFemale24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usersingle24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\administrator24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\keys128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\updateUser128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\survey64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\splashScreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\saveBlack32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notebook32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\modified32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printPreview32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="NewIcon32.ico" />
+    <Content Include="NewIcon64.ico" />
+    <None Include="Resources\Add32.png" />
+    <None Include="Resources\refresh32.png" />
+    <None Include="Resources\cirujanoPng24.png" />
+    <None Include="Resources\themisPng24.png" />
+    <None Include="Resources\graficoPng24.png" />
+    <None Include="Resources\copy32.png" />
+    <None Include="Resources\clipBoard32.png" />
+    <None Include="Resources\cut32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="Telerik.WinControls">
+      <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.WinControls.GridView">
+      <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.WinControls.RichTextBox">
+      <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.WinControls.Themes.Office2010Blue">
+      <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.WinControls.UI">
+      <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="TelerikCommon">
+      <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>4</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Word">
+      <Guid>{00020905-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>8</VersionMajor>
+      <VersionMinor>4</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

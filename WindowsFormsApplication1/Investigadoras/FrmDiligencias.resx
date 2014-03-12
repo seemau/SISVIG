@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="checkBoxMedidaJ.Text" xml:space="preserve">
+    <value>j) Levantar un inventario de los bienes muebles existentes en el domicilio familiar, a fin de salvaguardar el patrimonio de la mujer y sus hijos. Esta medida se ejecutará cuando se aplique la medida del literal "a" y "c" de este artículo</value>
+  </data>
+  <data name="resource.Text" xml:space="preserve">
+    <value>j) Levantar un inventario de los bienes muebles existentes en el domicilio familiar, a fin de salvaguardar el patrimonio de la mujer y sus hijos. Esta medida se ejecutará cuando se aplique la medida del literal "a" y "c" de este artículo</value>
+  </data>
+  <data name="checkBoxMedidaH.Text" xml:space="preserve">
+    <value>h) Secuestrar y retener inmediatamente las armas de fuego, o armas corto punzantes y contundentes que se encuentren en manos del presunto agresor, independientemente de que porte o no permiso; y de su profesión u oficio</value>
+  </data>
+  <data name="resource.Text1" xml:space="preserve">
+    <value>h) Secuestrar y retener inmediatamente las armas de fuego, o armas corto punzantes y contundentes que se encuentren en manos del presunto agresor, independientemente de que porte o no permiso; y de su profesión u oficio</value>
+  </data>
+  <data name="checkBoxMedidaG.Text" xml:space="preserve">
+    <value>g) Prohibir al presunto agresor realizar actos de intimidación, persecución, acoso o perturbación contra la mujer, cualquier miembro del grupo familiar o las personas relacionadas con la denunciante, ya sea por sí mismo o a través de terceros por cualquier medio electrónico, escrito y audiovisual</value>
+  </data>
+  <data name="resource.Text2" xml:space="preserve">
+    <value>g) Prohibir al presunto agresor realizar actos de intimidación, persecución, acoso o perturbación contra la mujer, cualquier miembro del grupo familiar o las personas relacionadas con la denunciante, ya sea por sí mismo o a través de terceros por cualquier medio electrónico, escrito y audiovisual</value>
+  </data>
+  <data name="checkBoxMedidaF.Text" xml:space="preserve">
+    <value>f) Solicitar la intervención del Ministerio de la Familia, Adolescencia y Niñez en caso de denuncia de vulneración de derechos de niños, niñas…Solicitar la colaboración de organismos especializados que brinden apoyo, protección, asesoría, consejería y seguimiento necesario</value>
+  </data>
+  <data name="resource.Text3" xml:space="preserve">
+    <value>f) Solicitar la intervención del Ministerio de la Familia, Adolescencia y Niñez en caso de denuncia de vulneración de derechos de niños, niñas…Solicitar la colaboración de organismos especializados que brinden apoyo, protección, asesoría, consejería y seguimiento necesario</value>
+  </data>
+  <data name="checkBoxMedidaC.Text" xml:space="preserve">
+    <value>c) Ordenar el reintegro de la mujer al domicilio donde se le impida su ingreso o de donde fue expulsada con violencia, intimidación o cualquier medio de coacción, independientemente de la titularidad del bien inmueble</value>
+  </data>
+  <data name="resource.Text4" xml:space="preserve">
+    <value>c) Ordenar el reintegro de la mujer al domicilio donde se le impida su ingreso o de donde fue expulsada con violencia, intimidación o cualquier medio de coacción, independientemente de la titularidad del bien inmueble</value>
+  </data>
+  <data name="checkBoxMedidaB.Text" xml:space="preserve">
+    <value>b) Prohibir o restringir la presencia del presunto agresor en la casa de habitación, centro de trabajo, estudios, lugares habitualmente frecuentados por la mujer o lugar donde ella se encuentre dentro de un radio mínimo de 200 metros</value>
+  </data>
+  <data name="resource.Text5" xml:space="preserve">
+    <value>b) Prohibir o restringir la presencia del presunto agresor en la casa de habitación, centro de trabajo, estudios, lugares habitualmente frecuentados por la mujer o lugar donde ella se encuentre dentro de un radio mínimo de 200 metros</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAAAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAA
+        AAD///8AAAAAAAAAAAAICAgCBwcHAwADBAoAAwMTAAAAGQAAABoAAAAUAAAADAAAAAQAAAACAAAAAAAA
+        AAD///8A////AAAAAAAAAAACAwYGCgkICBsFBQUxAAEARwAAAFIAAABSAAUASAAAATMAAAAdAAAADQAA
+        AAMAAAAA////AP///wAAAAAAAAAABA0NDRUVBhUzXQFmYp8ArrWzAMXfsgDE5psAqslYAF9kCwEHOgAA
+        ABoAAAAHAAAAAP///wD///8AAAAAAAAAAAZYA10WwwDUnssA3v/MAOH/zQDi/80A4v/MAOH/ygDe/78A
+        0PQ0AzgUAAAACAAAAAH///8A////AAAAAAAzADcBzADd184A4v/RAOb/0QDo/74A0v/AANT/0QDo/9EA
+        5v/OAOL/zADd/zMANwAAAAAA////AP///wAAAAAAzQDcZ9EA4//UAOj/0wDn/8gA3P+cAK3/owC1/8oA
+        3f/TAOj/1ADo/9EA4//KANn/AAAAAP///wD///8AZgBtANIA4v/XAOn/2QDt/78Az/9WFVb/Wida/2Qm
+        aP9oIGv/yQDa/9kA7f/WAOj/0QDh/2YAbSz///8A////ANAA3RbYAOb/3ADt/94A8P/gAPH/oQ2n/1gh
+        WP9dIl//og2t/98A8f/eAO//2wDt/9YA5v+YAJ/q////AP///wDgAO5v3ADq/+EA8P/jAPL/kQia/38J
+        if/YAOX/1wDl/38Kiv+XCaL/4wDx/+EA7//cAOr/3gDr/////wD///8A7Qv/de4K/v/pCfj/6gr6/1UI
+        W//pCvj/6gr5/+oK+f/oCvf/WQti/+oJ+v/pCvj/7Qr+/+wG/v////8A////ALEUvyPuJP//7Sr//+4s
+        //9aB1z/7S///+0t///tLf//7S///14OZv/uK///7Sr//+0j//92DX/3////AP///wB1EH8A7S///+07
+        ///uQf//axBy/8sl3f/uQ///7kP//8sl3v9yFHr/7kH//+06///sLv//Ogg/Tf///wD///8AAAAAAPAn
+        +IjtQv//7k3//+Y/9/9jD23/eBGC/3wVg/9pFW//5z/4/+5M///tQP//sia//wAAAAD///8A////AAAA
+        AAA6Cz8A7T3/9+1N///uV///713//+o7/P/qPPz/713//+5W///tS///5Dj//wAAAAAAAAAA////AP//
+        /wAAAAAAAAAAADwKPwCxMr/F7Uv//+5U///uWP//7lf//+5T///sS///sjG//wAAAAAAAAAAAAAAAP//
+        /wD///8Af39/AH9/fwB/f38Af39/ALuQvwD2ov+B9qT/1Pak//31ov/AtpG/FX9/fwB/f38Af39/AH9/
+        fwD///8A4AcAAMADAADAAwAAwAEAAMAHAADAAwAAwAEAAIABAACAAQAAgAEAAIABAADAAQAAwAMAAOAH
+        AADwDwAA/B8AAA==
+</value>
+  </data>
+</root>

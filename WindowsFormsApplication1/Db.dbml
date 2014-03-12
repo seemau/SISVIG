@@ -1,0 +1,897 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SISVIG_DB" Class="DbDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DIEGO-PC;Initial Catalog=SISVIG_DB;User ID=diego" SettingsObjectName="WindowsFormsApplication1.Properties.Settings" SettingsPropertyName="SISVIG_DBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.asesoria_legal" Member="asesoria_legal">
+    <Type Name="asesoria_legal">
+      <Column Name="id_asesoria" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="identificacion" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="asesoria_penal" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="asesoria_civil" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fecha" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Association Name="usuario_asesoria_legal" Member="usuario" ThisKey="identificacion" OtherKey="identificacion" Type="usuario" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.barrios" Member="barrios">
+    <Type Name="barrios">
+      <Column Name="id_barrio" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_delegacion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nombre" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="delegacion_barrios" Member="delegacion" ThisKey="id_delegacion" OtherKey="id_delegacion" Type="delegacion" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.capacitacion" Member="capacitacion">
+    <Type Name="capacitacion">
+      <Column Name="id_capacitacion" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="fecha_realizacion" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="tema" Type="System.String" DbType="NVarChar(400) NOT NULL" CanBeNull="false" />
+      <Column Name="participantes" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="participantes_varones" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="participantes_mujeres" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="dirigido" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="local" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="capacitacion_usuario_capacitacion" Member="usuario_capacitacion" ThisKey="id_capacitacion" OtherKey="id_capacitacion" Type="usuario_capacitacion" />
+    </Type>
+  </Table>
+  <Table Name="dbo.citas_judiciales" Member="citas_judiciales">
+    <Type Name="citas_judiciales">
+      <Column Name="id_citasJudiciales" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="victima" Type="System.String" DbType="NVarChar(60)" CanBeNull="true" />
+      <Column Name="agresor" Type="System.String" DbType="NVarChar(60)" CanBeNull="true" />
+      <Column Name="delito" Type="System.String" DbType="NVarChar(102)" CanBeNull="true" />
+      <Column Name="identificacion" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="juzgados" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="asunto_penal" Type="System.String" DbType="NVarChar(35) NOT NULL" CanBeNull="false" />
+      <Column Name="asistencia" Type="System.String" DbType="NVarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Association Name="usuario_citas_judiciales" Member="usuario" ThisKey="identificacion" OtherKey="identificacion" Type="usuario" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.consejeria" Member="consejeria">
+    <Type Name="consejeria">
+      <Column Name="id_consejeria" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="fecha" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="nombres" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="apellidos" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="ins_procedencia" Type="System.String" DbType="NVarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="identificacion" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="usuario_consejeria" Member="usuario" ThisKey="identificacion" OtherKey="identificacion" Type="usuario" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.delegacion" Member="delegacion">
+    <Type Name="delegacion">
+      <Column Name="id_delegacion" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nombre" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="jefa_comisaria" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="codigo" Type="System.String" DbType="NVarChar(4)" CanBeNull="true" />
+      <Association Name="delegacion_barrios" Member="barrios" ThisKey="id_delegacion" OtherKey="id_delegacion" Type="barrios" />
+      <Association Name="delegacion_juzgados" Member="juzgados" ThisKey="id_delegacion" OtherKey="id_delegacion" Type="juzgados" />
+      <Association Name="delegacion_usuario" Member="usuario" ThisKey="id_delegacion" OtherKey="id_delegacion" Type="usuario" />
+      <Association Name="delegacion_victima" Member="victima" ThisKey="id_delegacion" OtherKey="id_delegacion" Type="victima" />
+    </Type>
+  </Table>
+  <Table Name="dbo.delitos" Member="delitos">
+    <Type Name="delitos">
+      <Column Name="id_delito" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nombre" Type="System.String" DbType="NVarChar(102) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.denunciante" Member="denunciante">
+    <Type Name="denunciante">
+      <Column Name="id_acompanante" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="n_expediente" Type="System.String" DbType="NVarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="nombres" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="apellidos" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="edad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tipo_identificacion" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="n_identificacion" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Association Name="expediente_denunciante" Member="expediente" ThisKey="n_expediente" OtherKey="n_expediente" Type="expediente" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.dictamen_medicoLegal" Member="dictamen_medicoLegal">
+    <Type Name="dictamen_medicoLegal">
+      <Column Name="id_dictamen" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="n_expediente" Type="System.String" DbType="NVarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="identificacion" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="fecha_realizacion" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="tipo_dictamen" Type="System.String" DbType="NVarChar(17)" CanBeNull="true" />
+      <Column Name="agente_vulnerable" Type="System.String" DbType="NVarChar(17)" CanBeNull="true" />
+      <Column Name="tipo_lesion" Type="System.String" DbType="NVarChar(22)" CanBeNull="true" />
+      <Column Name="ubicacion_anatomica" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="conclusiones" Type="System.String" DbType="NVarChar(60)" CanBeNull="true" />
+      <Column Name="extragenital" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="paragenital" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="genital" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="ubicacion_genitales" Type="System.String" DbType="NVarChar(35)" CanBeNull="true" />
+      <Column Name="caracteristicas_himen" Type="System.String" DbType="NVarChar(29)" CanBeNull="true" />
+      <Column Name="caracteristicas_ano" Type="System.String" DbType="NVarChar(29)" CanBeNull="true" />
+      <Column Name="tocamiento" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="bucal" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
+      <Column Name="vaginal" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
+      <Column Name="anal" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
+      <Column Name="presencia_ITS" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="embarazo" Type="System.String" DbType="NVarChar(13)" CanBeNull="true" />
+      <Association Name="expediente_dictamen_medicoLegal" Member="expediente" ThisKey="n_expediente" OtherKey="n_expediente" Type="expediente" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.diligencia" Member="diligencia">
+    <Type Name="diligencia">
+      <Column Name="n_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="n_expediente" Type="System.String" DbType="NVarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="nombre" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Association Name="expediente_diligencia" Member="expediente" ThisKey="n_expediente" OtherKey="n_expediente" Type="expediente" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.entrevista_complementaria" Member="entrevista_complementaria">
+    <Type Name="entrevista_complementaria">
+      <Column Name="id_entrevistaCm" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_victima" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="identificacion" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="nombres" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="apellidos" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="parentesco_victima" Type="System.String" DbType="NVarChar(25) NOT NULL" CanBeNull="false" />
+      <Association Name="usuario_entrevista_complementaria" Member="usuario" ThisKey="identificacion" OtherKey="identificacion" Type="usuario" IsForeignKey="true" />
+      <Association Name="victima_entrevista_complementaria" Member="victima" ThisKey="id_victima" OtherKey="id_victima" Type="victima" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.estudio_social" Member="estudio_social">
+    <Type Name="estudio_social">
+      <Column Name="expediente" Type="System.String" DbType="NVarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="identificacion" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="n_chip" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_entrega" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="id_victima" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_realizacion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="iExtension" Type="System.String" DbType="NVarChar(6)" CanBeNull="true" />
+      <Column Name="iTamaño" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="iDocumento" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="iGUID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="oficial_estudio_social" Member="oficial" ThisKey="n_chip" OtherKey="n_chip" Type="oficial" IsForeignKey="true" />
+      <Association Name="usuario_estudio_social" Member="usuario" ThisKey="identificacion" OtherKey="identificacion" Type="usuario" IsForeignKey="true" />
+      <Association Name="victima_estudio_social" Member="victima" ThisKey="id_victima" OtherKey="id_victima" Type="victima" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.expediente" Member="expediente">
+    <Type Name="expediente">
+      <Column Name="n_expediente" Type="System.String" DbType="NVarChar(17) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="n_denuncia" Type="System.String" DbType="NVarChar(17)" CanBeNull="true" />
+      <Column Name="identificacion" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="delito" Type="System.String" DbType="NVarChar(102) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_ocurrencia" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_denuncia" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="sintesis_hechos" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="arma_utilizada" Type="System.String" DbType="NVarChar(19)" CanBeNull="true" />
+      <Column Name="Lugar_afectado" Type="System.String" DbType="NVarChar(7)" CanBeNull="true" />
+      <Column Name="barrio" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lugar_ocurrencia" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="fecha_remision" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="remitido" Type="System.String" DbType="NVarChar(21)" CanBeNull="true" />
+      <Association Name="expediente_denunciante" Member="denunciante" ThisKey="n_expediente" OtherKey="n_expediente" Type="denunciante" />
+      <Association Name="expediente_dictamen_medicoLegal" Member="dictamen_medicoLegal" ThisKey="n_expediente" OtherKey="n_expediente" Type="dictamen_medicoLegal" />
+      <Association Name="expediente_diligencia" Member="diligencia" ThisKey="n_expediente" OtherKey="n_expediente" Type="diligencia" />
+      <Association Name="expediente_fiscal" Member="fiscal" ThisKey="n_expediente" OtherKey="n_expediente" Type="fiscal" />
+      <Association Name="expediente_medidas_precautelares" Member="medidas_precautelares" ThisKey="n_expediente" OtherKey="n_expediente" Type="medidas_precautelares" />
+      <Association Name="expediente_presunto_agresor" Member="presunto_agresor" ThisKey="n_expediente" OtherKey="n_expediente" Type="presunto_agresor" />
+      <Association Name="expediente_victima" Member="victima" ThisKey="n_expediente" OtherKey="n_expediente" Type="victima" />
+      <Association Name="usuario_expediente" Member="usuario" ThisKey="identificacion" OtherKey="identificacion" Type="usuario" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.fiscal" Member="fiscal">
+    <Type Name="fiscal">
+      <Column Name="idExpediente_fiscal" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="n_expediente" Type="System.String" DbType="NVarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="estado" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="juzgados" Type="System.String" DbType="NVarChar(51)" CanBeNull="true" />
+      <Column Name="audiencia_preliminar" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="audiencia_inicial" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="criterio_oportunidad" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="observaciones" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="fecha_reingreso" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="actual" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nombre" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="extension" Type="System.String" DbType="NVarChar(6)" CanBeNull="true" />
+      <Column Name="Tamano" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="documento" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="CampoGUID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="expediente_fiscal" Member="expediente" ThisKey="n_expediente" OtherKey="n_expediente" Type="expediente" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.juzgados" Member="juzgados">
+    <Type Name="juzgados">
+      <Column Name="id_juzgados" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_delegacion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nombre" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Association Name="delegacion_juzgados" Member="delegacion" ThisKey="id_delegacion" OtherKey="id_delegacion" Type="delegacion" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.medidas_precautelares" Member="medidas_precautelares">
+    <Type Name="medidas_precautelares">
+      <Column Name="n_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="n_expediente" Type="System.String" DbType="NVarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="nombre" Type="System.String" DbType="NVarChar(300) NOT NULL" CanBeNull="false" />
+      <Association Name="expediente_medidas_precautelares" Member="expediente" ThisKey="n_expediente" OtherKey="n_expediente" Type="expediente" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.oficial" Member="oficial">
+    <Type Name="oficial">
+      <Column Name="n_chip" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="identificacion" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="oficial_estudio_social" Member="estudio_social" ThisKey="n_chip" OtherKey="n_chip" Type="estudio_social" />
+      <Association Name="oficial_valoracion_psicologica" Member="valoracion_psicologica" ThisKey="n_chip" OtherKey="n_chip" Type="valoracion_psicologica" />
+      <Association Name="usuario_oficial" Member="usuario" ThisKey="identificacion" OtherKey="identificacion" Type="usuario" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.presunto_agresor" Member="presunto_agresor">
+    <Type Name="presunto_agresor">
+      <Column Name="id_agresor" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="n_expediente" Type="System.String" DbType="NVarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="nombres" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="apellidos" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="edad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sexo" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="situacion" Type="System.String" DbType="NVarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="parentesco" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="nivel_escolar" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="condicion_laboral" Type="System.String" DbType="NVarChar(29)" CanBeNull="true" />
+      <Column Name="indice_criminal" Type="System.String" DbType="NVarChar(17)" CanBeNull="true" />
+      <Column Name="nacionalidad" Type="System.String" DbType="NVarChar(13)" CanBeNull="true" />
+      <Column Name="factores_riesgo" Type="System.String" DbType="NVarChar(17)" CanBeNull="true" />
+      <Column Name="condicion_mental" Type="System.String" DbType="NVarChar(23)" CanBeNull="true" />
+      <Column Name="medio_utilizado" Type="System.String" DbType="NVarChar(21)" CanBeNull="true" />
+      <Column Name="tipo_identificacion" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="n_identificacion" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Association Name="expediente_presunto_agresor" Member="expediente" ThisKey="n_expediente" OtherKey="n_expediente" Type="expediente" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.psicologo" Member="psicologo">
+    <Type Name="psicologo">
+      <Column Name="identificacion" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="institucion" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Association Name="usuario_psicologo" Member="usuario" ThisKey="identificacion" OtherKey="identificacion" Type="usuario" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.rol" Member="rol">
+    <Type Name="rol">
+      <Column Name="id_rol" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nombre" Type="System.String" DbType="NVarChar(25) NOT NULL" CanBeNull="false" />
+      <Association Name="rol_usuario" Member="usuario" ThisKey="id_rol" OtherKey="id_roll" Type="usuario" />
+    </Type>
+  </Table>
+  <Table Name="dbo.usuario" Member="usuario">
+    <Type Name="usuario">
+      <Column Name="identificacion" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="contra" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="nombres" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="apellidos" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="id_delegacion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_roll" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="activo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="usuario_asesoria_legal" Member="asesoria_legal" ThisKey="identificacion" OtherKey="identificacion" Type="asesoria_legal" />
+      <Association Name="usuario_citas_judiciales" Member="citas_judiciales" ThisKey="identificacion" OtherKey="identificacion" Type="citas_judiciales" />
+      <Association Name="usuario_consejeria" Member="consejeria" ThisKey="identificacion" OtherKey="identificacion" Type="consejeria" />
+      <Association Name="usuario_entrevista_complementaria" Member="entrevista_complementaria" ThisKey="identificacion" OtherKey="identificacion" Type="entrevista_complementaria" />
+      <Association Name="usuario_estudio_social" Member="estudio_social" ThisKey="identificacion" OtherKey="identificacion" Type="estudio_social" />
+      <Association Name="usuario_expediente" Member="expediente" ThisKey="identificacion" OtherKey="identificacion" Type="expediente" />
+      <Association Name="usuario_oficial" Member="oficial" ThisKey="identificacion" OtherKey="identificacion" Type="oficial" />
+      <Association Name="usuario_psicologo" Member="psicologo" ThisKey="identificacion" OtherKey="identificacion" Type="psicologo" />
+      <Association Name="usuario_usuario_capacitacion" Member="usuario_capacitacion" ThisKey="identificacion" OtherKey="identificacion" Type="usuario_capacitacion" />
+      <Association Name="usuario_valoracion_psicologica" Member="valoracion_psicologica" ThisKey="identificacion" OtherKey="identificacion" Type="valoracion_psicologica" />
+      <Association Name="delegacion_usuario" Member="delegacion" ThisKey="id_delegacion" OtherKey="id_delegacion" Type="delegacion" IsForeignKey="true" />
+      <Association Name="rol_usuario" Member="rol" ThisKey="id_roll" OtherKey="id_rol" Type="rol" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.usuario_capacitacion" Member="usuario_capacitacion">
+    <Type Name="usuario_capacitacion">
+      <Column Name="identificacion" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="id_capacitacion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="capacitacion_usuario_capacitacion" Member="capacitacion" ThisKey="id_capacitacion" OtherKey="id_capacitacion" Type="capacitacion" IsForeignKey="true" />
+      <Association Name="usuario_usuario_capacitacion" Member="usuario" ThisKey="identificacion" OtherKey="identificacion" Type="usuario" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.valoracion_psicologica" Member="valoracion_psicologica">
+    <Type Name="valoracion_psicologica">
+      <Column Name="expediente" Type="System.String" DbType="NVarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="id_victima" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="identificacion" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_realizacion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="diagnostico" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="tipo_daño" Type="System.String" DbType="NVarChar(129)" CanBeNull="true" />
+      <Column Name="n_chip" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="iExtension" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="iTamaño" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="iDocumento" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="iGUID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_entrega" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Association Name="oficial_valoracion_psicologica" Member="oficial" ThisKey="n_chip" OtherKey="n_chip" Type="oficial" IsForeignKey="true" />
+      <Association Name="usuario_valoracion_psicologica" Member="usuario" ThisKey="identificacion" OtherKey="identificacion" Type="usuario" IsForeignKey="true" />
+      <Association Name="victima_valoracion_psicologica" Member="victima" ThisKey="id_victima" OtherKey="id_victima" Type="victima" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.victima" Member="victima">
+    <Type Name="victima">
+      <Column Name="id_victima" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="n_expediente" Type="System.String" DbType="NVarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="id_delegacion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombres" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Apellidos" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="edad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="sexo" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="nacionalidad" Type="System.String" DbType="NVarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="tipo_identificacion" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="n_identificacion" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="condicion_laboral" Type="System.String" DbType="NVarChar(29) NOT NULL" CanBeNull="false" />
+      <Column Name="nivel_escolar" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="discapacidades" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Association Name="victima_entrevista_complementaria" Member="entrevista_complementaria" ThisKey="id_victima" OtherKey="id_victima" Type="entrevista_complementaria" />
+      <Association Name="victima_estudio_social" Member="estudio_social" ThisKey="id_victima" OtherKey="id_victima" Type="estudio_social" />
+      <Association Name="victima_valoracion_psicologica" Member="valoracion_psicologica" ThisKey="id_victima" OtherKey="id_victima" Type="valoracion_psicologica" />
+      <Association Name="delegacion_victima" Member="delegacion" ThisKey="id_delegacion" OtherKey="id_delegacion" Type="delegacion" IsForeignKey="true" />
+      <Association Name="expediente_victima" Member="expediente" ThisKey="n_expediente" OtherKey="n_expediente" Type="expediente" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.contarUsuario" Method="contarUsuario">
+    <Parameter Name="usuario" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="contarUsuarioResult">
+      <Column Name="cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.eliminarRol" Method="eliminarRol">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.infDictamenesXdelegacion" Method="infDictamenesXdelegacion">
+    <Parameter Name="id_delegacion" Type="System.Int32" DbType="Int" />
+    <Parameter Name="fecha_inicio" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="fecha_final" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="mes" Type="System.Int32" DbType="Int" />
+    <Parameter Name="year" Type="System.Int32" DbType="Int" />
+    <Parameter Name="tipo_busqueda" Type="System.Int32" DbType="Int" />
+    <ElementType Name="infDictamenesXdelegacionResult">
+      <Column Name="cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tipo_dictamen" Type="System.String" DbType="NVarChar(17)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.infInformesSocial" Method="infInformesSocial">
+    <Parameter Name="identificacion" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="fecha_inicio" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="fecha_final" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="mes" Type="System.Int32" DbType="Int" />
+    <Parameter Name="year" Type="System.Int32" DbType="Int" />
+    <Parameter Name="tipo_busqueda" Type="System.Int32" DbType="Int" />
+    <ElementType Name="infInformesSocialResult">
+      <Column Name="nombreTrabajadoraSocial" Type="System.String" DbType="NVarChar(61) NOT NULL" CanBeNull="false" />
+      <Column Name="numeroExpediente" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="nombreVictima" Type="System.String" DbType="NVarChar(61) NOT NULL" CanBeNull="false" />
+      <Column Name="delito" Type="System.String" DbType="NVarChar(102) NOT NULL" CanBeNull="false" />
+      <Column Name="fechaRealizacion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="estudiosRealizados" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.infValoracionesPsicologicas" Method="infValoracionesPsicologicas">
+    <Parameter Name="identificacion" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="fecha_inicio" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="fecha_final" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="mes" Type="System.Int32" DbType="Int" />
+    <Parameter Name="year" Type="System.Int32" DbType="Int" />
+    <Parameter Name="tipo_busqueda" Type="System.Int32" DbType="Int" />
+    <ElementType Name="infValoracionesPsicologicasResult">
+      <Column Name="nombrePsicologa" Type="System.String" DbType="NVarChar(61) NOT NULL" CanBeNull="false" />
+      <Column Name="institucion" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="fechaRealizacion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="nombreVictima" Type="System.String" DbType="NVarChar(61) NOT NULL" CanBeNull="false" />
+      <Column Name="delito" Type="System.String" DbType="NVarChar(102) NOT NULL" CanBeNull="false" />
+      <Column Name="numeroExpediente" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="valoracionesRealizadas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.infVictimasAtendidasXInvestigadoras" Method="infVictimasAtendidasXInvestigadoras">
+    <Parameter Name="identificacion" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="fecha_inicio" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="fecha_final" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="mes" Type="System.Int32" DbType="Int" />
+    <Parameter Name="year" Type="System.Int32" DbType="Int" />
+    <Parameter Name="tipo_busqueda" Type="System.Int32" DbType="Int" />
+    <ElementType Name="infVictimasAtendidasXInvestigadorasResult">
+      <Column Name="numeroExpediente" Type="System.String" DbType="NVarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="nombreInvestigadora" Type="System.String" DbType="NVarChar(61) NOT NULL" CanBeNull="false" />
+      <Column Name="nombreVictima" Type="System.String" DbType="NVarChar(61) NOT NULL" CanBeNull="false" />
+      <Column Name="delito" Type="System.String" DbType="NVarChar(102) NOT NULL" CanBeNull="false" />
+      <Column Name="fechaDenuncia" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="cantidadVictimas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.modificarContra" Method="modificarContra">
+    <Parameter Name="usuario" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="contra" Type="System.String" DbType="NVarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.modificarInvestigador" Method="modificarInvestigador">
+    <Parameter Name="identificacion" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="nombre" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="apellido" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="n_chip" Type="System.String" DbType="NVarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.modificarPsicologo" Method="modificarPsicologo">
+    <Parameter Name="identificacion" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="nombre" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="apellido" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="institucion" Type="System.String" DbType="NVarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.modificarRol" Method="modificarRol">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="nombreRol" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.modificarUsuario" Method="modificarUsuario">
+    <Parameter Name="identificacion" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="nombre" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="apellido" Type="System.String" DbType="NVarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.MostrarDelegacion" Method="MostrarDelegacion">
+    <ElementType Name="MostrarDelegacionResult">
+      <Column Name="id_delegacion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nombre" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="codigo" Type="System.String" DbType="NVarChar(4)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.mostrarDictamenesForenses" Method="mostrarDictamenesForenses">
+    <Parameter Name="identificacion" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="cadena" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="fecha_inicio" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="fecha_final" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="mes" Type="System.Int32" DbType="Int" />
+    <Parameter Name="year" Type="System.Int32" DbType="Int" />
+    <Parameter Name="tipo_busqueda" Type="System.Int32" DbType="Int" />
+    <ElementType Name="mostrarDictamenesForensesResult">
+      <Column Name="victima" Type="System.String" DbType="NVarChar(61) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="tipoDictamen" Type="System.String" DbType="NVarChar(17)" CanBeNull="true" />
+      <Column Name="delito" Type="System.String" DbType="NVarChar(102) NOT NULL" CanBeNull="false" />
+      <Column Name="sexo" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="idDictamen" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.mostrarEstudiosSociales" Method="mostrarEstudiosSociales">
+    <Parameter Name="identificacion" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="cadena" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="fecha_inicio" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="fecha_final" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="mes" Type="System.Int32" DbType="Int" />
+    <Parameter Name="year" Type="System.Int32" DbType="Int" />
+    <Parameter Name="tipo_busqueda" Type="System.Int32" DbType="Int" />
+    <ElementType Name="mostrarEstudiosSocialesResult">
+      <Column Name="expediente" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="victima" Type="System.String" DbType="NVarChar(61) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="delito" Type="System.String" DbType="NVarChar(102) NOT NULL" CanBeNull="false" />
+      <Column Name="investigadora" Type="System.String" DbType="NVarChar(61) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.mostrarEstudiosSocialesAInvestigadoras" Method="mostrarEstudiosSocialesAInvestigadoras">
+    <Parameter Name="n_chip" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="cadena" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="fecha_inicio" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="fecha_final" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="mes" Type="System.Int32" DbType="Int" />
+    <Parameter Name="year" Type="System.Int32" DbType="Int" />
+    <Parameter Name="tipo_busqueda" Type="System.Int32" DbType="Int" />
+    <ElementType Name="mostrarEstudiosSocialesAInvestigadorasResult">
+      <Column Name="expediente" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="victima" Type="System.String" DbType="NVarChar(61) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="delito" Type="System.String" DbType="NVarChar(102) NOT NULL" CanBeNull="false" />
+      <Column Name="trabajadoraSocial" Type="System.String" DbType="NVarChar(61) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.mostrarMisExpedientesAfiscales" Method="mostrarMisExpedientesAfiscales">
+    <Parameter Name="id_delegacion" Type="System.Int32" DbType="Int" />
+    <Parameter Name="cadena" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="fecha_inicio" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="fecha_final" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="mes" Type="System.Int32" DbType="Int" />
+    <Parameter Name="year" Type="System.Int32" DbType="Int" />
+    <Parameter Name="tipo_busqueda" Type="System.Int32" DbType="Int" />
+    <ElementType Name="mostrarMisExpedientesAfiscalesResult">
+      <Column Name="nombreVictima" Type="System.String" DbType="NVarChar(61) NOT NULL" CanBeNull="false" />
+      <Column Name="numeroExpediente" Type="System.String" DbType="NVarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="edadVictima" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="delito" Type="System.String" DbType="NVarChar(102) NOT NULL" CanBeNull="false" />
+      <Column Name="direccionVictima" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="numeroIdentificacion" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="idVictima" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nombreDenunciante" Type="System.String" DbType="NVarChar(61) NOT NULL" CanBeNull="false" />
+      <Column Name="identificacionDenunciante" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="nombreInvestigadora" Type="System.String" DbType="NVarChar(61) NOT NULL" CanBeNull="false" />
+      <Column Name="fechaDenuncia" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="sexo" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.mostrarValoracionesAInvestigadoras" Method="mostrarValoracionesAInvestigadoras">
+    <Parameter Name="n_chip" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="cadena" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="fecha_inicio" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="fecha_final" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="mes" Type="System.Int32" DbType="Int" />
+    <Parameter Name="year" Type="System.Int32" DbType="Int" />
+    <Parameter Name="tipo_busqueda" Type="System.Int32" DbType="Int" />
+    <ElementType Name="mostrarValoracionesAInvestigadorasResult">
+      <Column Name="expediente" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="victima" Type="System.String" DbType="NVarChar(61) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="delito" Type="System.String" DbType="NVarChar(102) NOT NULL" CanBeNull="false" />
+      <Column Name="diagnostico" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="tipoDamage" Type="System.String" DbType="NVarChar(129)" CanBeNull="true" />
+      <Column Name="psicologa" Type="System.String" DbType="NVarChar(61) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.mostrarVictimasAfiscales" Method="mostrarVictimasAfiscales">
+    <Parameter Name="id_delegacion" Type="System.Int32" DbType="Int" />
+    <Parameter Name="cadena" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="fecha_inicio" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="fecha_final" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="mes" Type="System.Int32" DbType="Int" />
+    <Parameter Name="year" Type="System.Int32" DbType="Int" />
+    <Parameter Name="tipo_busqueda" Type="System.Int32" DbType="Int" />
+    <ElementType Name="mostrarVictimasAfiscalesResult">
+      <Column Name="nombreVictima" Type="System.String" DbType="NVarChar(61) NOT NULL" CanBeNull="false" />
+      <Column Name="numeroExpediente" Type="System.String" DbType="NVarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="edadVictima" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="delito" Type="System.String" DbType="NVarChar(102) NOT NULL" CanBeNull="false" />
+      <Column Name="direccionVictima" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="numeroIdentificacion" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="idVictima" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nombreDenunciante" Type="System.String" DbType="NVarChar(61) NOT NULL" CanBeNull="false" />
+      <Column Name="identificacionDenunciante" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="nombreInvestigadora" Type="System.String" DbType="NVarChar(61) NOT NULL" CanBeNull="false" />
+      <Column Name="fechaDenuncia" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="sexo" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.mostrarVictimasAInvestigadoras" Method="mostrarVictimasAInvestigadoras">
+    <Parameter Name="cadena" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="identificacion" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="mostrarVictimasAInvestigadorasResult">
+      <Column Name="nombreVictima" Type="System.String" DbType="NVarChar(61) NOT NULL" CanBeNull="false" />
+      <Column Name="numeroExpediente" Type="System.String" DbType="NVarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="edadVictima" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="delito" Type="System.String" DbType="NVarChar(102) NOT NULL" CanBeNull="false" />
+      <Column Name="direccionVictima" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="numeroIdentificacion" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="idVictima" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nombreDenunciante" Type="System.String" DbType="NVarChar(61) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.mostrarVictimasAjefas" Method="mostrarVictimasAjefas">
+    <Parameter Name="id_delegacion" Type="System.Int32" DbType="Int" />
+    <Parameter Name="cadena" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="fecha_inicio" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="fecha_final" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="mes" Type="System.Int32" DbType="Int" />
+    <Parameter Name="year" Type="System.Int32" DbType="Int" />
+    <Parameter Name="tipo_busqueda" Type="System.Int32" DbType="Int" />
+    <ElementType Name="mostrarVictimasAjefasResult">
+      <Column Name="nombreVictima" Type="System.String" DbType="NVarChar(61) NOT NULL" CanBeNull="false" />
+      <Column Name="numeroExpediente" Type="System.String" DbType="NVarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="edadVictima" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="delito" Type="System.String" DbType="NVarChar(102) NOT NULL" CanBeNull="false" />
+      <Column Name="direccionVictima" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="numeroIdentificacion" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="idVictima" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nombreDenunciante" Type="System.String" DbType="NVarChar(61) NOT NULL" CanBeNull="false" />
+      <Column Name="identificacionDenunciante" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="nombreInvestigadora" Type="System.String" DbType="NVarChar(61) NOT NULL" CanBeNull="false" />
+      <Column Name="fechaDenuncia" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="sexo" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.mostrarVictimasAmedicos" Method="mostrarVictimasAmedicos">
+    <Parameter Name="id_delegacion" Type="System.Int32" DbType="Int" />
+    <Parameter Name="cadena" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="fecha_inicio" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="fecha_final" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="mes" Type="System.Int32" DbType="Int" />
+    <Parameter Name="year" Type="System.Int32" DbType="Int" />
+    <Parameter Name="tipo_busqueda" Type="System.Int32" DbType="Int" />
+    <ElementType Name="mostrarVictimasAmedicosResult">
+      <Column Name="nombreVictima" Type="System.String" DbType="NVarChar(61) NOT NULL" CanBeNull="false" />
+      <Column Name="numeroExpediente" Type="System.String" DbType="NVarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="edadVictima" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="delito" Type="System.String" DbType="NVarChar(102) NOT NULL" CanBeNull="false" />
+      <Column Name="direccionVictima" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="numeroIdentificacion" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="idVictima" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nombreDenunciante" Type="System.String" DbType="NVarChar(61) NOT NULL" CanBeNull="false" />
+      <Column Name="identificacionDenunciante" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="nombreInvestigadora" Type="System.String" DbType="NVarChar(61) NOT NULL" CanBeNull="false" />
+      <Column Name="fechaDenuncia" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="sexo" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.mostrarVictimasEstudio" Method="mostrarVictimasEstudio">
+    <Parameter Name="cadena" Type="System.String" DbType="NVarChar(MAX)" />
+    <ElementType Name="mostrarVictimasEstudioResult">
+      <Column Name="oficial" Type="System.String" DbType="NVarChar(61) NOT NULL" CanBeNull="false" />
+      <Column Name="nombreDenunciante" Type="System.String" DbType="NVarChar(61) NOT NULL" CanBeNull="false" />
+      <Column Name="numeroExpediente" Type="System.String" DbType="NVarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="nombreVictima" Type="System.String" DbType="NVarChar(61) NOT NULL" CanBeNull="false" />
+      <Column Name="edadVictima" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="direccionVictima" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="numeroChip" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="idVictima" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="delito" Type="System.String" DbType="NVarChar(102) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.mostrarVictimasValoracion" Method="mostrarVictimasValoracion">
+    <Parameter Name="cadena" Type="System.String" DbType="NVarChar(MAX)" />
+    <ElementType Name="mostrarVictimasValoracionResult">
+      <Column Name="oficial" Type="System.String" DbType="NVarChar(61) NOT NULL" CanBeNull="false" />
+      <Column Name="numeroExpediente" Type="System.String" DbType="NVarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="nombreVictima" Type="System.String" DbType="NVarChar(61) NOT NULL" CanBeNull="false" />
+      <Column Name="nombreDenunciante" Type="System.String" DbType="NVarChar(61) NOT NULL" CanBeNull="false" />
+      <Column Name="edadVictima" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="direccionVictima" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="numeroChip" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="idVictima" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="delito" Type="System.String" DbType="NVarChar(102) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.mostrarBarrios" Method="mostrarBarrios">
+    <Parameter Name="cadena" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="id_delegacion" Type="System.Int32" DbType="Int" />
+    <ElementType Name="mostrarBarriosResult">
+      <Column Name="idBarrio" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NombreBarrio" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.mostrarCitas" Method="mostrarCitas">
+    <Parameter Name="cadena" Type="System.String" DbType="NVarChar(200)" />
+    <Parameter Name="fechaInicial" Type="System.DateTime" DbType="SmallDateTime" />
+    <Parameter Name="fechaFinal" Type="System.DateTime" DbType="SmallDateTime" />
+    <Parameter Name="tipoBusqueda" Type="System.Int32" DbType="Int" />
+    <Parameter Name="delegacion" Type="System.Int32" DbType="Int" />
+    <Parameter Name="usuario" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="mostrarCitasResult">
+      <Column Name="asuntoPenal" Type="System.String" DbType="NVarChar(35) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="agresor" Type="System.String" DbType="NVarChar(60)" CanBeNull="true" />
+      <Column Name="juzgados" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="delito" Type="System.String" DbType="NVarChar(102)" CanBeNull="true" />
+      <Column Name="victima" Type="System.String" DbType="NVarChar(60)" CanBeNull="true" />
+      <Column Name="oficial" Type="System.String" DbType="NVarChar(61) NOT NULL" CanBeNull="false" />
+      <Column Name="asistencia" Type="System.String" DbType="NVarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.insertarUsuario" Method="insertarUsuario">
+    <Parameter Name="identificacion" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="nombre" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="apellido" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="contra" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="idDelegacion" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idRol" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.insertarUsuarioInvestigador" Method="insertarUsuarioInvestigador">
+    <Parameter Name="identificacion" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="nombre" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="apellido" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="contra" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="idDelegacion" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idRol" Type="System.Int32" DbType="Int" />
+    <Parameter Name="chip" Type="System.String" DbType="NVarChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.insertarUsuarioJefaComisaria" Method="insertarUsuarioJefaComisaria">
+    <Parameter Name="identificacion" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="nombre" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="apellido" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="contra" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="idDelegacion" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idRol" Type="System.Int32" DbType="Int" />
+    <Parameter Name="chip" Type="System.String" DbType="NVarChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.insertarUsuarioPsicologo" Method="insertarUsuarioPsicologo">
+    <Parameter Name="identificacion" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="nombre" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="apellido" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="contra" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="idDelegacion" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idRol" Type="System.Int32" DbType="Int" />
+    <Parameter Name="institucion" Type="System.String" DbType="NVarChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.infCasosRelevantes" Method="infCasosRelevantes">
+    <Parameter Name="idVictima" Type="System.Int32" DbType="Int" />
+    <ElementType Name="infCasosRelevantesResult">
+      <Column Name="nombreDelegacion" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="delito" Type="System.String" DbType="NVarChar(102) NOT NULL" CanBeNull="false" />
+      <Column Name="numeroDenuncia" Type="System.String" DbType="NVarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="remitido" Type="System.String" DbType="NVarChar(21)" CanBeNull="true" />
+      <Column Name="fechaRemision" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="denunciante" Type="System.String" DbType="NVarChar(71)" CanBeNull="true" />
+      <Column Name="victima" Type="System.String" DbType="NVarChar(71)" CanBeNull="true" />
+      <Column Name="agresor" Type="System.String" DbType="NVarChar(71)" CanBeNull="true" />
+      <Column Name="parentescoAgresor" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="fechaOcurrencia" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="fechaDenuncia" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="lugarOcurrencia" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="medioUtilizado" Type="System.String" DbType="NVarChar(21)" CanBeNull="true" />
+      <Column Name="situacionLegal" Type="System.String" DbType="NVarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="sintesisHechos" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="diligencia" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.asignarCapacitacion" Method="asignarCapacitacion">
+    <Parameter Name="idCapacitacion" Type="System.Int32" DbType="Int" />
+    <Parameter Name="usuario" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.mostrarCapacitaciones" Method="mostrarCapacitaciones">
+    <Parameter Name="delegacion" Type="System.Int32" DbType="Int" />
+    <Parameter Name="cadena" Type="System.String" DbType="NVarChar(200)" />
+    <Parameter Name="fechaInicial" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="fechaFinal" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="mes" Type="System.Int32" DbType="Int" />
+    <Parameter Name="tipoBusqueda" Type="System.Int32" DbType="Int" />
+    <ElementType Name="mostrarCapacitacionesResult">
+      <Column Name="idCapacitacion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="tema" Type="System.String" DbType="NVarChar(400) NOT NULL" CanBeNull="false" />
+      <Column Name="dirigidoA" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="local" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="participantes" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.mostrarMisCapacitaciones" Method="mostrarMisCapacitaciones">
+    <Parameter Name="delegacion" Type="System.Int32" DbType="Int" />
+    <Parameter Name="cadena" Type="System.String" DbType="NVarChar(200)" />
+    <Parameter Name="fechaInicial" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="fechaFinal" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="mes" Type="System.Int32" DbType="Int" />
+    <Parameter Name="usuario" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="tipoBusqueda" Type="System.Int32" DbType="Int" />
+    <ElementType Name="mostrarMisCapacitacionesResult">
+      <Column Name="idCapacitacion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="tema" Type="System.String" DbType="NVarChar(400) NOT NULL" CanBeNull="false" />
+      <Column Name="dirigidoA" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="local" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="participantes" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.mostrarAdmin" Method="mostrarAdmin">
+    <Parameter Name="cadena" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="delegacion" Type="System.Int32" DbType="Int" />
+    <ElementType Name="mostrarAdminResult">
+      <Column Name="Usuario" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Nombres" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Apellidos" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Rol" Type="System.String" DbType="NVarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="Delegación" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="activo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.mostrarEstadisticos" Method="mostrarEstadisticos">
+    <Parameter Name="cadena" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="delegacion" Type="System.Int32" DbType="Int" />
+    <ElementType Name="mostrarEstadisticosResult">
+      <Column Name="Usuario" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Nombres" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Apellidos" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Rol" Type="System.String" DbType="NVarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="Delegación" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="activo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.mostrarFiscales" Method="mostrarFiscales">
+    <Parameter Name="cadena" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="delegacion" Type="System.Int32" DbType="Int" />
+    <ElementType Name="mostrarFiscalesResult">
+      <Column Name="Usuario" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Nombres" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Apellidos" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Rol" Type="System.String" DbType="NVarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="Delegación" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="activo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.mostrarMedicosForenses" Method="mostrarMedicosForenses">
+    <Parameter Name="cadena" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="delegacion" Type="System.Int32" DbType="Int" />
+    <ElementType Name="mostrarMedicosForensesResult">
+      <Column Name="Usuario" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Nombres" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Apellidos" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Rol" Type="System.String" DbType="NVarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="Delegación" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="activo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.mostrarPsicologo" Method="mostrarPsicologo">
+    <Parameter Name="cadena" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="delegacion" Type="System.Int32" DbType="Int" />
+    <ElementType Name="mostrarPsicologoResult">
+      <Column Name="Usuario" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Nombres" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Apellidos" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Rol" Type="System.String" DbType="NVarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="Delegación" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="institucion" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="activo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.mostrarTrs" Method="mostrarTrs">
+    <Parameter Name="cadena" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="delegacion" Type="System.Int32" DbType="Int" />
+    <ElementType Name="mostrarTrsResult">
+      <Column Name="Usuario" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Nombres" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Apellidos" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Rol" Type="System.String" DbType="NVarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="Delegación" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="activo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.mostrarUsuario" Method="mostrarUsuario">
+    <Parameter Name="cadena" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="id_delegacion" Type="System.Int32" DbType="Int" />
+    <ElementType Name="mostrarUsuarioResult">
+      <Column Name="Usuario" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Nombres" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Apellidos" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Rol" Type="System.String" DbType="NVarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="Delegación" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="activo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.mostrarInvestigador" Method="mostrarInvestigador">
+    <Parameter Name="cadena" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="delegacion" Type="System.Int32" DbType="Int" />
+    <ElementType Name="mostrarInvestigadorResult">
+      <Column Name="Usuario" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Nombres" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Apellidos" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Rol" Type="System.String" DbType="NVarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="Delegación" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="n_chip" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="activo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.mostrarValoraciones" Method="mostrarValoraciones">
+    <Parameter Name="identificacion" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="cadena" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="fecha_inicio" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="fecha_final" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="mes" Type="System.Int32" DbType="Int" />
+    <Parameter Name="year" Type="System.Int32" DbType="Int" />
+    <Parameter Name="tipo_busqueda" Type="System.Int32" DbType="Int" />
+    <ElementType Name="mostrarValoracionesResult">
+      <Column Name="expediente" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="victima" Type="System.String" DbType="NVarChar(61) NOT NULL" CanBeNull="false" />
+      <Column Name="idVictima" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fecha" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="delito" Type="System.String" DbType="NVarChar(102) NOT NULL" CanBeNull="false" />
+      <Column Name="diagnostico" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="tipoDamage" Type="System.String" DbType="NVarChar(129)" CanBeNull="true" />
+      <Column Name="investigadora" Type="System.String" DbType="NVarChar(61) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.mostrarExpedientes" Method="mostrarExpedientes">
+    <Parameter Name="cadena" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="fechaInicial" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="fechaFinal" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="mes" Type="System.Int32" DbType="Int" />
+    <Parameter Name="tipoBusqueda" Type="System.Int32" DbType="Int" />
+    <ElementType Name="mostrarExpedientesResult">
+      <Column Name="numeroDenuncia" Type="System.String" DbType="NVarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="numeroExpediente" Type="System.String" DbType="NVarChar(17)" CanBeNull="true" />
+      <Column Name="delito" Type="System.String" DbType="NVarChar(102) NOT NULL" CanBeNull="false" />
+      <Column Name="nombreDenunciante" Type="System.String" DbType="NVarChar(61) NOT NULL" CanBeNull="false" />
+      <Column Name="nombreInvestigador" Type="System.String" DbType="NVarChar(61) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>

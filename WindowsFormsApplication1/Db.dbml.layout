@@ -1,0 +1,346 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 20, 58.25" name="Db">
+  <DataContextMoniker Name="/DbDataContext" />
+  <nestedChildShapes>
+    <classShape Id="d956e5af-5b94-4a49-a400-ece6c9109bae" absoluteBounds="9.25, 17.5, 2, 1.7708968098958309">
+      <DataClassMoniker Name="/DbDataContext/asesoria_legal" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8a7d4730-6076-4d12-ae43-5a1efa171491" absoluteBounds="9.265, 17.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="80cf8989-cd92-4d87-973d-de7dc0df1783" absoluteBounds="3.5, 26.875, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/DbDataContext/barrios" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f27bd8d1-d11c-4bfc-b4d8-9e3e6318020c" absoluteBounds="3.515, 27.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="612528e3-3ba0-4259-981c-d33872a41be0" absoluteBounds="6.5, 31.5, 2, 2.3478011067708309">
+      <DataClassMoniker Name="/DbDataContext/capacitacion" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c46f1c72-fe3b-4971-9cc5-851c2099f667" absoluteBounds="6.515, 31.96, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="428cccdd-3743-440f-82d0-bb95b0cad8a5" absoluteBounds="9.25, 25.625, 2, 2.5401025390625023">
+      <DataClassMoniker Name="/DbDataContext/citas_judiciales" />
+      <nestedChildShapes>
+        <elementListCompartment Id="08bd20b0-2c56-405a-a31e-5c25648445b1" absoluteBounds="9.265, 26.085, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cd47b2f4-a2d7-4a4b-9168-9ba409640800" absoluteBounds="9.25, 20, 2, 1.9631982421875023">
+      <DataClassMoniker Name="/DbDataContext/consejeria" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7fd3a8d3-1b75-4c36-83b4-15980d498526" absoluteBounds="9.265, 20.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e7c654d5-33b4-4221-b148-791913c1198d" absoluteBounds="0.75, 27.875, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DbDataContext/delegacion" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1e1265d9-38d6-4e77-a12e-c05964c97e88" absoluteBounds="0.765, 28.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="378038b4-c3e0-4272-8920-76345327f9f9" absoluteBounds="3.5, 9.125, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/DbDataContext/delitos" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9edab647-88fd-430f-bbdd-1854c7b982b8" absoluteBounds="3.515, 9.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4a7802ee-92cb-4355-a751-2a0bdf46821c" absoluteBounds="12, 36.75, 2, 2.1554996744791595">
+      <DataClassMoniker Name="/DbDataContext/denunciante" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fcfef51a-0d9d-4640-9e55-a81813af3d65" absoluteBounds="12.015, 37.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4e395d19-bfdb-49be-8163-00136b6f867d" absoluteBounds="12, 53.125, 2, 4.8477197265625023">
+      <DataClassMoniker Name="/DbDataContext/dictamen_medicoLegal" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e8b05465-c52d-4ec1-a6cb-9c65422f457b" absoluteBounds="12.015, 53.585, 1.9700000000000002, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f52e037a-c4c4-480f-856e-b0ca595c1396" absoluteBounds="12, 32.375, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/DbDataContext/diligencia" />
+      <nestedChildShapes>
+        <elementListCompartment Id="00c63595-ec72-4bb4-a597-c00116f094e9" absoluteBounds="12.015, 32.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="36d3fba1-0f70-454c-ab92-3646b96f0946" absoluteBounds="12.25, 27.5, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DbDataContext/entrevista_complementaria" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7154680a-112e-4af1-a194-11854bae1a30" absoluteBounds="12.265, 27.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c7cc993c-2984-46cb-8e3f-8c5efa171f2e" absoluteBounds="12, 19.375, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/DbDataContext/estudio_social" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d1653c62-a293-43a7-bf7d-544908d35472" absoluteBounds="12.015, 19.835, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7497e1cd-55c1-4aec-b01e-1d331a88fdf6" absoluteBounds="9.25, 41.5, 2, 3.3093082682291595">
+      <DataClassMoniker Name="/DbDataContext/expediente" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5d9311e9-f511-44c5-a08e-f5fddd3e8e22" absoluteBounds="9.265, 41.96, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9a444029-9bc5-42f5-bcf4-7d6625e6405d" absoluteBounds="12, 43.625, 2, 3.8862125651041595">
+      <DataClassMoniker Name="/DbDataContext/fiscal" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d2f3f95b-0c99-4fba-8ca0-9300a8787395" absoluteBounds="12.015, 44.085, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="066b0b1b-3511-4aeb-8607-550c77cdf381" absoluteBounds="3.5, 29, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/DbDataContext/juzgados" />
+      <nestedChildShapes>
+        <elementListCompartment Id="eb9603d5-debe-4a91-914f-00fb04f9ece9" absoluteBounds="3.515, 29.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="16e828a2-1f6b-40f4-90e1-5373a624e161" absoluteBounds="12, 34.625, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/DbDataContext/medidas_precautelares" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1e0c9dda-13bf-4da4-9333-62b52bc6721c" absoluteBounds="12.015, 35.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5b53102a-fc46-440d-98f6-53cd47d35910" absoluteBounds="9.25, 11.625, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/DbDataContext/oficial" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7e6e9456-4907-4f71-aad6-e5d6bfe64e3b" absoluteBounds="9.265, 12.085, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c2f2487b-f8d0-4b3d-a59c-3a9b1502a4ab" absoluteBounds="12, 48.25, 2, 4.0785139973958309">
+      <DataClassMoniker Name="/DbDataContext/presunto_agresor" />
+      <nestedChildShapes>
+        <elementListCompartment Id="df59c04b-34a3-48a6-a271-ba3cfde18186" absoluteBounds="12.015, 48.71, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9aeaa43f-f52e-45c0-b823-800895ae8f30" absoluteBounds="9.25, 13.625, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/DbDataContext/psicologo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4a40282d-d206-4f9d-b2db-e5d3906819bc" absoluteBounds="9.265, 14.085, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="49cf6a1a-25c2-4ca7-b039-16b3780a1f73" absoluteBounds="3.75, 24, 2, 1.1939925130208309">
+      <DataClassMoniker Name="/DbDataContext/rol" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0fbc5f23-8fe1-40dc-974b-503334329ee6" absoluteBounds="3.765, 24.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f3495ef2-7729-423b-90a8-c4093d9be083" absoluteBounds="6.5, 27.5, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DbDataContext/usuario" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d1f0f64d-33ff-495c-92b9-6ebcdf945ad3" absoluteBounds="6.515, 27.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8b2c7651-004d-43aa-a92c-175db44820cc" absoluteBounds="9.25, 29, 2, 1.1939925130208309">
+      <DataClassMoniker Name="/DbDataContext/usuario_capacitacion" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b1c103b6-b2c1-485c-b91d-eadbff6c9c8f" absoluteBounds="9.265, 29.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e017170d-ac30-472c-85bd-cdebffc0da3b" absoluteBounds="17.75, 23.25, 2, 3.1170068359375023">
+      <DataClassMoniker Name="/DbDataContext/valoracion_psicologica" />
+      <nestedChildShapes>
+        <elementListCompartment Id="79e2d19d-50d0-4cc1-b99a-7f73b28dda28" absoluteBounds="17.765, 23.71, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cc61d550-f445-4e36-8bce-ff2727a87390" absoluteBounds="15, 34.625, 2, 3.3093082682291595">
+      <DataClassMoniker Name="/DbDataContext/victima" />
+      <nestedChildShapes>
+        <elementListCompartment Id="17407e2d-9a0d-4212-96a3-afc557e49226" absoluteBounds="15.015, 35.085, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 28.0681469726563); (3.5 : 28.0681469726563)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DbDataContext/delegacion/delegacion_barrios" />
+      <nodes>
+        <classShapeMoniker Id="e7c654d5-33b4-4221-b148-791913c1198d" />
+        <classShapeMoniker Id="80cf8989-cd92-4d87-973d-de7dc0df1783" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.25 : 41.5); (10.25 : 37.8277498372396); (10.6979191666667 : 37.8277498372396 : JumpStart); (10.8645858333333 : 37.8277498372396 : JumpEnd); (12 : 37.8277498372396)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DbDataContext/expediente/expediente_denunciante" />
+      <nodes>
+        <classShapeMoniker Id="7497e1cd-55c1-4aec-b01e-1d331a88fdf6" />
+        <classShapeMoniker Id="4a7802ee-92cb-4355-a751-2a0bdf46821c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.25 : 44.8093082682292); (10.25 : 55.5488598632813); (12 : 55.5488598632813)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DbDataContext/expediente/expediente_dictamen_medicoLegal" />
+      <nodes>
+        <classShapeMoniker Id="7497e1cd-55c1-4aec-b01e-1d331a88fdf6" />
+        <classShapeMoniker Id="4e395d19-bfdb-49be-8163-00136b6f867d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.7812525 : 41.5); (10.7812525 : 33.0681469726563); (12 : 33.0681469726563)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DbDataContext/expediente/expediente_diligencia" />
+      <nodes>
+        <classShapeMoniker Id="7497e1cd-55c1-4aec-b01e-1d331a88fdf6" />
+        <classShapeMoniker Id="f52e037a-c4c4-480f-856e-b0ca595c1396" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.25 : 44.2171541341146); (12 : 44.2171541341146)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DbDataContext/expediente/expediente_fiscal" />
+      <nodes>
+        <classShapeMoniker Id="7497e1cd-55c1-4aec-b01e-1d331a88fdf6" />
+        <classShapeMoniker Id="9a444029-9bc5-42f5-bcf4-7d6625e6405d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 29.2267976888021); (3.5 : 29.2267976888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DbDataContext/delegacion/delegacion_juzgados" />
+      <nodes>
+        <classShapeMoniker Id="e7c654d5-33b4-4221-b148-791913c1198d" />
+        <classShapeMoniker Id="066b0b1b-3511-4aeb-8607-550c77cdf381" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(9.7187475 : 41.5); (9.7187475 : 35.3181469726563); (10.6979191666667 : 35.3181469726563 : JumpStart); (10.8645858333333 : 35.3181469726563 : JumpEnd); (12 : 35.3181469726563)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DbDataContext/expediente/expediente_medidas_precautelares" />
+      <nodes>
+        <classShapeMoniker Id="7497e1cd-55c1-4aec-b01e-1d331a88fdf6" />
+        <classShapeMoniker Id="16e828a2-1f6b-40f4-90e1-5373a624e161" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.25 : 12.2219962565104); (13 : 12.2219962565104); (13 : 19.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DbDataContext/oficial/oficial_estudio_social" />
+      <nodes>
+        <classShapeMoniker Id="5b53102a-fc46-440d-98f6-53cd47d35910" />
+        <classShapeMoniker Id="c7cc993c-2984-46cb-8e3f-8c5efa171f2e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.7812525 : 44.8093082682292); (10.7812525 : 50.2892569986979); (12 : 50.2892569986979)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DbDataContext/expediente/expediente_presunto_agresor" />
+      <nodes>
+        <classShapeMoniker Id="7497e1cd-55c1-4aec-b01e-1d331a88fdf6" />
+        <classShapeMoniker Id="c2f2487b-f8d0-4b3d-a59c-3a9b1502a4ab" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.5 : 27.5); (7.5 : 18.3854484049479); (7.68229291666667 : 18.3854484049479 : JumpStart); (7.84895958333333 : 18.3854484049479 : JumpEnd); (9.25 : 18.3854484049479)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DbDataContext/usuario/usuario_asesoria_legal" />
+      <nodes>
+        <classShapeMoniker Id="f3495ef2-7729-423b-90a8-c4093d9be083" />
+        <classShapeMoniker Id="d956e5af-5b94-4a49-a400-ece6c9109bae" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 27.8325512695313); (9.25 : 27.8325512695313)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DbDataContext/usuario/usuario_citas_judiciales" />
+      <nodes>
+        <classShapeMoniker Id="f3495ef2-7729-423b-90a8-c4093d9be083" />
+        <classShapeMoniker Id="428cccdd-3743-440f-82d0-bb95b0cad8a5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.0312525 : 27.5); (8.0312525 : 20.9815991210938); (9.25 : 20.9815991210938)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DbDataContext/usuario/usuario_consejeria" />
+      <nodes>
+        <classShapeMoniker Id="f3495ef2-7729-423b-90a8-c4093d9be083" />
+        <classShapeMoniker Id="cd47b2f4-a2d7-4a4b-9168-9ba409640800" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 28.5825512695313); (12.25 : 28.5825512695313)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DbDataContext/usuario/usuario_entrevista_complementaria" />
+      <nodes>
+        <classShapeMoniker Id="f3495ef2-7729-423b-90a8-c4093d9be083" />
+        <classShapeMoniker Id="36d3fba1-0f70-454c-ab92-3646b96f0946" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.9687475 : 27.5); (6.9687475 : 19.65625); (7.41666666666667 : 19.65625 : JumpStart); (7.58333333333333 : 19.65625 : JumpEnd); (7.68229291666667 : 19.65625 : JumpStart); (7.84895958333333 : 19.65625 : JumpEnd); (8.21354541666667 : 19.65625 : JumpStart); (8.38021208333333 : 19.65625 : JumpEnd); (12 : 19.65625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DbDataContext/usuario/usuario_estudio_social" />
+      <nodes>
+        <classShapeMoniker Id="f3495ef2-7729-423b-90a8-c4093d9be083" />
+        <classShapeMoniker Id="c7cc993c-2984-46cb-8e3f-8c5efa171f2e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 29.6539602129407); (8.875 : 30.0289602129407); (8.875 : 43.1546541341146); (9.25 : 43.1546541341146)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DbDataContext/usuario/usuario_expediente" />
+      <nodes>
+        <classShapeMoniker Id="f3495ef2-7729-423b-90a8-c4093d9be083" />
+        <classShapeMoniker Id="7497e1cd-55c1-4aec-b01e-1d331a88fdf6" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.29687875 : 27.5); (8.29687875 : 12.2219962565104); (9.25 : 12.2219962565104)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DbDataContext/usuario/usuario_oficial" />
+      <nodes>
+        <classShapeMoniker Id="f3495ef2-7729-423b-90a8-c4093d9be083" />
+        <classShapeMoniker Id="5b53102a-fc46-440d-98f6-53cd47d35910" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.76562625 : 27.5); (7.76562625 : 14.2219962565104); (9.25 : 14.2219962565104)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DbDataContext/usuario/usuario_psicologo" />
+      <nodes>
+        <classShapeMoniker Id="f3495ef2-7729-423b-90a8-c4093d9be083" />
+        <classShapeMoniker Id="9aeaa43f-f52e-45c0-b823-800895ae8f30" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 28.6306469726563); (6.5 : 28.6306469726563)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DbDataContext/delegacion/delegacion_usuario" />
+      <nodes>
+        <classShapeMoniker Id="e7c654d5-33b4-4221-b148-791913c1198d" />
+        <classShapeMoniker Id="f3495ef2-7729-423b-90a8-c4093d9be083" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.65625 : 25.1939925130208); (5.65625 : 28.4459679589844); (6.5 : 28.4459679589844)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DbDataContext/rol/rol_usuario" />
+      <nodes>
+        <classShapeMoniker Id="49cf6a1a-25c2-4ca7-b039-16b3780a1f73" />
+        <classShapeMoniker Id="f3495ef2-7729-423b-90a8-c4093d9be083" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 32.2840734863281); (10.01562625 : 32.2840734863281); (10.01562625 : 30.1939925130208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DbDataContext/capacitacion/capacitacion_usuario_capacitacion" />
+      <nodes>
+        <classShapeMoniker Id="612528e3-3ba0-4259-981c-d33872a41be0" />
+        <classShapeMoniker Id="8b2c7651-004d-43aa-a92c-175db44820cc" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 29.2957276064704); (9.25 : 29.2957276064704)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DbDataContext/usuario/usuario_usuario_capacitacion" />
+      <nodes>
+        <classShapeMoniker Id="f3495ef2-7729-423b-90a8-c4093d9be083" />
+        <classShapeMoniker Id="8b2c7651-004d-43aa-a92c-175db44820cc" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.25 : 12.5517468847656); (12.9166666666667 : 12.5517468847656 : JumpStart); (13.0833333333333 : 12.5517468847656 : JumpEnd); (18.75 : 12.5517468847656); (18.75 : 23.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DbDataContext/oficial/oficial_valoracion_psicologica" />
+      <nodes>
+        <classShapeMoniker Id="5b53102a-fc46-440d-98f6-53cd47d35910" />
+        <classShapeMoniker Id="e017170d-ac30-472c-85bd-cdebffc0da3b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.23437375 : 27.5); (7.23437375 : 24.40625); (7.41666666666667 : 24.40625 : JumpStart); (7.58333333333333 : 24.40625 : JumpEnd); (7.68229291666667 : 24.40625 : JumpStart); (7.84895958333333 : 24.40625 : JumpEnd); (15.3854141666667 : 24.40625 : JumpStart); (15.5520808333333 : 24.40625 : JumpEnd); (17.75 : 24.40625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DbDataContext/usuario/usuario_valoracion_psicologica" />
+      <nodes>
+        <classShapeMoniker Id="f3495ef2-7729-423b-90a8-c4093d9be083" />
+        <classShapeMoniker Id="e017170d-ac30-472c-85bd-cdebffc0da3b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(16 : 34.625); (16 : 28.5777498372396); (15.5520808333333 : 28.5777498372396 : JumpStart); (15.3854141666667 : 28.5777498372396 : JumpEnd); (14.25 : 28.5777498372396)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DbDataContext/victima/victima_entrevista_complementaria" />
+      <nodes>
+        <classShapeMoniker Id="cc61d550-f445-4e36-8bce-ff2727a87390" />
+        <classShapeMoniker Id="36d3fba1-0f70-454c-ab92-3646b96f0946" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(15.4687475 : 34.625); (15.4687475 : 20.7412019856771); (14 : 20.7412019856771)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DbDataContext/victima/victima_estudio_social" />
+      <nodes>
+        <classShapeMoniker Id="cc61d550-f445-4e36-8bce-ff2727a87390" />
+        <classShapeMoniker Id="c7cc993c-2984-46cb-8e3f-8c5efa171f2e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(16.5312525 : 34.625); (16.5312525 : 25.4178809179688); (17.75 : 25.4178809179688)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DbDataContext/victima/victima_valoracion_psicologica" />
+      <nodes>
+        <classShapeMoniker Id="cc61d550-f445-4e36-8bce-ff2727a87390" />
+        <classShapeMoniker Id="e017170d-ac30-472c-85bd-cdebffc0da3b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 29.4535953776042); (1.75 : 36.3806469726563); (10.6979191666667 : 36.3806469726563 : JumpStart); (10.8645858333333 : 36.3806469726563 : JumpEnd); (15 : 36.3806469726563)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DbDataContext/delegacion/delegacion_victima" />
+      <nodes>
+        <classShapeMoniker Id="e7c654d5-33b4-4221-b148-791913c1198d" />
+        <classShapeMoniker Id="cc61d550-f445-4e36-8bce-ff2727a87390" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.04687875 : 41.5); (11.04687875 : 36.5653259863281); (15 : 36.5653259863281)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DbDataContext/expediente/expediente_victima" />
+      <nodes>
+        <classShapeMoniker Id="7497e1cd-55c1-4aec-b01e-1d331a88fdf6" />
+        <classShapeMoniker Id="cc61d550-f445-4e36-8bce-ff2727a87390" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

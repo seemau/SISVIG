@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SISVIG", "WindowsFormsApplication1\SISVIG.csproj", "{1D53DF61-3C9F-4F8B-A9C5-DB45EF2B9CB3}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SISVIG Installer", "SISVIG Installer\SISVIG Installer.vdproj", "{31749FB3-B6C0-434A-A7B1-9E3D8484E37C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1D53DF61-3C9F-4F8B-A9C5-DB45EF2B9CB3}.Debug|x64.ActiveCfg = Debug|x86
+		{1D53DF61-3C9F-4F8B-A9C5-DB45EF2B9CB3}.Debug|x64.Build.0 = Debug|x86
+		{1D53DF61-3C9F-4F8B-A9C5-DB45EF2B9CB3}.Debug|x86.ActiveCfg = Debug|x86
+		{1D53DF61-3C9F-4F8B-A9C5-DB45EF2B9CB3}.Debug|x86.Build.0 = Debug|x86
+		{1D53DF61-3C9F-4F8B-A9C5-DB45EF2B9CB3}.Release|x64.ActiveCfg = Release|x86
+		{1D53DF61-3C9F-4F8B-A9C5-DB45EF2B9CB3}.Release|x64.Build.0 = Release|x86
+		{1D53DF61-3C9F-4F8B-A9C5-DB45EF2B9CB3}.Release|x86.ActiveCfg = Release|x86
+		{1D53DF61-3C9F-4F8B-A9C5-DB45EF2B9CB3}.Release|x86.Build.0 = Release|x86
+		{31749FB3-B6C0-434A-A7B1-9E3D8484E37C}.Debug|x64.ActiveCfg = Debug
+		{31749FB3-B6C0-434A-A7B1-9E3D8484E37C}.Debug|x64.Build.0 = Debug
+		{31749FB3-B6C0-434A-A7B1-9E3D8484E37C}.Debug|x86.ActiveCfg = Debug
+		{31749FB3-B6C0-434A-A7B1-9E3D8484E37C}.Release|x64.ActiveCfg = Release
+		{31749FB3-B6C0-434A-A7B1-9E3D8484E37C}.Release|x64.Build.0 = Release
+		{31749FB3-B6C0-434A-A7B1-9E3D8484E37C}.Release|x86.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

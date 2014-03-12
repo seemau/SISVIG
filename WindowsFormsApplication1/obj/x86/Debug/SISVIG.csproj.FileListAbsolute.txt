@@ -1,0 +1,222 @@
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\SISVIG.exe.config
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\SISVIG.exe.manifest
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\SISVIG.application
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\SISVIG.exe
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\SISVIG.pdb
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\Qios.DevSuite.Components.dll
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\Qios.DevSuite.Components.xml
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.AgregarUsuario.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Dialogos.DialogEditContra.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Dialogos.DialogModificarUsuario.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.FrmConfig.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.FrmMostrar.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.FrmPrincipal.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\SISVIG.exe.manifest
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\SISVIG.application
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\SISVIG.exe
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\SISVIG.pdb
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\bin\Debug\SISVIG.exe.config
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\SISVIG.exe
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\SISVIG.pdb
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\bin\Debug\SISVIG.exe.manifest
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\bin\Debug\SISVIG.application
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\bin\Debug\SISVIG.exe
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\bin\Debug\SISVIG.pdb
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\bin\Debug\Qios.DevSuite.Components.dll
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\bin\Debug\Qios.DevSuite.Components.xml
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.AgregarUsuario.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Dialogos.DialogEditContra.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Dialogos.DialogModificarUsuario.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.FrmConfig.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.FrmMostrar.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.FrmPrincipal.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\SISVIG.exe.manifest
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\SISVIG.application
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Investigadoras.FrmAgregarVictima.resources
+D:\Mis documentos\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\bin\Debug\SISVIG.exe.config
+D:\Mis documentos\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\SISVIG.exe
+D:\Mis documentos\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\SISVIG.pdb
+D:\Mis documentos\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\bin\Debug\SISVIG.exe.manifest
+D:\Mis documentos\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\bin\Debug\SISVIG.application
+D:\Mis documentos\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\bin\Debug\SISVIG.exe
+D:\Mis documentos\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\bin\Debug\SISVIG.pdb
+D:\Mis documentos\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\bin\Debug\Qios.DevSuite.Components.dll
+D:\Mis documentos\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\bin\Debug\Qios.DevSuite.Components.xml
+D:\Mis documentos\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Mis documentos\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.AgregarUsuario.resources
+D:\Mis documentos\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Dialogos.DialogEditContra.resources
+D:\Mis documentos\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Dialogos.DialogModificarUsuario.resources
+D:\Mis documentos\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.FrmConfig.resources
+D:\Mis documentos\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.FrmMostrar.resources
+D:\Mis documentos\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Investigadoras.FrmAgregarVictima.resources
+D:\Mis documentos\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+D:\Mis documentos\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.FrmPrincipal.resources
+D:\Mis documentos\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\Mis documentos\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\Mis documentos\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\SISVIG.exe.manifest
+D:\Mis documentos\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\SISVIG.application
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Investigadoras.FrmAgresor.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.psicologa.FrmValoracionPsico.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.psicologa.FrmInformePsicologico.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.FrmLogin.resources
+D:\Mis documentos\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.FrmLogin.resources
+D:\Mis documentos\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.psicologa.FrmInformePsicologico.resources
+D:\Mis documentos\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.psicologa.FrmValoracionPsico.resources
+D:\Mis documentos\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Investigadoras.FrmAgresor.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.psicologa.FrmValoraciones.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Dialogos.DialogEditInforme.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.TrabajadoraSocial.FrmTrabajoSocial.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\SISVIG.csproj.ResolveComReference.cache
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.TrabajadoraSocial.FrmInformeTrabajoSocial.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.TrabajadoraSocial.FrmEstudiosSociales.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Investigadoras.FrmMostrarEstudiosSociales.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Investigadoras.FrmMostrarValoraciones.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Dialogos.DialogShowFile.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Dialogos.DialogEditContraUser.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Dialogos.DialogElegirSistema.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Investigadoras.FrmEntrevistaUnica.resources
+D:\Mis documentos\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\SISVIG.csproj.ResolveComReference.cache
+D:\Mis documentos\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Dialogos.DialogEditContraUser.resources
+D:\Mis documentos\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Dialogos.DialogEditInforme.resources
+D:\Mis documentos\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Dialogos.DialogElegirSistema.resources
+D:\Mis documentos\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Dialogos.DialogShowFile.resources
+D:\Mis documentos\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Dialogos.FrmChooseDelegacion.resources
+D:\Mis documentos\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Informes.FrmInfVictimaConAcompañante.resources
+D:\Mis documentos\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Informes.FrmInfVictimaSinAcompañante.resources
+D:\Mis documentos\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Investigadoras.FrmEntrevistaUnica.resources
+D:\Mis documentos\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Investigadoras.FrmMostrarEstudiosSociales.resources
+D:\Mis documentos\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Investigadoras.FrmMostrarValoraciones.resources
+D:\Mis documentos\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.psicologa.FrmValoraciones.resources
+D:\Mis documentos\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.TrabajadoraSocial.FrmEstudiosSociales.resources
+D:\Mis documentos\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.TrabajadoraSocial.FrmInformeTrabajoSocial.resources
+D:\Mis documentos\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.TrabajadoraSocial.FrmTrabajoSocial.resources
+D:\Mis documentos\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\RdlCompile.cache
+D:\Mis documentos\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\RdlCompile.compiled
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Dialogos.FrmChooseDelegacion.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\RdlCompile.cache
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\RdlCompile.compiled
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Investigadoras.FrmMostrarVictimas.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Investigadoras.FrmAgregarVictima2.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.JefaComisaria.FrmAgregarUsuario.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.JefaComisaria.FrmReportPsicologas.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Informes.FrmInfValoracionesPsicologicas.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.JefaComisaria.FrmReportTrabajadorasSocial.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Informes.FrmInfInformesSociales.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.JefaComisaria.FrmReportInvestigadoras.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Informes.FrmInfVictimasAtendidasXivestigadoras.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.JefaComisaria.FrmVictimas.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Informes.FrmInfCasosRelevantes.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Direccion.FrmReportInvestigadoras.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Direccion.FrmReportPsicologas.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Direccion.FrmReportTrabajosSocial.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Direccion.FrmVictimas.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Fiscal.FrmMostrarExpedientes.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.MedicoForense.FrmExpediente.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Dialogos.DialogConexion.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Fiscal.FrmFiscal.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.MedicoForense.FrmNuevaValoracion.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Dialogos.DialogSintesisHechos.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Direccion.FrmDictamenesForense.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.MedicoForense.FrmMostrarDictamenesRealizados.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Dialogos.DialogCapacitacion.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Dialogos.DialogosPsiTrs.DialogAllCapacitaciones.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Dialogos.FrmTransferencias.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Fiscal.FrmMostrarMisExpedientesFiscales.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Fiscal.FrmMostrarEstadosExpedienteMP.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Dialogos.Citas.DialogNuevaCita.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Dialogos.DialogUsuarios.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Admin.FrmBarrios.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\bin\Debug\SISVIG.exe.config
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\SISVIG.csproj.ResolveComReference.cache
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\SISVIG.exe
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\SISVIG.pdb
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\bin\Debug\SISVIG.exe.manifest
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\bin\Debug\SISVIG.application
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\bin\Debug\SISVIG.exe
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\bin\Debug\SISVIG.pdb
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\bin\Debug\Qios.DevSuite.Components.dll
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\bin\Debug\Qios.DevSuite.Components.xml
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Dialogos.Citas.DialogNuevaCita.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Dialogos.DialogCapacitacion.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Dialogos.DialogConexion.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Dialogos.DialogEditContraUser.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Dialogos.DialogEditInforme.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Dialogos.DialogElegirSistema.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Dialogos.DialogosPsiTrs.DialogAllCapacitaciones.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Dialogos.DialogShowFile.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Dialogos.DialogSintesisHechos.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Dialogos.DialogUsuarios.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Dialogos.FrmChooseDelegacion.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Direccion.FrmDictamenesForense.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Direccion.FrmReportInvestigadoras.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Direccion.FrmReportPsicologas.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Direccion.FrmReportTrabajosSocial.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Direccion.FrmVictimas.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Fiscal.FrmFiscal.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Fiscal.FrmMostrarEstadosExpedienteMP.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Fiscal.FrmMostrarExpedientes.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Fiscal.FrmMostrarMisExpedientesFiscales.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.FrmLogin.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Informes.FrmInfCasosRelevantes.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Informes.FrmInfInformesSociales.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Informes.FrmInfValoracionesPsicologicas.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Informes.FrmInfVictimasAtendidasXivestigadoras.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Investigadoras.FrmAgregarVictima2.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Investigadoras.FrmEntrevistaUnica.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Investigadoras.FrmMostrarEstudiosSociales.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Investigadoras.FrmMostrarValoraciones.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Investigadoras.FrmMostrarVictimas.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.JefaComisaria.FrmAgregarUsuario.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.JefaComisaria.FrmReportInvestigadoras.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.JefaComisaria.FrmReportPsicologas.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.JefaComisaria.FrmReportTrabajadorasSocial.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.JefaComisaria.FrmVictimas.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.MedicoForense.FrmExpediente.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.MedicoForense.FrmMostrarDictamenesRealizados.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.MedicoForense.FrmNuevaValoracion.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.psicologa.FrmInformePsicologico.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.psicologa.FrmValoraciones.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.psicologa.FrmValoracionPsico.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.TrabajadoraSocial.FrmEstudiosSociales.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.TrabajadoraSocial.FrmInformeTrabajoSocial.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.TrabajadoraSocial.FrmTrabajoSocial.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.AgregarUsuario.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Dialogos.DialogEditContra.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Dialogos.DialogModificarUsuario.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.FrmConfig.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.FrmMostrar.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Investigadoras.FrmAgregarVictima.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Investigadoras.FrmAgresor.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.FrmPrincipal.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\RdlCompile.cache
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\RdlCompile.compiled
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\SISVIG.exe.manifest
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\SISVIG.application
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Configuracion.FrmBarrios.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Configuracion.FrmJuzgados.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Dialogos.DialogBarrios.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Dialogos.DialogUsuariosInvestigadoras.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Investigadoras.FrmDiligencias.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Investigadoras.FrmMostrarExpedientes.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Dialogos.Citas.FrmMostrarCitas.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\SISVIG.csproj.GenerateResource.Cache
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Configuracion.FrmDelitos.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\SISVIG.csprojResolveAssemblyReference.cache
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.psicologa.FrmNewEntrevistaCompl.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.psicologa.FrmMostrarEntrevistaCompl.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.psicologa.FrmNewConsejeria.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.psicologa.FrmMostrarConsejeria.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Investigadoras.FrmModificarExpediente.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Dialogos.DialogModificarVictima.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Dialogos.DialogModificarAgresor.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Fiscal.FrmExpedientesPoliciales.resources
+C:\Users\DIEGO\Documents\Visual Studio 2010\Projects\SISVIG\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Fiscal.FrmExpedientesFiscales.resources
