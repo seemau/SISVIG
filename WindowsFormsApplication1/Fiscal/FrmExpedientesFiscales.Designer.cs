@@ -159,6 +159,7 @@
             this.RootElement.ApplyShapeToControl = true;
             this.Text = "Fiscalia";
             this.ThemeName = "ControlDefault";
+            this.Load += new System.EventHandler(this.FrmExpedientesFiscales_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gvEstadoExpediente.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvEstadoExpediente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEditar)).EndInit();

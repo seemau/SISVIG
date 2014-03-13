@@ -857,7 +857,7 @@
             // 
             this.lblNombreDelito.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreDelito.ForeColor = System.Drawing.Color.Navy;
-            this.lblNombreDelito.Location = new System.Drawing.Point(114, 19);
+            this.lblNombreDelito.Location = new System.Drawing.Point(114, 16);
             this.lblNombreDelito.Name = "lblNombreDelito";
             this.lblNombreDelito.Size = new System.Drawing.Size(54, 22);
             this.lblNombreDelito.TabIndex = 2;

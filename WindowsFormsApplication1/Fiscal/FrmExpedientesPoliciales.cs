@@ -158,7 +158,7 @@ namespace WindowsFormsApplication1.Fiscal
         {
             if(this.gvExpedientes.SelectedRows.Count == 1)
             {
-                FrmExpedientesFiscales mostrarExpediente = new FrmExpedientesFiscales(this.gvExpedientes.CurrentRow.Cells["delito"].Value.ToString());
+                FrmExpedientesFiscales mostrarExpediente = new FrmExpedientesFiscales(this.gvExpedientes.CurrentRow.Cells["delito"].Value.ToString(),this.gvExpedientes.CurrentRow.Cells["numeroDenuncia"].Value.ToString());
                 mostrarExpediente.ShowDialog(this);
             }
         }
