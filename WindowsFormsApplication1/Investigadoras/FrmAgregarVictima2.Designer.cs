@@ -292,6 +292,7 @@
             this.btnModificar = new Telerik.WinControls.UI.RadButton();
             this.btnSiguiente = new Telerik.WinControls.UI.RadButton();
             this.btnAtras = new Telerik.WinControls.UI.RadButton();
+            this.txtIdentificacionVictima = new Telerik.WinControls.UI.RadTextBox();
             this.txtCedulaVictima = new System.Windows.Forms.MaskedTextBox();
             this.lblNumeroIdentificacion = new Telerik.WinControls.UI.RadLabel();
             this.cmbTipoIdentificacionVictima = new Telerik.WinControls.UI.RadDropDownList();
@@ -329,7 +330,6 @@
             this.lblNombreDenunciante = new Telerik.WinControls.UI.RadLabel();
             this.wizardWelcomePage1 = new Telerik.WinControls.UI.WizardWelcomePage();
             this.qBalloon1 = new Qios.DevSuite.Components.QBalloon();
-            this.txtIdentificacionVictima = new Telerik.WinControls.UI.RadTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.radWizard1)).BeginInit();
             this.radWizard1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -417,6 +417,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnModificar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSiguiente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAtras)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIdentificacionVictima)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblNumeroIdentificacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbTipoIdentificacionVictima)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblTipoIdentificacion)).BeginInit();
@@ -451,7 +452,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.lblApellidoDenunciante)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombreDenunciante)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblNombreDenunciante)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtIdentificacionVictima)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -2010,6 +2010,18 @@
             this.btnAtras.Text = "< Atras";
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
+            // txtIdentificacionVictima
+            // 
+            this.txtIdentificacionVictima.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdentificacionVictima.Location = new System.Drawing.Point(13, 93);
+            this.txtIdentificacionVictima.MaxLength = 20;
+            this.txtIdentificacionVictima.Name = "txtIdentificacionVictima";
+            this.txtIdentificacionVictima.Size = new System.Drawing.Size(155, 25);
+            this.txtIdentificacionVictima.TabIndex = 19;
+            this.txtIdentificacionVictima.TabStop = false;
+            this.txtIdentificacionVictima.Visible = false;
+            this.txtIdentificacionVictima.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtIdentificacionVictima_KeyDown);
+            // 
             // txtCedulaVictima
             // 
             this.txtCedulaVictima.Location = new System.Drawing.Point(693, 21);
@@ -2553,18 +2565,6 @@
             this.qBalloon1.AddListener(this.txtSufijoDenuncia, "Si deseas realizar una modificación a este número hacer clic derecho y luego en M" +
                     "odificar");
             // 
-            // txtIdentificacionVictima
-            // 
-            this.txtIdentificacionVictima.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdentificacionVictima.Location = new System.Drawing.Point(13, 93);
-            this.txtIdentificacionVictima.MaxLength = 20;
-            this.txtIdentificacionVictima.Name = "txtIdentificacionVictima";
-            this.txtIdentificacionVictima.Size = new System.Drawing.Size(155, 25);
-            this.txtIdentificacionVictima.TabIndex = 19;
-            this.txtIdentificacionVictima.TabStop = false;
-            this.txtIdentificacionVictima.Visible = false;
-            this.txtIdentificacionVictima.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtIdentificacionVictima_KeyDown);
-            // 
             // FrmAgregarVictima2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2581,6 +2581,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar";
             this.ThemeName = "ControlDefault";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmAgregarVictima2_FormClosing);
             this.Load += new System.EventHandler(this.FrmAgregarVictima2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radWizard1)).EndInit();
             this.radWizard1.ResumeLayout(false);
@@ -2673,6 +2674,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnModificar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSiguiente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAtras)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIdentificacionVictima)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblNumeroIdentificacion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbTipoIdentificacionVictima)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblTipoIdentificacion)).EndInit();
@@ -2708,7 +2710,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.lblApellidoDenunciante)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombreDenunciante)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblNombreDenunciante)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtIdentificacionVictima)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 

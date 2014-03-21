@@ -615,9 +615,9 @@ namespace WindowsFormsApplication1
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.mostrarExpedientes")]
-		public ISingleResult<mostrarExpedientesResult> mostrarExpedientes([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(MAX)")] string cadena, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> fechaInicial, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> fechaFinal, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> mes, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> tipoBusqueda)
+		public ISingleResult<mostrarExpedientesResult> mostrarExpedientes([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(MAX)")] string cadena, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> fechaInicial, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> fechaFinal, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> mes, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> tipoBusqueda, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idDelegacion)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cadena, fechaInicial, fechaFinal, mes, tipoBusqueda);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cadena, fechaInicial, fechaFinal, mes, tipoBusqueda, idDelegacion);
 			return ((ISingleResult<mostrarExpedientesResult>)(result.ReturnValue));
 		}
 	}

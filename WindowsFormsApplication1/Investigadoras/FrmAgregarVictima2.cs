@@ -90,6 +90,11 @@ namespace WindowsFormsApplication1.Investigadoras
             cmbFactoresRiesgo.SelectedIndex = 2;
             cmbCondicionMental.SelectedIndex = 0;
         }
+
+        private void FrmAgregarVictima2_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+        }
         #endregion
 
         #region Eventos de los ComboBox SelectedIndexChanged
@@ -885,10 +890,13 @@ namespace WindowsFormsApplication1.Investigadoras
                 {
                     if (!this.verificarCamposVacios(this.groupBoxRelatossHech))
                     {
-                        this.insertar();
-                        nuevaTransaccion.Complete();
-                        Mensaje.informacion("Los datos se han guardado correctamente");
-                        this.Close();
+                        if(Mensaje.pregunta("Realmente desea agregar la denuncia" + this.txtSufijoDenuncia.Text + this.txtNumeroDenuncia.Text + "?") == DialogResult.OK)
+                        {
+                            this.insertar();
+                            nuevaTransaccion.Complete();
+                            Mensaje.informacion("Los datos se han guardado correctamente");
+                            this.Close();
+                        }
                     }
                 }
             }

@@ -92,7 +92,7 @@ namespace WindowsFormsApplication1.Fiscal
                 if (this.cmbBuscarPor.SelectedIndex != 0 || this.txtBuscar.Text != string.Empty)
                 {
                     DbDataContext varLinq = new DbDataContext();
-                    this.gvExpedientes.DataSource = varLinq.mostrarExpedientes(this.txtBuscar.Text, this.dtpDesde.Value, this.dtpHasta.Value, this.cmbMes.SelectedIndex, this.cmbBuscarPor.SelectedIndex);
+                    this.gvExpedientes.DataSource = varLinq.mostrarExpedientes(this.txtBuscar.Text, this.dtpDesde.Value, this.dtpHasta.Value, this.cmbMes.SelectedIndex, this.cmbBuscarPor.SelectedIndex,Properties.Settings.Default.idDelegacionPredeterminada);
                     this.setDatosGenerales();
                     this.lblResultados.Text = "<html>Se encontraron <strong> " + this.gvExpedientes.RowCount + " </strong> resultados</html>";
                 }

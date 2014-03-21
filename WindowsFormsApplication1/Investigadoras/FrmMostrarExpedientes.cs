@@ -118,7 +118,7 @@ namespace WindowsFormsApplication1.Investigadoras
                     if (cadena != "%")
                     {
                         DbDataContext varLinq = new DbDataContext();
-                        this.gvExpedientes.DataSource = varLinq.mostrarExpedientes(cadena, fechaDesde, fechaHasta, 0, tipoBusqueda);
+                        this.gvExpedientes.DataSource = varLinq.mostrarExpedientes(cadena, fechaDesde, fechaHasta, 0, tipoBusqueda,Properties.Settings.Default.idDelegacionPredeterminada);
                         this.setDatosGenerales();
                     }
                 }

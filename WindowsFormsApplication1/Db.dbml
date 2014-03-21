@@ -886,6 +886,7 @@
     <Parameter Name="fechaFinal" Type="System.DateTime" DbType="Date" />
     <Parameter Name="mes" Type="System.Int32" DbType="Int" />
     <Parameter Name="tipoBusqueda" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idDelegacion" Type="System.Int32" DbType="Int" />
     <ElementType Name="mostrarExpedientesResult">
       <Column Name="numeroDenuncia" Type="System.String" DbType="NVarChar(17) NOT NULL" CanBeNull="false" />
       <Column Name="numeroExpediente" Type="System.String" DbType="NVarChar(17)" CanBeNull="true" />
