@@ -23,9 +23,8 @@ namespace WindowsFormsApplication1.Dialogos.Citas
         {
             this.cmbBuscarPor.SelectedIndex = 1;
             this.dtpDesde.Value = DateTime.Now.Date;
-            this.dtpHasta.Value = DateTime.Now.Date;
+            this.dtpHasta.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 23, 59, 59);
             this.setDatosCitas();
-            
         }
         #endregion
 
@@ -92,6 +91,10 @@ namespace WindowsFormsApplication1.Dialogos.Citas
                         this.setDatosCitas();
                     }
                 }
+                else
+                {
+                    Mensaje.alerta("Usted no tiene permiso para realizar esta operacion");
+                }
             }
 
         }
@@ -103,8 +106,8 @@ namespace WindowsFormsApplication1.Dialogos.Citas
             try
             {
                 DbDataContext varLinq = new DbDataContext();
-                this.dtpHasta.Value = this.dtpHasta.Value.AddHours(23);
-                this.dtpHasta.Value= this.dtpHasta.Value.AddMinutes(59);
+                //this.dtpHasta.Value = this.dtpHasta.Value.AddHours(23);
+                //this.dtpHasta.Value= this.dtpHasta.Value.AddMinutes(59);
                 if (Propiedades.Rol == "Estadistica")
                 {
                     this.gvCitas.DataSource = varLinq.mostrarCitas(this.txtBuscar.Text,

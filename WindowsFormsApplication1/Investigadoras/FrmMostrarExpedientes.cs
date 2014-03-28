@@ -22,7 +22,7 @@ namespace WindowsFormsApplication1.Investigadoras
         private void FrmMostrarExpedientes_Load(object sender, EventArgs e)
         {
             this.dtpDesde.Value = DateTime.Now;
-            this.dtpHasta.Value = DateTime.Now;
+            this.dtpHasta.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 23, 59, 59);
             this.cmbBuscarPor.SelectedIndex = 1;
             this.setDatosExpedientes(this.txtBuscar.Text, this.dtpDesde.Value, this.dtpHasta.Value, this.cmbBuscarPor.SelectedIndex);
         }

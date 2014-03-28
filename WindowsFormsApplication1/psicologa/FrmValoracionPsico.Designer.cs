@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn10 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn11 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn12 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn13 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn14 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn15 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn16 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn17 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn18 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
             this.gvVictimasNoValoracion = new Telerik.WinControls.UI.RadGridView();
             this.btnShow = new Telerik.WinControls.UI.RadButton();
@@ -46,6 +46,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvVictimasNoValoracion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvVictimasNoValoracion.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnShow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnNewValoracion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblBuscar)).BeginInit();
@@ -97,65 +98,65 @@
             this.gvVictimasNoValoracion.MasterTemplate.AllowDragToGroup = false;
             this.gvVictimasNoValoracion.MasterTemplate.AllowEditRow = false;
             this.gvVictimasNoValoracion.MasterTemplate.AutoGenerateColumns = false;
-            gridViewTextBoxColumn1.EnableExpressionEditor = false;
-            gridViewTextBoxColumn1.FieldName = "numeroExpediente";
-            gridViewTextBoxColumn1.HeaderText = "Denunicia Nº";
-            gridViewTextBoxColumn1.Name = "numeroExpediente";
-            gridViewTextBoxColumn1.Width = 157;
-            gridViewTextBoxColumn2.EnableExpressionEditor = false;
-            gridViewTextBoxColumn2.FieldName = "oficial";
-            gridViewTextBoxColumn2.HeaderText = "Oficial";
-            gridViewTextBoxColumn2.Name = "nombreOficial";
-            gridViewTextBoxColumn2.Width = 180;
-            gridViewTextBoxColumn3.EnableExpressionEditor = false;
-            gridViewTextBoxColumn3.FieldName = "nombreDenunciante";
-            gridViewTextBoxColumn3.HeaderText = "Nombre del Denunciante";
-            gridViewTextBoxColumn3.Name = "nombreDenunciante";
-            gridViewTextBoxColumn3.Width = 270;
-            gridViewTextBoxColumn4.EnableExpressionEditor = false;
-            gridViewTextBoxColumn4.FieldName = "nombreVictima";
-            gridViewTextBoxColumn4.HeaderText = "Nombre de la victima";
-            gridViewTextBoxColumn4.Name = "nombreVictima";
-            gridViewTextBoxColumn4.Width = 279;
-            gridViewTextBoxColumn5.EnableExpressionEditor = false;
-            gridViewTextBoxColumn5.FieldName = "delito";
-            gridViewTextBoxColumn5.HeaderText = "Presunto Delito";
-            gridViewTextBoxColumn5.Name = "delito";
-            gridViewTextBoxColumn5.Width = 150;
-            gridViewTextBoxColumn6.EnableExpressionEditor = false;
-            gridViewTextBoxColumn6.FieldName = "edadVictima";
-            gridViewTextBoxColumn6.HeaderText = "Edad de la Victima";
-            gridViewTextBoxColumn6.Name = "edadVictima";
-            gridViewTextBoxColumn6.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn6.Width = 140;
-            gridViewTextBoxColumn7.EnableExpressionEditor = false;
-            gridViewTextBoxColumn7.FieldName = "direccionVictima";
-            gridViewTextBoxColumn7.HeaderText = "Lugar Ocurrencia";
-            gridViewTextBoxColumn7.Name = "direccionVictima";
-            gridViewTextBoxColumn7.RowSpan = 10;
-            gridViewTextBoxColumn7.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            gridViewTextBoxColumn7.Width = 176;
-            gridViewTextBoxColumn7.WrapText = true;
-            gridViewTextBoxColumn8.EnableExpressionEditor = false;
-            gridViewTextBoxColumn8.FieldName = "numeroChip";
-            gridViewTextBoxColumn8.HeaderText = "Numero Chip";
-            gridViewTextBoxColumn8.IsVisible = false;
-            gridViewTextBoxColumn8.Name = "nChipOficial";
-            gridViewTextBoxColumn9.EnableExpressionEditor = false;
-            gridViewTextBoxColumn9.FieldName = "idVictima";
-            gridViewTextBoxColumn9.HeaderText = "Id Victima";
-            gridViewTextBoxColumn9.IsVisible = false;
-            gridViewTextBoxColumn9.Name = "idVictima";
+            gridViewTextBoxColumn10.EnableExpressionEditor = false;
+            gridViewTextBoxColumn10.FieldName = "numeroExpediente";
+            gridViewTextBoxColumn10.HeaderText = "Denunicia Nº";
+            gridViewTextBoxColumn10.Name = "numeroExpediente";
+            gridViewTextBoxColumn10.Width = 157;
+            gridViewTextBoxColumn11.EnableExpressionEditor = false;
+            gridViewTextBoxColumn11.FieldName = "oficial";
+            gridViewTextBoxColumn11.HeaderText = "Oficial";
+            gridViewTextBoxColumn11.Name = "nombreOficial";
+            gridViewTextBoxColumn11.Width = 180;
+            gridViewTextBoxColumn12.EnableExpressionEditor = false;
+            gridViewTextBoxColumn12.FieldName = "nombreDenunciante";
+            gridViewTextBoxColumn12.HeaderText = "Nombre del Denunciante";
+            gridViewTextBoxColumn12.Name = "nombreDenunciante";
+            gridViewTextBoxColumn12.Width = 270;
+            gridViewTextBoxColumn13.EnableExpressionEditor = false;
+            gridViewTextBoxColumn13.FieldName = "nombreVictima";
+            gridViewTextBoxColumn13.HeaderText = "Nombre de la victima";
+            gridViewTextBoxColumn13.Name = "nombreVictima";
+            gridViewTextBoxColumn13.Width = 279;
+            gridViewTextBoxColumn14.EnableExpressionEditor = false;
+            gridViewTextBoxColumn14.FieldName = "delito";
+            gridViewTextBoxColumn14.HeaderText = "Presunto Delito";
+            gridViewTextBoxColumn14.Name = "delito";
+            gridViewTextBoxColumn14.Width = 150;
+            gridViewTextBoxColumn15.EnableExpressionEditor = false;
+            gridViewTextBoxColumn15.FieldName = "edadVictima";
+            gridViewTextBoxColumn15.HeaderText = "Edad de la Victima";
+            gridViewTextBoxColumn15.Name = "edadVictima";
+            gridViewTextBoxColumn15.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewTextBoxColumn15.Width = 140;
+            gridViewTextBoxColumn16.EnableExpressionEditor = false;
+            gridViewTextBoxColumn16.FieldName = "direccionVictima";
+            gridViewTextBoxColumn16.HeaderText = "Lugar Ocurrencia";
+            gridViewTextBoxColumn16.Name = "direccionVictima";
+            gridViewTextBoxColumn16.RowSpan = 10;
+            gridViewTextBoxColumn16.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            gridViewTextBoxColumn16.Width = 176;
+            gridViewTextBoxColumn16.WrapText = true;
+            gridViewTextBoxColumn17.EnableExpressionEditor = false;
+            gridViewTextBoxColumn17.FieldName = "numeroChip";
+            gridViewTextBoxColumn17.HeaderText = "Numero Chip";
+            gridViewTextBoxColumn17.IsVisible = false;
+            gridViewTextBoxColumn17.Name = "nChipOficial";
+            gridViewTextBoxColumn18.EnableExpressionEditor = false;
+            gridViewTextBoxColumn18.FieldName = "idVictima";
+            gridViewTextBoxColumn18.HeaderText = "Id Victima";
+            gridViewTextBoxColumn18.IsVisible = false;
+            gridViewTextBoxColumn18.Name = "idVictima";
             this.gvVictimasNoValoracion.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn1,
-            gridViewTextBoxColumn2,
-            gridViewTextBoxColumn3,
-            gridViewTextBoxColumn4,
-            gridViewTextBoxColumn5,
-            gridViewTextBoxColumn6,
-            gridViewTextBoxColumn7,
-            gridViewTextBoxColumn8,
-            gridViewTextBoxColumn9});
+            gridViewTextBoxColumn10,
+            gridViewTextBoxColumn11,
+            gridViewTextBoxColumn12,
+            gridViewTextBoxColumn13,
+            gridViewTextBoxColumn14,
+            gridViewTextBoxColumn15,
+            gridViewTextBoxColumn16,
+            gridViewTextBoxColumn17,
+            gridViewTextBoxColumn18});
             this.gvVictimasNoValoracion.MasterTemplate.EnableAlternatingRowColor = true;
             this.gvVictimasNoValoracion.MasterTemplate.EnableGrouping = false;
             this.gvVictimasNoValoracion.MasterTemplate.EnableSorting = false;
@@ -231,6 +232,7 @@
             this.Load += new System.EventHandler(this.FrmValoracionPsico_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gvVictimasNoValoracion.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvVictimasNoValoracion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnShow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnNewValoracion)).EndInit();

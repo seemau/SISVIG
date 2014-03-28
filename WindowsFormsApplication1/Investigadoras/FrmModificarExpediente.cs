@@ -35,6 +35,7 @@ namespace WindowsFormsApplication1.Investigadoras
                 _varLINQ = new DbDataContext();
                 _modificarExpediente = new expediente();
                 _modificarDenunciante = new denunciante();
+                this.cmbDelito.DataSource = Propiedades.Delitos;
                 this.wbCargando.Visible = true;
                 this.wbCargando.StartWaiting();
                 this.btnGuardar.Enabled = false;

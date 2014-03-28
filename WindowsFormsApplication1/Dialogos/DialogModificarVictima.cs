@@ -102,7 +102,10 @@ namespace WindowsFormsApplication1.Dialogos
             if (!Convertir.CamposVacios(this))
             {
                 if (!this._modificar)
+                {
                     this._objVictima = new victima();
+                    this._objVictima.id_delegacion = Properties.Settings.Default.idDelegacionPredeterminada;
+                }
                 this._objVictima.Nombres = this.txtNombre.Text;
                 this._objVictima.Apellidos = this.txtApellido.Text;
                 this._objVictima.edad = (int)this.spinEdad.Value;

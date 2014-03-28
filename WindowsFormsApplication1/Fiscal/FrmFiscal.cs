@@ -11,6 +11,8 @@ namespace WindowsFormsApplication1.Fiscal
     {
         private string _delito;
         private string _expediente;
+        private Boolean _modificar = false;
+        private fiscal _expedienteFiscal;
 
         public FrmFiscal()
         {
@@ -84,6 +86,9 @@ namespace WindowsFormsApplication1.Fiscal
         #endregion
 
         #region Propiedades
+        /// <summary>
+        /// Establece el delito del expediente para mostrarlo en el formulario
+        /// </summary>
         public string Delito
         {
             set
@@ -91,12 +96,23 @@ namespace WindowsFormsApplication1.Fiscal
                 this._delito = value;
             }
         }
-
+        /// <summary>
+        /// Establece el numero de expediente policial para asignar expediente fiscal
+        /// </summary>
         public string Expediente
         {
             set
             {
                 this._expediente = value;
+            }
+        }
+
+        public fiscal ExpedienteFiscal
+        {
+            set
+            {
+                this._expedienteFiscal = value;
+                this._modificar = true;
             }
         }
         #endregion
@@ -162,13 +178,13 @@ namespace WindowsFormsApplication1.Fiscal
                     nuevoExpedienteFiscal.estado = this.cmbEstado.SelectedItem.Text;
                     nuevoExpedienteFiscal.observaciones = this.txtObservaciones.Text;
                     nuevoExpedienteFiscal.CampoGUID = Guid.NewGuid();
-                    if (this.chkCriterioOportunidad.ToggleState == ToggleState.On)
-                        nuevoExpedienteFiscal.criterio_oportunidad = this.chkCriterioOportunidad.Text;
-                    if (this._delito != this.cmbDelito.Text)
-                    {
-                        var resulsetExpediente = varLinq.expediente.FirstOrDefault(p => p.n_expediente == this._expediente);
-                        resulsetExpediente.delito = this.cmbDelito.Text;
-                    }
+                    //if (this.chkCriterioOportunidad.ToggleState == ToggleState.On)
+                    nuevoExpedienteFiscal.criterio_oportunidad = this.chkCriterioOportunidad.ToggleState == ToggleState.On ? this.chkCriterioOportunidad.Text : null;
+                    //if (this._delito != this.cmbDelito.Text)
+                    //{
+                    //    var resulsetExpediente = varLinq.expediente.FirstOrDefault(p => p.n_expediente == this._expediente);
+                    //    resulsetExpediente.delito = this.cmbDelito.Text;
+                    //}
                     
                     switch (cmbEstado.SelectedIndex)
                     {

@@ -945,7 +945,7 @@
             this.gvVictima.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.gvVictima.Location = new System.Drawing.Point(8, 8);
             // 
-            // 
+            // gvVictima
             // 
             this.gvVictima.MasterTemplate.AddNewRowPosition = Telerik.WinControls.UI.SystemRowPosition.Bottom;
             this.gvVictima.MasterTemplate.AllowAddNewRow = false;
@@ -1052,7 +1052,7 @@
             this.gvAgresor.MasterTemplate.AllowEditRow = false;
             this.gvAgresor.MasterTemplate.AutoGenerateColumns = false;
             gridViewTextBoxColumn5.EnableExpressionEditor = false;
-            gridViewTextBoxColumn5.Expression = "ISNULL(apellidoAgresor ,\'Desconocido(a)\') ";
+            gridViewTextBoxColumn5.Expression = "";
             gridViewTextBoxColumn5.FieldName = "nombres";
             gridViewTextBoxColumn5.HeaderText = "Nombre";
             gridViewTextBoxColumn5.Name = "nombreAgresor";

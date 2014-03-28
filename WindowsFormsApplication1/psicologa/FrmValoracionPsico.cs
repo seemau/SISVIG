@@ -142,16 +142,17 @@ namespace WindowsFormsApplication1.psicologa
             {
                 if (gvVictimasNoValoracion.SelectedRows.Count != 0)
                 {
-                    int rowSelected = gvVictimasNoValoracion.CurrentRow.Index;
-                    string numeroExpediente = this.gvVictimasNoValoracion.Rows[rowSelected].Cells["numeroExpediente"].Value.ToString();
-                    string victima = this.gvVictimasNoValoracion.Rows[rowSelected].Cells["nombreVictima"].Value.ToString();
-                    Dialogos.DialogSintesisHechos mostrarDialogo = new Dialogos.DialogSintesisHechos();
-                    mostrarDialogo.Victima = victima;
-                    mostrarDialogo.Expediente = numeroExpediente;
-                    mostrarDialogo.Show(this);
-                    //Informes.FrmInfCasosRelevantes nuevoCaso = new Informes.FrmInfCasosRelevantes(id);
-                    //nuevoCaso.Delegacion = Properties.Settings.Default.delegacionPredeterminada;
-                    //nuevoCaso.Show();
+                    //int rowSelected = gvVictimasNoValoracion.CurrentRow.Index;
+                    //string numeroExpediente = this.gvVictimasNoValoracion.Rows[rowSelected].Cells["numeroExpediente"].Value.ToString();
+                    //string victima = this.gvVictimasNoValoracion.Rows[rowSelected].Cells["nombreVictima"].Value.ToString();
+                    //Dialogos.DialogSintesisHechos mostrarDialogo = new Dialogos.DialogSintesisHechos();
+                    //mostrarDialogo.Victima = victima;
+                    //mostrarDialogo.Expediente = numeroExpediente;
+                    //mostrarDialogo.Show(this);
+                    int id =(int) this.gvVictimasNoValoracion.CurrentRow.Cells["idVictima"].Value;
+                    Informes.FrmInfCasosRelevantes nuevoCaso = new Informes.FrmInfCasosRelevantes(id);
+                    nuevoCaso.Delegacion = Properties.Settings.Default.delegacionPredeterminada;
+                    nuevoCaso.Show();
                 }
             }
             catch (Exception excepcion)

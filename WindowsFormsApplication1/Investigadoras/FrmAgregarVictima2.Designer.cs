@@ -1279,6 +1279,8 @@
             // groupBoxExpediente
             // 
             this.groupBoxExpediente.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
+            this.groupBoxExpediente.Controls.Add(this.txtNumeroExpediente);
+            this.groupBoxExpediente.Controls.Add(this.txtNumeroDenuncia);
             this.groupBoxExpediente.Controls.Add(this.txtSufijoExpediente);
             this.groupBoxExpediente.Controls.Add(this.txtSufijoDenuncia);
             this.groupBoxExpediente.Controls.Add(this.btnExaminarBarrios);
@@ -1287,8 +1289,6 @@
             this.groupBoxExpediente.Controls.Add(this.btnExaminarInvestigadoras);
             this.groupBoxExpediente.Controls.Add(this.txtInvestigadora);
             this.groupBoxExpediente.Controls.Add(this.lblInvestigadora);
-            this.groupBoxExpediente.Controls.Add(this.txtNumeroExpediente);
-            this.groupBoxExpediente.Controls.Add(this.txtNumeroDenuncia);
             this.groupBoxExpediente.Controls.Add(this.radLabel1);
             this.groupBoxExpediente.Controls.Add(this.cmbLugarAfectado);
             this.groupBoxExpediente.Controls.Add(this.lblLugarAfectado);
@@ -1576,7 +1576,6 @@
             this.dtpFechaDenuncia.Size = new System.Drawing.Size(195, 25);
             this.dtpFechaDenuncia.TabIndex = 7;
             this.dtpFechaDenuncia.TabStop = false;
-            this.dtpFechaDenuncia.Tag = "";
             this.dtpFechaDenuncia.Text = "19/02/2013 12:00 a.m.";
             this.dtpFechaDenuncia.Value = new System.DateTime(2013, 2, 19, 0, 0, 0, 0);
             this.dtpFechaDenuncia.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dtpFechaDenuncia_KeyDown);
@@ -1630,7 +1629,6 @@
             this.dtpFechaOcurrencia.Size = new System.Drawing.Size(195, 25);
             this.dtpFechaOcurrencia.TabIndex = 6;
             this.dtpFechaOcurrencia.TabStop = false;
-            this.dtpFechaOcurrencia.Tag = "";
             this.dtpFechaOcurrencia.Text = "26/02/2013 12:00 a.m.";
             this.dtpFechaOcurrencia.Value = new System.DateTime(2013, 2, 26, 0, 0, 0, 0);
             this.dtpFechaOcurrencia.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dtpFechaOcurrencia_KeyDown);

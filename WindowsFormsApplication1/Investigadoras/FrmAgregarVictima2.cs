@@ -93,7 +93,13 @@ namespace WindowsFormsApplication1.Investigadoras
 
         private void FrmAgregarVictima2_FormClosing(object sender, FormClosingEventArgs e)
         {
-
+            if (camposLlenos(tableLayoutPanel1))
+            {
+                if (Mensaje.pregunta("Realmente desea cerrar la ventana", "Cerrar") == DialogResult.No)
+                {
+                    e.Cancel = true;   
+                }
+            }
         }
         #endregion
 
@@ -502,6 +508,41 @@ namespace WindowsFormsApplication1.Investigadoras
                         if (controles.Text == string.Empty || (controles is Telerik.WinControls.UI.RadMaskedEditBox && controles.Text == "_____"))
                         {
                             Mensaje.alerta("Usted no ha llenado el campo " + controles.Tag.ToString());
+                            return true;
+                        }
+                    }
+                }
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Verifica si existe algun campo que esta lleno para mandar un mensaje 
+        /// de verificacin si desea salir.
+        /// </summary>
+        /// <param name="ControlContenedor">Es el contenedor donde estan los controles</param>
+        /// <returns></returns>
+        public bool camposLlenos(Control ControlContenedor)
+        {
+            foreach (Control controles in ControlContenedor.Controls)
+            {
+                if (controles is Telerik.WinControls.UI.RadGroupBox)
+                {
+                    if (this.camposLlenos(controles))
+                    {
+                        return true;
+                    }
+                }
+                else
+                {
+                    if (controles.Tag != null && (controles.Tag.ToString() != "Sufijo Denuncia" && controles.Tag.ToString() != "Sufijo Expediente"))
+                    {
+                        if (controles is Telerik.WinControls.UI.RadMaskedEditBox && controles.Text != "_____")
+                        {
+                            return true;
+                        }
+                        if (controles.Text != string.Empty && !(controles is Telerik.WinControls.UI.RadMaskedEditBox))
+                        {
                             return true;
                         }
                     }
@@ -1686,6 +1727,7 @@ namespace WindowsFormsApplication1.Investigadoras
             }
         }
 
+        #region Codigo defasado
         private void txtSufijoDenuncia_TextChanged(object sender, EventArgs e)
         {
             if ((this.txtSufijoDenuncia.Text[0] != 'C') && (this.txtSufijoDenuncia.Text[0] != 'A') && (this.txtSufijoExpediente.Text[0] != 'D') && (this.txtSufijoDenuncia.Text[0] != '_'))
@@ -1705,5 +1747,6 @@ namespace WindowsFormsApplication1.Investigadoras
                 this.txtSufijoExpediente.Text = cadenaTemp.ToString();
             }
         }
+        #endregion
     }
 }

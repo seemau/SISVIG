@@ -204,7 +204,5 @@ namespace WindowsFormsApplication1.JefaComisaria
         }
         #endregion
 
-        
-
     }
 }
