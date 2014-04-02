@@ -42,11 +42,13 @@ namespace WindowsFormsApplication1.Fiscal
         }
         #endregion
 
+        #region Eventos del formulario
         private void FrmExpedientesFiscales_Load(object sender, EventArgs e)
         {
             this._varLINQ = new DbDataContext();
             this.iniciarExpedientesFiscales();
         }
+        #endregion
 
         #region Metodos
         public void iniciarExpedientesFiscales()

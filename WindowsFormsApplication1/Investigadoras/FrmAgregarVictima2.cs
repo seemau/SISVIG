@@ -17,7 +17,7 @@ namespace WindowsFormsApplication1.Investigadoras
         private int index;
         private int indexAgresor;
         private int idBarrio;
-
+        private bool _finalizadoCorrectamente = false;
         public FrmAgregarVictima2()
         {
             InitializeComponent();
@@ -93,7 +93,7 @@ namespace WindowsFormsApplication1.Investigadoras
 
         private void FrmAgregarVictima2_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (camposLlenos(tableLayoutPanel1))
+            if (camposLlenos(tableLayoutPanel1) && !this._finalizadoCorrectamente)
             {
                 if (Mensaje.pregunta("Realmente desea cerrar la ventana", "Cerrar") == DialogResult.No)
                 {
@@ -931,11 +931,12 @@ namespace WindowsFormsApplication1.Investigadoras
                 {
                     if (!this.verificarCamposVacios(this.groupBoxRelatossHech))
                     {
-                        if(Mensaje.pregunta("Realmente desea agregar la denuncia" + this.txtSufijoDenuncia.Text + this.txtNumeroDenuncia.Text + "?") == DialogResult.OK)
+                        if(Mensaje.pregunta("¿Realmente desea agregar la denuncia " + this.txtSufijoDenuncia.Text + this.txtNumeroDenuncia.Text + " ?") == DialogResult.Yes)
                         {
                             this.insertar();
                             nuevaTransaccion.Complete();
                             Mensaje.informacion("Los datos se han guardado correctamente");
+                            this._finalizadoCorrectamente = true;
                             this.Close();
                         }
                     }
