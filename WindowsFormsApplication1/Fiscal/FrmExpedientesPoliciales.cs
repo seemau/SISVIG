@@ -92,9 +92,9 @@ namespace WindowsFormsApplication1.Fiscal
                 if (this.cmbBuscarPor.SelectedIndex != 0 || this.txtBuscar.Text != string.Empty)
                 {
                     DbDataContext varLinq = new DbDataContext();
-                    this.gvExpedientes.DataSource = varLinq.mostrarExpedientes(this.txtBuscar.Text, this.dtpDesde.Value, this.dtpHasta.Value, this.cmbMes.SelectedIndex, this.cmbBuscarPor.SelectedIndex,Properties.Settings.Default.idDelegacionPredeterminada);
+                    this.gvExpedientes.DataSource = varLinq.mostrarExpedientes(this.txtBuscar.Text, this.dtpDesde.Value, new DateTime(this.dtpHasta.Value.Year,this.dtpHasta.Value.Month,this.dtpHasta.Value.Day,23,59,59), this.cmbMes.SelectedIndex - 1, this.cmbBuscarPor.SelectedIndex,Properties.Settings.Default.idDelegacionPredeterminada);
                     this.setDatosGenerales();
-                    this.lblResultados.Text = "<html>Se encontraron <strong> " + this.gvExpedientes.RowCount + " </strong> resultados</html>";
+                    this.lblResultados.Text = "<html>Se encontraron <strong>  " + this.gvExpedientes.RowCount + " </strong> resultados</html>";
                 }
             }
             catch (Exception ex)
@@ -162,7 +162,5 @@ namespace WindowsFormsApplication1.Fiscal
                 mostrarExpediente.ShowDialog(this);
             }
         }
-
-        
     }
 }

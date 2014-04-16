@@ -29,7 +29,7 @@ namespace WindowsFormsApplication1.Investigadoras
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            this.setDatosExpedientes(this.txtBuscar.Text, this.dtpDesde.Value, this.dtpHasta.Value, this.cmbBuscarPor.SelectedIndex);
+            this.setDatosExpedientes(this.txtBuscar.Text, this.dtpDesde.Value, new DateTime(this.dtpHasta.Value.Year,this.dtpHasta.Value.Month,this.dtpHasta.Value.Day,23,59,59), this.cmbBuscarPor.SelectedIndex);
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
