@@ -22,19 +22,21 @@ namespace WindowsFormsApplication1.Investigadoras
         private void FrmMostrarExpedientes_Load(object sender, EventArgs e)
         {
             this.dtpDesde.Value = DateTime.Now;
-            this.dtpHasta.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 23, 59, 59);
+            //this.dtpHasta.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 23, 59, 59);
+            this.dtpHasta.Value = DateTime.Now;
             this.cmbBuscarPor.SelectedIndex = 1;
-            this.setDatosExpedientes(this.txtBuscar.Text, this.dtpDesde.Value, this.dtpHasta.Value, this.cmbBuscarPor.SelectedIndex);
+            this.setDatosExpedientes();
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            this.setDatosExpedientes(this.txtBuscar.Text, this.dtpDesde.Value, new DateTime(this.dtpHasta.Value.Year,this.dtpHasta.Value.Month,this.dtpHasta.Value.Day,23,59,59), this.cmbBuscarPor.SelectedIndex);
+            //this.dtpHasta.Value = new DateTime(this.dtpHasta.Value.Year,this.dtpHasta.Value.Month,this.dtpHasta.Value.Day,23,59,59);
+            this.setDatosExpedientes();
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
-            this.setDatosExpedientes(this.txtBuscar.Text, this.dtpDesde.Value, this.dtpHasta.Value, this.cmbBuscarPor.SelectedIndex);
+            this.setDatosExpedientes();
         }
         private void cmbBuscarPor_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
         {
@@ -109,16 +111,17 @@ namespace WindowsFormsApplication1.Investigadoras
         }
 
         #region Metodos
-        public void setDatosExpedientes(string cadena, DateTime fechaDesde, DateTime fechaHasta, int tipoBusqueda)
+        public void setDatosExpedientes()
         {
             try
             {
-                if (this.cmbBuscarPor.SelectedIndex != 0 || cadena != string.Empty)
+                if (this.cmbBuscarPor.SelectedIndex != 0 || this.txtBuscar.Text != string.Empty)
                 {
-                    if (cadena != "%")
+                    if (this.txtBuscar.Text != "%")
                     {
                         DbDataContext varLinq = new DbDataContext();
-                        this.gvExpedientes.DataSource = varLinq.mostrarExpedientes(cadena, fechaDesde, fechaHasta, 0, tipoBusqueda,Properties.Settings.Default.idDelegacionPredeterminada);
+                        this.gvExpedientes.DataSource = varLinq.mostrarExpedientes(this.txtBuscar.Text, this.dtpDesde.Value, this.dtpHasta.Value, 0, this.cmbBuscarPor.SelectedIndex,Properties.Settings.Default.idDelegacionPredeterminada);
+                        this.lblResultados.Text = "<html><strong> " + this.gvExpedientes.RowCount + " </strong> Resultados</html>"; 
                         this.setDatosGenerales();
                     }
                 }
@@ -161,6 +164,5 @@ namespace WindowsFormsApplication1.Investigadoras
             }
         }
         #endregion
-
     }
 }

@@ -89,6 +89,7 @@
             gridViewTextBoxColumn3.FieldName = "fecha_reingreso";
             gridViewTextBoxColumn3.FormatString = "{0:d}";
             gridViewTextBoxColumn3.HeaderText = "Fecha Reingreso";
+            gridViewTextBoxColumn3.IsVisible = false;
             gridViewTextBoxColumn3.Name = "fechaReingreso";
             gridViewTextBoxColumn3.Width = 163;
             this.gvEstadoExpediente.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
@@ -113,6 +114,7 @@
             this.btnEditar.Size = new System.Drawing.Size(80, 24);
             this.btnEditar.TabIndex = 70;
             this.btnEditar.Text = "&Editar";
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnVer
             // 

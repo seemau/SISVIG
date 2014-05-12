@@ -23,8 +23,9 @@ namespace WindowsFormsApplication1.Fiscal
         {
             this.cmbBuscarPor.SelectedIndex = 2;
             this.dtpDesde.Value = DateTime.Now.Date;
-            this.dtpHasta.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 23, 59, 59);
-            this.cmbMes.SelectedIndex = DateTime.Now.Month - 1;
+            //this.dtpHasta.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 23, 59, 59);
+            this.dtpHasta.Value = DateTime.Now;
+            this.cmbMes.SelectedIndex = DateTime.Now.Month + 1;
             this.setDatosExpedientes();
         }
         #endregion
@@ -92,7 +93,7 @@ namespace WindowsFormsApplication1.Fiscal
                 if (this.cmbBuscarPor.SelectedIndex != 0 || this.txtBuscar.Text != string.Empty)
                 {
                     DbDataContext varLinq = new DbDataContext();
-                    this.gvExpedientes.DataSource = varLinq.mostrarExpedientes(this.txtBuscar.Text, this.dtpDesde.Value, new DateTime(this.dtpHasta.Value.Year,this.dtpHasta.Value.Month,this.dtpHasta.Value.Day,23,59,59), this.cmbMes.SelectedIndex - 1, this.cmbBuscarPor.SelectedIndex,Properties.Settings.Default.idDelegacionPredeterminada);
+                    this.gvExpedientes.DataSource = varLinq.mostrarExpedientes(this.txtBuscar.Text, this.dtpDesde.Value, this.dtpHasta.Value, this.cmbMes.SelectedIndex + 1, this.cmbBuscarPor.SelectedIndex,Properties.Settings.Default.idDelegacionPredeterminada);
                     this.setDatosGenerales();
                     this.lblResultados.Text = "<html>Se encontraron <strong>  " + this.gvExpedientes.RowCount + " </strong> resultados</html>";
                 }

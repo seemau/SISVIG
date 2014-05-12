@@ -33,7 +33,13 @@ namespace WindowsFormsApplication1.Fiscal
                 FrmFiscal nuevoExpedienteFiscal = new FrmFiscal();
                 nuevoExpedienteFiscal.Delito = this._delito;
                 nuevoExpedienteFiscal.Expediente = this._denuncia;
-                nuevoExpedienteFiscal.ShowDialog(this);
+                if (nuevoExpedienteFiscal.ShowDialog(this) == DialogResult.OK)
+                {
+                    this._varLINQ.fiscal.InsertOnSubmit(nuevoExpedienteFiscal.ExpedienteFiscal);
+                    this._varLINQ.SubmitChanges();
+                    this._expedientesFiscales.Add(nuevoExpedienteFiscal.ExpedienteFiscal);
+                }
+
             }
             catch (Exception ex)
             {
@@ -59,5 +65,11 @@ namespace WindowsFormsApplication1.Fiscal
             this.gvEstadoExpediente.DataSource = this._expedientesFiscales;
         }
         #endregion
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            System.Console.WriteLine("Creo que no sirve");
+            this.gvEstadoExpediente.MasterView.Refresh();
+        }
     }
 }

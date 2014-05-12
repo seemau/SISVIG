@@ -107,12 +107,19 @@ namespace WindowsFormsApplication1.Fiscal
             }
         }
 
+        /// <summary>
+        /// Obtiene o establece el expediente fiscal cuando se establece significa que sera modificado
+        /// </summary>
         public fiscal ExpedienteFiscal
         {
             set
             {
                 this._expedienteFiscal = value;
                 this._modificar = true;
+            }
+            get
+            {
+                return this._expedienteFiscal;
             }
         }
         #endregion
@@ -170,16 +177,17 @@ namespace WindowsFormsApplication1.Fiscal
         {
             try
             {
-                using (TransactionScope transaccion = new TransactionScope())
-                {
-                    DbDataContext varLinq = new DbDataContext();
-                    fiscal nuevoExpedienteFiscal = new fiscal();
-                    nuevoExpedienteFiscal.n_expediente = this._expediente;
-                    nuevoExpedienteFiscal.estado = this.cmbEstado.SelectedItem.Text;
-                    nuevoExpedienteFiscal.observaciones = this.txtObservaciones.Text;
-                    nuevoExpedienteFiscal.CampoGUID = Guid.NewGuid();
+                
+                    if (!this._modificar)
+                    {
+                        this._expedienteFiscal = new fiscal();
+                        this._expedienteFiscal.n_expediente = this._expediente;
+                        this._expedienteFiscal.CampoGUID = Guid.NewGuid();
+                    }
+                    this._expedienteFiscal.estado = this.cmbEstado.SelectedItem.Text;
+                    this._expedienteFiscal.observaciones = this.txtObservaciones.Text;
                     //if (this.chkCriterioOportunidad.ToggleState == ToggleState.On)
-                    nuevoExpedienteFiscal.criterio_oportunidad = this.chkCriterioOportunidad.ToggleState == ToggleState.On ? this.chkCriterioOportunidad.Text : null;
+                    this._expedienteFiscal.criterio_oportunidad = this.chkCriterioOportunidad.ToggleState == ToggleState.On ? this.chkCriterioOportunidad.Text : null;
                     //if (this._delito != this.cmbDelito.Text)
                     //{
                     //    var resulsetExpediente = varLinq.expediente.FirstOrDefault(p => p.n_expediente == this._expediente);
@@ -188,72 +196,89 @@ namespace WindowsFormsApplication1.Fiscal
                     
                     switch (cmbEstado.SelectedIndex)
                     {
-                        case 0:
-                            nuevoExpedienteFiscal.fecha = this.dtpFecha.Value.Date;
+                        case 0: //Acusasion
+                            this._expedienteFiscal.fecha = this.dtpFecha.Value.Date;
                             if (chkSinDefinir.ToggleState == ToggleState.Off)
-                                nuevoExpedienteFiscal.juzgados = this.cmbJuzgados.Text;
-                            nuevoExpedienteFiscal.audiencia_preliminar = this.dtpAudienciaPreliminar.Value;
-                            nuevoExpedienteFiscal.audiencia_inicial = this.dtpAudienciaInicial.Value;
+                                this._expedienteFiscal.juzgados = this.cmbJuzgados.Text;
+                            this._expedienteFiscal.audiencia_preliminar = this.dtpAudienciaPreliminar.Value;
+                            this._expedienteFiscal.audiencia_inicial = this.dtpAudienciaInicial.Value;
+                            this._expedienteFiscal.fecha_reingreso = null;
+                            this._expedienteFiscal.documento = null;
+                            this._expedienteFiscal.nombre = null;
+                            this._expedienteFiscal.extension = null;
+                            this._expedienteFiscal.Tamano = null;
                             break;
-                        case 1:
-                            nuevoExpedienteFiscal.fecha = this.dtpFechaAmpliacion.Value;
+                        case 1: //Ampliacion
+                            this._expedienteFiscal.fecha = this.dtpFechaAmpliacion.Value;
                             if(this.chkEnEspera.ToggleState == ToggleState.Off)
-                                nuevoExpedienteFiscal.fecha_reingreso = this.dtpReingreso.Value;
+                                this._expedienteFiscal.fecha_reingreso = this.dtpReingreso.Value;
                             if (this.txtPath.Text != string.Empty)
                             {
                                 byte[] stream = System.IO.File.ReadAllBytes(this.txtPath.Text);
-                                nuevoExpedienteFiscal.documento = stream;
-                                nuevoExpedienteFiscal.nombre = System.IO.Path.GetFileNameWithoutExtension(this.txtPath.Text);
-                                nuevoExpedienteFiscal.extension = System.IO.Path.GetExtension(this.txtPath.Text);
+                                this._expedienteFiscal.documento = stream;
+                                this._expedienteFiscal.nombre = System.IO.Path.GetFileNameWithoutExtension(this.txtPath.Text);
+                                this._expedienteFiscal.extension = System.IO.Path.GetExtension(this.txtPath.Text);
                                 System.IO.FileInfo informacionArchivo = new System.IO.FileInfo(this.txtPath.Text);
-                                nuevoExpedienteFiscal.Tamano = (int)informacionArchivo.Length;
+                                this._expedienteFiscal.Tamano = (int)informacionArchivo.Length;
                             }
+                            this._expedienteFiscal.audiencia_preliminar = null;
+                            this._expedienteFiscal.audiencia_inicial = null;
+                            this._expedienteFiscal.juzgados = null;
                             break;
                         case 2:
                             //Desestimacion
-                            nuevoExpedienteFiscal.fecha = this.dtpDesestimacion.Value;
+                            this._expedienteFiscal.fecha = this.dtpDesestimacion.Value;
                             if (this.txtPathDesestimacion.Text != string.Empty)
                             {
                                 byte[] stream = System.IO.File.ReadAllBytes(this.txtPathDesestimacion.Text);
-                                nuevoExpedienteFiscal.documento = stream;
-                                nuevoExpedienteFiscal.nombre = System.IO.Path.GetFileNameWithoutExtension(this.txtPathDesestimacion.Text);
-                                nuevoExpedienteFiscal.extension = System.IO.Path.GetExtension(this.txtPathDesestimacion.Text);
+                                this._expedienteFiscal.documento = stream;
+                                this._expedienteFiscal.nombre = System.IO.Path.GetFileNameWithoutExtension(this.txtPathDesestimacion.Text);
+                                this._expedienteFiscal.extension = System.IO.Path.GetExtension(this.txtPathDesestimacion.Text);
                                 System.IO.FileInfo informacionArchivo = new System.IO.FileInfo(this.txtPathDesestimacion.Text);
-                                nuevoExpedienteFiscal.Tamano = (int)informacionArchivo.Length;
+                                this._expedienteFiscal.Tamano = (int)informacionArchivo.Length;
                             }
+                            this._expedienteFiscal.audiencia_preliminar = null;
+                            this._expedienteFiscal.audiencia_inicial = null;
+                            this._expedienteFiscal.fecha_reingreso = null;
+                            this._expedienteFiscal.juzgados = null;
                             break;
                         case 3:
                             //Por ahora
-                            nuevoExpedienteFiscal.fecha = this.dtpDesestimacion.Value;
+                            this._expedienteFiscal.fecha = this.dtpDesestimacion.Value;
                             if (this.txtPathDesestimacion.Text != string.Empty)
                             {
                                 byte[] stream = System.IO.File.ReadAllBytes(this.txtPathDesestimacion.Text);
-                                nuevoExpedienteFiscal.documento = stream;
-                                nuevoExpedienteFiscal.nombre = System.IO.Path.GetFileNameWithoutExtension(this.txtPathDesestimacion.Text);
-                                nuevoExpedienteFiscal.extension = System.IO.Path.GetExtension(this.txtPathDesestimacion.Text);
+                                this._expedienteFiscal.documento = stream;
+                                this._expedienteFiscal.nombre = System.IO.Path.GetFileNameWithoutExtension(this.txtPathDesestimacion.Text);
+                                this._expedienteFiscal.extension = System.IO.Path.GetExtension(this.txtPathDesestimacion.Text);
                                 System.IO.FileInfo informacionArchivo = new System.IO.FileInfo(this.txtPathDesestimacion.Text);
-                                nuevoExpedienteFiscal.Tamano = (int)informacionArchivo.Length;
+                                this._expedienteFiscal.Tamano = (int)informacionArchivo.Length;
                             }
+                            this._expedienteFiscal.audiencia_preliminar = null;
+                            this._expedienteFiscal.audiencia_inicial = null;
+                            this._expedienteFiscal.fecha_reingreso = null;
+                            this._expedienteFiscal.juzgados = null;
                             break;
                         case 4:
                             //Archivo Fiscal
-                            nuevoExpedienteFiscal.fecha = this.dtpDesestimacion.Value;
+                            this._expedienteFiscal.fecha = this.dtpDesestimacion.Value;
                             if (this.txtPathDesestimacion.Text != string.Empty)
                             {
                                 byte[] stream = System.IO.File.ReadAllBytes(this.txtPathDesestimacion.Text);
-                                nuevoExpedienteFiscal.documento = stream;
-                                nuevoExpedienteFiscal.nombre = System.IO.Path.GetFileNameWithoutExtension(this.txtPathDesestimacion.Text);
-                                nuevoExpedienteFiscal.extension = System.IO.Path.GetExtension(this.txtPathDesestimacion.Text);
+                                this._expedienteFiscal.documento = stream;
+                                this._expedienteFiscal.nombre = System.IO.Path.GetFileNameWithoutExtension(this.txtPathDesestimacion.Text);
+                                this._expedienteFiscal.extension = System.IO.Path.GetExtension(this.txtPathDesestimacion.Text);
                                 System.IO.FileInfo informacionArchivo = new System.IO.FileInfo(this.txtPathDesestimacion.Text);
-                                nuevoExpedienteFiscal.Tamano = (int)informacionArchivo.Length;
+                                this._expedienteFiscal.Tamano = (int)informacionArchivo.Length;
                             }
+                            this._expedienteFiscal.audiencia_preliminar = null;
+                            this._expedienteFiscal.audiencia_inicial = null;
+                            this._expedienteFiscal.fecha_reingreso = null;
+                            this._expedienteFiscal.juzgados = null;
                             break;
-                    }
-                    varLinq.fiscal.InsertOnSubmit(nuevoExpedienteFiscal);
-                    varLinq.SubmitChanges();
-                    transaccion.Complete();
-                    this.Close();
                 }
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
             }
             catch (Exception ex)
             {
