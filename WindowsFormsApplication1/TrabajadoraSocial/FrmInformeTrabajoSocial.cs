@@ -187,7 +187,7 @@ namespace WindowsFormsApplication1.TrabajadoraSocial
             int year;
 
             //Obtenemos todos los informes del corriente año y contamos cuantos existen
-            var numero = from variable in varLinq.valoracion_psicologica
+            var numero = from variable in varLinq.estudio_social
                          where variable.fecha_entrega >= new DateTime(DateTime.Now.Year, 1, 1) &&
                                variable.fecha_entrega <= new DateTime(DateTime.Now.Year, 12, 31)
                          select variable;
