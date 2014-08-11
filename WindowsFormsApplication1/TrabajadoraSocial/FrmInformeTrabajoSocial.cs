@@ -105,7 +105,7 @@ namespace WindowsFormsApplication1.TrabajadoraSocial
             {
                 if (!this.verificarCamposVacios(this.panelValoracion))
                 {
-                    this.guardarValoracion();
+                    this.guardarEstudioSocial();
                     DialogResult = DialogResult.OK;
                     this.Close();
                 }
@@ -123,9 +123,9 @@ namespace WindowsFormsApplication1.TrabajadoraSocial
 
         #region Metodos
         /// <summary>
-        /// Almacena la valoracion psicologica en la base de datos
+        /// Almacena el archivo del estudio social en la base de datos
         /// </summary>
-        public void guardarValoracion()
+        public void guardarEstudioSocial()
         {
             DbDataContext varLinq = new DbDataContext();
             System.IO.FileInfo info = new System.IO.FileInfo(txtPath.Text);
@@ -181,7 +181,7 @@ namespace WindowsFormsApplication1.TrabajadoraSocial
         {
             DbDataContext varLinq = new DbDataContext();
             int numeroInforme = 0;
-            string institucion="DCMN";
+            string institucion="CMN";
             string distrito;
             string rol = "TRS";
             int year;

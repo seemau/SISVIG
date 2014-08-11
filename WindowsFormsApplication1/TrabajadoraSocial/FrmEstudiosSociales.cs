@@ -10,7 +10,7 @@ namespace WindowsFormsApplication1.TrabajadoraSocial
 {
     public partial class FrmEstudiosSociales : Telerik.WinControls.UI.RadForm
     {
-        private List<ProcessController> listProcess = new List<ProcessController>();
+        private List<ProcessController> listProcess = new List<ProcessController>();//Esta variable no se utiliza
 
         public FrmEstudiosSociales()
         {

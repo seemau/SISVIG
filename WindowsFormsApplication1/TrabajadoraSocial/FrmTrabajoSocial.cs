@@ -122,16 +122,17 @@ namespace WindowsFormsApplication1.TrabajadoraSocial
             {
                 if (gvVictimasNoEstudio.SelectedRows.Count != 0)
                 {
-                    int rowSelected = gvVictimasNoEstudio.CurrentRow.Index;
-                    string numeroExpediente = this.gvVictimasNoEstudio.Rows[rowSelected].Cells["numeroExpediente"].Value.ToString();
-                    string victima = this.gvVictimasNoEstudio.Rows[rowSelected].Cells["nombreVictima"].Value.ToString();
-                    Dialogos.DialogSintesisHechos mostrarDialogo = new Dialogos.DialogSintesisHechos();
-                    mostrarDialogo.Victima = victima;
-                    mostrarDialogo.Expediente = numeroExpediente;
-                    mostrarDialogo.Show(this);
-                    //Informes.FrmInfCasosRelevantes nuevoCaso = new Informes.FrmInfCasosRelevantes(id);
-                    //nuevoCaso.Delegacion = Properties.Settings.Default.delegacionPredeterminada;
-                    //nuevoCaso.Show();
+                    //int rowSelected = gvVictimasNoEstudio.CurrentRow.Index;
+                    //string numeroExpediente = this.gvVictimasNoEstudio.Rows[rowSelected].Cells["numeroExpediente"].Value.ToString();
+                    //string victima = this.gvVictimasNoEstudio.Rows[rowSelected].Cells["nombreVictima"].Value.ToString();
+                    //Dialogos.DialogSintesisHechos mostrarDialogo = new Dialogos.DialogSintesisHechos();
+                    //mostrarDialogo.Victima = victima;
+                    //mostrarDialogo.Expediente = numeroExpediente;
+                    //mostrarDialogo.Show(this);
+                    int id = (int)this.gvVictimasNoEstudio.CurrentRow.Cells["idVictima"].Value;
+                    Informes.FrmInfCasosRelevantes nuevoCaso = new Informes.FrmInfCasosRelevantes(id);
+                    nuevoCaso.Delegacion = Properties.Settings.Default.delegacionPredeterminada;
+                    nuevoCaso.Show();
                 }
             }
             catch (Exception excepcion)

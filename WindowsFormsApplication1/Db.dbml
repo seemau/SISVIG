@@ -624,20 +624,6 @@
       <Column Name="delito" Type="System.String" DbType="NVarChar(102) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="dbo.mostrarVictimasValoracion" Method="mostrarVictimasValoracion">
-    <Parameter Name="cadena" Type="System.String" DbType="NVarChar(MAX)" />
-    <ElementType Name="mostrarVictimasValoracionResult">
-      <Column Name="oficial" Type="System.String" DbType="NVarChar(61) NOT NULL" CanBeNull="false" />
-      <Column Name="numeroExpediente" Type="System.String" DbType="NVarChar(17) NOT NULL" CanBeNull="false" />
-      <Column Name="nombreVictima" Type="System.String" DbType="NVarChar(61) NOT NULL" CanBeNull="false" />
-      <Column Name="nombreDenunciante" Type="System.String" DbType="NVarChar(61) NOT NULL" CanBeNull="false" />
-      <Column Name="edadVictima" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="direccionVictima" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="numeroChip" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="idVictima" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="delito" Type="System.String" DbType="NVarChar(102) NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.mostrarBarrios" Method="mostrarBarrios">
     <Parameter Name="cadena" Type="System.String" DbType="NVarChar(MAX)" />
     <Parameter Name="id_delegacion" Type="System.Int32" DbType="Int" />
@@ -893,6 +879,26 @@
       <Column Name="delito" Type="System.String" DbType="NVarChar(102) NOT NULL" CanBeNull="false" />
       <Column Name="nombreDenunciante" Type="System.String" DbType="NVarChar(61) NOT NULL" CanBeNull="false" />
       <Column Name="nombreInvestigador" Type="System.String" DbType="NVarChar(61) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.mostrarVictimasValoracion" Method="mostrarVictimasValoracion">
+    <Parameter Name="idDelegacion" Type="System.Int32" DbType="Int" />
+    <Parameter Name="tipoBusqueda" Type="System.Int32" DbType="Int" />
+    <Parameter Name="cadena" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="fechaInicio" Type="System.DateTime" DbType="SmallDateTime" />
+    <Parameter Name="fechaFin" Type="System.DateTime" DbType="SmallDateTime" />
+    <Parameter Name="mes" Type="System.Int32" DbType="Int" />
+    <Parameter Name="year" Type="System.Int32" DbType="Int" />
+    <ElementType Name="mostrarVictimasValoracionResult">
+      <Column Name="oficial" Type="System.String" DbType="NVarChar(61) NOT NULL" CanBeNull="false" />
+      <Column Name="numeroExpediente" Type="System.String" DbType="NVarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="nombreVictima" Type="System.String" DbType="NVarChar(61) NOT NULL" CanBeNull="false" />
+      <Column Name="nombreDenunciante" Type="System.String" DbType="NVarChar(61) NOT NULL" CanBeNull="false" />
+      <Column Name="edadVictima" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="direccionVictima" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="numeroChip" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="idVictima" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="delito" Type="System.String" DbType="NVarChar(102) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
 </Database>

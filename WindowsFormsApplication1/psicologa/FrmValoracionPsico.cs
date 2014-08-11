@@ -17,7 +17,10 @@ namespace WindowsFormsApplication1.psicologa
             try
             {
                 //this.gvVictimasNoValoracion.TableElement.RowHeight = 60;
-                this.iniciarDatosVictima(string.Empty);
+                this.spinYear.Value = DateTime.Now.Year;
+                this.cmbMes.SelectedIndex = DateTime.Now.Month - 1;
+                this.cmbTipoBusqueda.SelectedIndex = 2;
+                this.iniciarDatosVictima();
             }
             catch (Exception excepcion)
             {
@@ -40,7 +43,7 @@ namespace WindowsFormsApplication1.psicologa
             {
                 this.btnNewValoracion.Enabled = true;
                 this.btnShow.Enabled = true;
-                this.iniciarDatosVictima(txtBuscar.Text);
+                this.iniciarDatosVictima();
             }
             catch (Exception excepcion)
             {
@@ -87,10 +90,17 @@ namespace WindowsFormsApplication1.psicologa
         /// </summary>
         /// <param name="cadena">Es la palabra que sera buscada en el procedimiento almcenado
         /// de MS SQL SERVER</param>
-        public void iniciarDatosVictima(string cadena)
+        public void iniciarDatosVictima()
         {
             DbDataContext varLinq = new DbDataContext();
-            gvVictimasNoValoracion.DataSource = varLinq.mostrarVictimasValoracion(cadena);
+            gvVictimasNoValoracion.DataSource = varLinq.mostrarVictimasValoracion(Properties.Settings.Default.idDelegacionPredeterminada,
+                                                                                  this.cmbTipoBusqueda.SelectedIndex,
+                                                                                  this.txtBuscar.Text,
+                                                                                  this.dtpFechaDesde.Value,
+                                                                                  this.dtpFechaHasta.Value,
+                                                                                  this.cmbMes.SelectedIndex +1, 
+                                                                                  (int)this.spinYear.Value);
+            this.lblResultado.Text = "<html>Resultados encontrados: <span style=\"color: #800000\">" + this.gvVictimasNoValoracion.RowCount + "</span></html>"; 
         }
 
         /// <summary>
@@ -109,7 +119,7 @@ namespace WindowsFormsApplication1.psicologa
                 nueva.Delito = (string)this.gvVictimasNoValoracion.Rows[rowSelected].Cells["delito"].Value;
                 if (nueva.ShowDialog() == DialogResult.OK)
                 {
-                    this.iniciarDatosVictima(string.Empty);
+                    this.iniciarDatosVictima();
                 }
             }
         }
@@ -161,5 +171,70 @@ namespace WindowsFormsApplication1.psicologa
             }
         }
         #endregion
+
+        private void cmbTipoBusqueda_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
+        {
+            if (e.Position == 0)
+            {
+                this.lblBuscar.Visible = true;
+                this.txtBuscar.Visible = true;
+                this.lblFechaHasta.Visible = false;
+                this.dtpFechaHasta.Visible = false;
+                this.lblFechaDesde.Visible = false;
+                this.dtpFechaDesde.Visible = false;
+                this.lblMes.Visible = false;
+                this.cmbMes.Visible = false;
+                this.lblYear.Visible = false;
+                this.spinYear.Visible = false;
+                this.txtBuscar.Select();
+            }
+            if (e.Position == 1)
+            {
+                this.lblBuscar.Visible = false;
+                this.txtBuscar.Visible = false;
+                this.lblFechaHasta.Visible = true;
+                this.dtpFechaHasta.Visible = true;
+                this.lblFechaDesde.Visible = true;
+                this.dtpFechaDesde.Visible = true;
+                this.lblMes.Visible = false;
+                this.cmbMes.Visible = false;
+                this.lblYear.Visible = false;
+                this.spinYear.Visible = false;
+                this.dtpFechaDesde.Select();
+            }
+            if (e.Position == 2)
+            {
+                this.lblBuscar.Visible = false;
+                this.txtBuscar.Visible = false;
+                this.lblFechaHasta.Visible = false;
+                this.dtpFechaHasta.Visible = false;
+                this.lblFechaDesde.Visible = false;
+                this.dtpFechaDesde.Visible = false;
+                this.lblMes.Visible = true;
+                this.cmbMes.Visible = true;
+                this.lblYear.Visible = false;
+                this.spinYear.Visible = false;
+                this.cmbMes.Select();
+            }
+            if (e.Position == 3)
+            {
+                this.lblBuscar.Visible = false;
+                this.txtBuscar.Visible = false;
+                this.lblFechaHasta.Visible = false;
+                this.dtpFechaHasta.Visible = false;
+                this.lblFechaDesde.Visible = false;
+                this.dtpFechaDesde.Visible = false;
+                this.lblMes.Visible = false;
+                this.cmbMes.Visible = false;
+                this.lblYear.Visible = true;
+                this.spinYear.Visible = true;
+                this.spinYear.Select();
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            this.iniciarDatosVictima();
+        }
     }
 }

@@ -46,6 +46,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvVictimasNoEstudio)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvVictimasNoEstudio.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtBuscar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblBuscar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnNewEstudioSocial)).BeginInit();
@@ -229,6 +230,7 @@
             this.Load += new System.EventHandler(this.FrmTrabajoSocial_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gvVictimasNoEstudio.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvVictimasNoEstudio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtBuscar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblBuscar)).EndInit();

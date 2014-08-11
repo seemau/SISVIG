@@ -474,13 +474,6 @@ namespace WindowsFormsApplication1
 			return ((ISingleResult<mostrarVictimasEstudioResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.mostrarVictimasValoracion")]
-		public ISingleResult<mostrarVictimasValoracionResult> mostrarVictimasValoracion([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(MAX)")] string cadena)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cadena);
-			return ((ISingleResult<mostrarVictimasValoracionResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.mostrarBarrios")]
 		public ISingleResult<mostrarBarriosResult> mostrarBarrios([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(MAX)")] string cadena, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_delegacion)
 		{
@@ -619,6 +612,13 @@ namespace WindowsFormsApplication1
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cadena, fechaInicial, fechaFinal, mes, tipoBusqueda, idDelegacion);
 			return ((ISingleResult<mostrarExpedientesResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.mostrarVictimasValoracion")]
+		public ISingleResult<mostrarVictimasValoracionResult> mostrarVictimasValoracion([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idDelegacion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> tipoBusqueda, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(100)")] string cadena, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="SmallDateTime")] System.Nullable<System.DateTime> fechaInicio, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="SmallDateTime")] System.Nullable<System.DateTime> fechaFin, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> mes, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> year)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idDelegacion, tipoBusqueda, cadena, fechaInicio, fechaFin, mes, year);
+			return ((ISingleResult<mostrarVictimasValoracionResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -9587,176 +9587,6 @@ namespace WindowsFormsApplication1
 		}
 	}
 	
-	public partial class mostrarVictimasValoracionResult
-	{
-		
-		private string _oficial;
-		
-		private string _numeroExpediente;
-		
-		private string _nombreVictima;
-		
-		private string _nombreDenunciante;
-		
-		private int _edadVictima;
-		
-		private string _direccionVictima;
-		
-		private string _numeroChip;
-		
-		private int _idVictima;
-		
-		private string _delito;
-		
-		public mostrarVictimasValoracionResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_oficial", DbType="NVarChar(61) NOT NULL", CanBeNull=false)]
-		public string oficial
-		{
-			get
-			{
-				return this._oficial;
-			}
-			set
-			{
-				if ((this._oficial != value))
-				{
-					this._oficial = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_numeroExpediente", DbType="NVarChar(17) NOT NULL", CanBeNull=false)]
-		public string numeroExpediente
-		{
-			get
-			{
-				return this._numeroExpediente;
-			}
-			set
-			{
-				if ((this._numeroExpediente != value))
-				{
-					this._numeroExpediente = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombreVictima", DbType="NVarChar(61) NOT NULL", CanBeNull=false)]
-		public string nombreVictima
-		{
-			get
-			{
-				return this._nombreVictima;
-			}
-			set
-			{
-				if ((this._nombreVictima != value))
-				{
-					this._nombreVictima = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombreDenunciante", DbType="NVarChar(61) NOT NULL", CanBeNull=false)]
-		public string nombreDenunciante
-		{
-			get
-			{
-				return this._nombreDenunciante;
-			}
-			set
-			{
-				if ((this._nombreDenunciante != value))
-				{
-					this._nombreDenunciante = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_edadVictima", DbType="Int NOT NULL")]
-		public int edadVictima
-		{
-			get
-			{
-				return this._edadVictima;
-			}
-			set
-			{
-				if ((this._edadVictima != value))
-				{
-					this._edadVictima = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_direccionVictima", DbType="NText", UpdateCheck=UpdateCheck.Never)]
-		public string direccionVictima
-		{
-			get
-			{
-				return this._direccionVictima;
-			}
-			set
-			{
-				if ((this._direccionVictima != value))
-				{
-					this._direccionVictima = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_numeroChip", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
-		public string numeroChip
-		{
-			get
-			{
-				return this._numeroChip;
-			}
-			set
-			{
-				if ((this._numeroChip != value))
-				{
-					this._numeroChip = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idVictima", DbType="Int NOT NULL")]
-		public int idVictima
-		{
-			get
-			{
-				return this._idVictima;
-			}
-			set
-			{
-				if ((this._idVictima != value))
-				{
-					this._idVictima = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_delito", DbType="NVarChar(102) NOT NULL", CanBeNull=false)]
-		public string delito
-		{
-			get
-			{
-				return this._delito;
-			}
-			set
-			{
-				if ((this._delito != value))
-				{
-					this._delito = value;
-				}
-			}
-		}
-	}
-	
 	public partial class mostrarBarriosResult
 	{
 		
@@ -11708,6 +11538,176 @@ namespace WindowsFormsApplication1
 				if ((this._nombreInvestigador != value))
 				{
 					this._nombreInvestigador = value;
+				}
+			}
+		}
+	}
+	
+	public partial class mostrarVictimasValoracionResult
+	{
+		
+		private string _oficial;
+		
+		private string _numeroExpediente;
+		
+		private string _nombreVictima;
+		
+		private string _nombreDenunciante;
+		
+		private int _edadVictima;
+		
+		private string _direccionVictima;
+		
+		private string _numeroChip;
+		
+		private int _idVictima;
+		
+		private string _delito;
+		
+		public mostrarVictimasValoracionResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_oficial", DbType="NVarChar(61) NOT NULL", CanBeNull=false)]
+		public string oficial
+		{
+			get
+			{
+				return this._oficial;
+			}
+			set
+			{
+				if ((this._oficial != value))
+				{
+					this._oficial = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_numeroExpediente", DbType="NVarChar(17) NOT NULL", CanBeNull=false)]
+		public string numeroExpediente
+		{
+			get
+			{
+				return this._numeroExpediente;
+			}
+			set
+			{
+				if ((this._numeroExpediente != value))
+				{
+					this._numeroExpediente = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombreVictima", DbType="NVarChar(61) NOT NULL", CanBeNull=false)]
+		public string nombreVictima
+		{
+			get
+			{
+				return this._nombreVictima;
+			}
+			set
+			{
+				if ((this._nombreVictima != value))
+				{
+					this._nombreVictima = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombreDenunciante", DbType="NVarChar(61) NOT NULL", CanBeNull=false)]
+		public string nombreDenunciante
+		{
+			get
+			{
+				return this._nombreDenunciante;
+			}
+			set
+			{
+				if ((this._nombreDenunciante != value))
+				{
+					this._nombreDenunciante = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_edadVictima", DbType="Int NOT NULL")]
+		public int edadVictima
+		{
+			get
+			{
+				return this._edadVictima;
+			}
+			set
+			{
+				if ((this._edadVictima != value))
+				{
+					this._edadVictima = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_direccionVictima", DbType="NText", UpdateCheck=UpdateCheck.Never)]
+		public string direccionVictima
+		{
+			get
+			{
+				return this._direccionVictima;
+			}
+			set
+			{
+				if ((this._direccionVictima != value))
+				{
+					this._direccionVictima = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_numeroChip", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
+		public string numeroChip
+		{
+			get
+			{
+				return this._numeroChip;
+			}
+			set
+			{
+				if ((this._numeroChip != value))
+				{
+					this._numeroChip = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idVictima", DbType="Int NOT NULL")]
+		public int idVictima
+		{
+			get
+			{
+				return this._idVictima;
+			}
+			set
+			{
+				if ((this._idVictima != value))
+				{
+					this._idVictima = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_delito", DbType="NVarChar(102) NOT NULL", CanBeNull=false)]
+		public string delito
+		{
+			get
+			{
+				return this._delito;
+			}
+			set
+			{
+				if ((this._delito != value))
+				{
+					this._delito = value;
 				}
 			}
 		}
