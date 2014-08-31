@@ -32,6 +32,8 @@
             Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem3 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem4 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem5 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem6 = new Telerik.WinControls.UI.RadListDataItem();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmInformePsicologico));
             this.panelValoracion = new Telerik.WinControls.UI.RadGroupBox();
             this.cmbTipoDamage = new Telerik.WinControls.UI.RadDropDownList();
@@ -108,16 +110,23 @@
             radListDataItem3.TextWrap = true;
             radListDataItem4.Text = "Sin Daño";
             radListDataItem4.TextWrap = true;
+            radListDataItem5.Text = "No acepto valoracion";
+            radListDataItem5.TextWrap = true;
+            radListDataItem6.Text = "No asistio";
+            radListDataItem6.TextWrap = true;
             this.cmbTipoDamage.Items.Add(radListDataItem1);
             this.cmbTipoDamage.Items.Add(radListDataItem2);
             this.cmbTipoDamage.Items.Add(radListDataItem3);
             this.cmbTipoDamage.Items.Add(radListDataItem4);
+            this.cmbTipoDamage.Items.Add(radListDataItem5);
+            this.cmbTipoDamage.Items.Add(radListDataItem6);
             this.cmbTipoDamage.Location = new System.Drawing.Point(98, 165);
             this.cmbTipoDamage.Name = "cmbTipoDamage";
             this.cmbTipoDamage.SelectNextOnDoubleClick = true;
             this.cmbTipoDamage.ShowImageInEditorArea = true;
             this.cmbTipoDamage.Size = new System.Drawing.Size(297, 25);
             this.cmbTipoDamage.TabIndex = 4;
+            this.cmbTipoDamage.SelectedIndexChanged += new Telerik.WinControls.UI.Data.PositionChangedEventHandler(this.cmbTipoDamage_SelectedIndexChanged);
             // 
             // btnExaminar
             // 

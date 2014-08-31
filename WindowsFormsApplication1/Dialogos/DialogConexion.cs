@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Xml.Linq;
 using WindowsFormsApplication1.biblioteca;
 using System.Data.Sql;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace WindowsFormsApplication1.Dialogos
 {
@@ -14,8 +16,17 @@ namespace WindowsFormsApplication1.Dialogos
         }
         private void DialogConexion_Load(object sender, EventArgs e)
         {
-            Convertir.descifrarConfiguracion();
-            this.btnActualizar_Click(sender, e);
+            //Convertir.descifrarConfiguracion();
+            //this.btnActualizar_Click(sender, e);
+            SqlConnectionStringBuilder n = new SqlConnectionStringBuilder(ConnectionStringManager.getPrimerCadenaConexion());
+            this.cmbServidor.Items.Add(n.DataSource);
+            this.cmbServidor.SelectedIndex = 0;
+            this.txtUsuario.Text = n.UserID;
+            this.txtPassword.Text = n.Password;
+            List<string> listaBaseDatos = new List<string>();
+            listaBaseDatos.Add(n.InitialCatalog);
+            this.cmbBaseDeDatos.DataSource = listaBaseDatos;
+            this.cmbBaseDeDatos.Update();
         }
        
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -28,18 +39,25 @@ namespace WindowsFormsApplication1.Dialogos
         {
             try
             {
-                XElement elementos = XElement.Load(@"SISVIG.exe.config");
-                XElement elementConcectionStrings = elementos.Element("connectionStrings");
-                XElement b = elementConcectionStrings.Element("add");
-                XAttribute ads = b.Attribute("connectionString");
-                ads.SetValue("Data Source="+cmbServidor.Text+";Initial Catalog="+cmbBaseDeDatos.Text+";Persist Security Info=True;User ID="+txtUsuario.Text+";Password="+txtPassword.Text);
-                XDocument documento = new XDocument(elementos);
-                documento.Save(@"SISVIG.exe.config");
-                Properties.Settings.Default.Save();
-                Properties.Settings.Default.Reload();
-                //Console.WriteLine(Properties.Settings.Default.probandoConnectionString);
+                string nombreCadenaConexion = ConnectionStringManager.getPrimerNombreCadenaConexion();
+                SqlConnectionStringBuilder nsc = new SqlConnectionStringBuilder();
+                nsc.DataSource = this.cmbServidor.Text;
+                nsc.UserID = this.txtUsuario.Text;
+                nsc.Password = this.txtPassword.Text;
+                nsc.InitialCatalog = this.cmbBaseDeDatos.Text;
+                ConnectionStringManager.saveCadenaConexion(nombreCadenaConexion, nsc.ConnectionString);
                 DialogResult = System.Windows.Forms.DialogResult.OK;
                 this.Close();
+                //XElement elementos = XElement.Load(@"SISVIG.exe.config");
+                //XElement elementConcectionStrings = elementos.Element("connectionStrings");
+                //XElement b = elementConcectionStrings.Element("add");
+                //XAttribute ads = b.Attribute("connectionString");
+                //ads.SetValue("Data Source="+cmbServidor.Text+";Initial Catalog="+cmbBaseDeDatos.Text+";Persist Security Info=True;User ID="+txtUsuario.Text+";Password="+txtPassword.Text);
+                //XDocument documento = new XDocument(elementos);
+                //documento.Save(@"SISVIG.exe.config");
+                //Properties.Settings.Default.Save();
+                //Properties.Settings.Default.Reload();
+                //Console.WriteLine(Properties.Settings.Default.probandoConnectionString);
                 //System.Windows.Forms.Application.Restart();
             }
             catch (Exception excepcion)
@@ -50,6 +68,7 @@ namespace WindowsFormsApplication1.Dialogos
 
         private void DisplayData(System.Data.DataTable table)
         {
+            this.cmbServidor.Items.Clear();
             foreach (System.Data.DataRow row in table.Rows)
             {
                 cmbServidor.Items.Add(row["ServerName"].ToString());
@@ -60,9 +79,8 @@ namespace WindowsFormsApplication1.Dialogos
         {
             string select;
             string cadenaConexion;
-            List<string> listaBasesdatos = new List<string>();
-
             string servidor = this.cmbServidor.Text;
+            List<String> listaBasesDatos = new List<string>();
 
             // Componemos la cadena de conexión con el servidor seleccionado 
             // con seguridad integrada
@@ -91,13 +109,12 @@ namespace WindowsFormsApplication1.Dialogos
                     // por cada registro
                     while (dr.Read())
                     {
-                        listaBasesdatos.Add(dr[0].ToString());
+                        listaBasesDatos.Add(dr[0].ToString());
                     }
-
-                    // Asignamos la lista de bases de datos como origen de datos del combobox
-                    this.cmbBaseDeDatos.DataSource = listaBasesdatos;
+                    this.cmbBaseDeDatos.DataSource = listaBasesDatos;
                     con.Close();
                 }
+                this.cmbBaseDeDatos.Update();
             }
             catch (Exception ex)
             {

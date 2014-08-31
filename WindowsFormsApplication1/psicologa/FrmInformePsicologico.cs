@@ -109,31 +109,69 @@ namespace WindowsFormsApplication1.psicologa
         public void guardarValoracion()
         {
             DbDataContext varLinq = new DbDataContext();
-            System.IO.FileInfo info = new System.IO.FileInfo(txtPath.Text);
-            if (info.Exists)
+            System.IO.FileInfo fileinfo = null;
+            if(this.txtPath.Text != string.Empty)
+                fileinfo = new System.IO.FileInfo(txtPath.Text);
+            if (this.cmbTipoDamage.SelectedIndex == 4 || this.cmbTipoDamage.SelectedIndex == 5)
             {
-                byte[] inputBuffer = System.IO.File.ReadAllBytes(txtPath.Text);
-                valoracion_psicologica nuevaValoracion = new valoracion_psicologica();
-                nuevaValoracion.expediente = this.obtenerNumeroExpediente();
-                nuevaValoracion.id_victima = IdVictima;
-                nuevaValoracion.identificacion = Propiedades.Usuario;
-                nuevaValoracion.fecha_realizacion = dtpFechaRealizacion.Value.Date;
-                //nuevaValoracion.delito = txtDelito.Text;
-                nuevaValoracion.diagnostico = txtDiagnostico.Text;
-                nuevaValoracion.tipo_daño = cmbTipoDamage.Items[cmbTipoDamage.SelectedIndex].Text;
-                nuevaValoracion.n_chip = NumeroChip;
-                nuevaValoracion.iExtension = info.Extension;
-                nuevaValoracion.iTamaño = (int)info.Length;
-                //nuevaValoracion.iDocumento = new System.Data.Linq.Binary(inputBuffer);
-                nuevaValoracion.iDocumento = inputBuffer;
-                nuevaValoracion.iGUID = Guid.NewGuid();
-                nuevaValoracion.fecha_entrega = DateTime.Now.Date;
-                varLinq.valoracion_psicologica.InsertOnSubmit(nuevaValoracion);
-                varLinq.SubmitChanges();
+                    valoracion_psicologica nuevaValoracion = new valoracion_psicologica();
+                    nuevaValoracion.expediente = this.obtenerNumeroExpediente();
+                    nuevaValoracion.id_victima = IdVictima;
+                    nuevaValoracion.identificacion = Propiedades.Usuario;
+                    nuevaValoracion.fecha_realizacion = dtpFechaRealizacion.Value.Date;
+                    //nuevaValoracion.delito = txtDelito.Text;
+                    //nuevaValoracion.iDocumento = new System.Data.Linq.Binary(inputBuffer);
+                    nuevaValoracion.diagnostico = "Ninguno";
+                    nuevaValoracion.tipo_daño = cmbTipoDamage.SelectedItem.Text;
+                    nuevaValoracion.n_chip = NumeroChip;
+                    nuevaValoracion.fecha_entrega = DateTime.Now.Date;
+                    nuevaValoracion.iGUID = Guid.NewGuid();
+                    if (this.txtPath.Text != string.Empty)
+                    {
+                        if (fileinfo.Exists)
+                        {
+                            byte[] inputBuffer = System.IO.File.ReadAllBytes(txtPath.Text);
+                            nuevaValoracion.iExtension = fileinfo.Extension;
+                            nuevaValoracion.iTamaño = (int)fileinfo.Length;
+                            nuevaValoracion.iDocumento = inputBuffer;
+                        }
+                    }
+                    else
+                    {
+                        nuevaValoracion.iExtension = null;
+                        nuevaValoracion.iTamaño = 0;
+                        nuevaValoracion.iDocumento = null;
+                    }
+                    varLinq.valoracion_psicologica.InsertOnSubmit(nuevaValoracion);
+                    varLinq.SubmitChanges();
             }
             else
             {
-                Mensaje.alerta("Elija una valoracion valida");
+                if (fileinfo.Exists)
+                {
+                    byte[] inputBuffer = System.IO.File.ReadAllBytes(txtPath.Text);
+                    valoracion_psicologica nuevaValoracion = new valoracion_psicologica();
+                    nuevaValoracion.expediente = this.obtenerNumeroExpediente();
+                    nuevaValoracion.id_victima = IdVictima;
+                    nuevaValoracion.identificacion = Propiedades.Usuario;
+                    nuevaValoracion.fecha_realizacion = dtpFechaRealizacion.Value.Date;
+                    //nuevaValoracion.delito = txtDelito.Text;
+                    nuevaValoracion.diagnostico = txtDiagnostico.Text;
+                    nuevaValoracion.tipo_daño = cmbTipoDamage.SelectedItem.Text;
+                    nuevaValoracion.n_chip = NumeroChip;
+                    nuevaValoracion.iExtension = fileinfo.Extension;
+                    nuevaValoracion.iTamaño = (int)fileinfo.Length;
+                    //nuevaValoracion.iDocumento = new System.Data.Linq.Binary(inputBuffer);
+                    nuevaValoracion.iDocumento = inputBuffer;
+                    nuevaValoracion.iGUID = Guid.NewGuid();
+                    nuevaValoracion.fecha_entrega = DateTime.Now.Date;
+                    varLinq.valoracion_psicologica.InsertOnSubmit(nuevaValoracion);
+                    varLinq.SubmitChanges();
+                }
+                else
+                {
+                    Mensaje.alerta("Elija una valoracion valida");
+                }
             }
         }
 
@@ -147,6 +185,10 @@ namespace WindowsFormsApplication1.psicologa
             bool camposVacios = false;
             foreach (Control controles in ControlContenedor.Controls)
             {
+                if ((this.cmbTipoDamage.SelectedIndex == 4 || this.cmbTipoDamage.SelectedIndex == 5) && (controles.Name == "txtPath" || controles.Name == "txtDiagnostico"))
+                {
+                    controles.Tag = "excluir";
+                }
                 if (controles is Telerik.WinControls.UI.RadTextBox && controles.Text == "" && controles.Tag == null)
                 {
                     camposVacios = true;
@@ -199,5 +241,24 @@ namespace WindowsFormsApplication1.psicologa
         }
         #endregion
 
+        #region Evento del ComboBox tipo de Danho
+        private void cmbTipoDamage_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
+        {
+            switch (e.Position)
+            {
+                case 0:
+                case 1:
+                case 2:
+                case 3:
+                    this.txtDiagnostico.Enabled = true;
+                    break;
+                case 4:
+                case 5:
+                    this.txtDiagnostico.Enabled = false;
+                    break;
+                    
+            }
+        }
+        #endregion
     }
 }

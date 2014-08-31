@@ -29,29 +29,28 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DialogConexion));
-            this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
-            this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
+            this.lblIntroduccion = new Telerik.WinControls.UI.RadLabel();
+            this.lblNombreServidor = new Telerik.WinControls.UI.RadLabel();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
             this.txtPassword = new Telerik.WinControls.UI.RadTextBox();
             this.txtUsuario = new Telerik.WinControls.UI.RadTextBox();
-            this.radLabel4 = new Telerik.WinControls.UI.RadLabel();
-            this.radLabel3 = new Telerik.WinControls.UI.RadLabel();
+            this.lblPassword = new Telerik.WinControls.UI.RadLabel();
+            this.lblNombreUsuario = new Telerik.WinControls.UI.RadLabel();
             this.btnActualizar = new Telerik.WinControls.UI.RadButton();
             this.cmbServidor = new Telerik.WinControls.UI.RadDropDownList();
             this.btnAceptar = new Telerik.WinControls.UI.RadButton();
             this.btnCancelar = new Telerik.WinControls.UI.RadButton();
             this.radGroupBox2 = new Telerik.WinControls.UI.RadGroupBox();
             this.cmbBaseDeDatos = new Telerik.WinControls.UI.RadDropDownList();
-            this.radLabel5 = new Telerik.WinControls.UI.RadLabel();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
-            this.radLabel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
+            this.lblBaseDatos = new Telerik.WinControls.UI.RadLabel();
+            ((System.ComponentModel.ISupportInitialize)(this.lblIntroduccion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblNombreServidor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtPassword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUsuario)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblPassword)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblNombreUsuario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnActualizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbServidor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAceptar)).BeginInit();
@@ -59,44 +58,53 @@
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox2)).BeginInit();
             this.radGroupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmbBaseDeDatos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblBaseDatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
-            // radLabel1
+            // lblIntroduccion
             // 
-            this.radLabel1.AutoSize = false;
-            this.radLabel1.Controls.Add(this.radLabel2);
-            this.radLabel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.radLabel1.Location = new System.Drawing.Point(0, 0);
-            this.radLabel1.Name = "radLabel1";
-            this.radLabel1.Size = new System.Drawing.Size(343, 52);
-            this.radLabel1.TabIndex = 1;
-            this.radLabel1.Text = " Especifique la información para establecer conexión con el origen de datos selec" +
-                "cionado.";
+            this.lblIntroduccion.AutoSize = false;
+            this.lblIntroduccion.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblIntroduccion.Image = ((System.Drawing.Image)(resources.GetObject("lblIntroduccion.Image")));
+            this.lblIntroduccion.ImageScalingSize = new System.Drawing.Size(5, 5);
+            this.lblIntroduccion.Location = new System.Drawing.Point(0, 0);
+            this.lblIntroduccion.Name = "lblIntroduccion";
+            this.lblIntroduccion.Size = new System.Drawing.Size(381, 76);
+            this.lblIntroduccion.TabIndex = 1;
+            this.lblIntroduccion.Text = resources.GetString("lblIntroduccion.Text");
+            this.lblIntroduccion.TextAlignment = System.Drawing.ContentAlignment.TopCenter;
+            this.lblIntroduccion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            ((Telerik.WinControls.UI.RadLabelElement)(this.lblIntroduccion.GetChildAt(0))).TextAlignment = System.Drawing.ContentAlignment.TopCenter;
+            ((Telerik.WinControls.UI.RadLabelElement)(this.lblIntroduccion.GetChildAt(0))).Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            ((Telerik.WinControls.UI.RadLabelElement)(this.lblIntroduccion.GetChildAt(0))).TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            ((Telerik.WinControls.UI.RadLabelElement)(this.lblIntroduccion.GetChildAt(0))).Text = resources.GetString("resource.Text");
+            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.lblIntroduccion.GetChildAt(0).GetChildAt(2))).TextAlignment = System.Drawing.ContentAlignment.TopCenter;
+            ((Telerik.WinControls.Primitives.TextPrimitive)(this.lblIntroduccion.GetChildAt(0).GetChildAt(2).GetChildAt(1))).TextWrap = true;
+            ((Telerik.WinControls.Primitives.TextPrimitive)(this.lblIntroduccion.GetChildAt(0).GetChildAt(2).GetChildAt(1))).TextAlignment = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // radLabel2
+            // lblNombreServidor
             // 
-            this.radLabel2.Location = new System.Drawing.Point(12, 34);
-            this.radLabel2.Name = "radLabel2";
-            this.radLabel2.Size = new System.Drawing.Size(113, 18);
-            this.radLabel2.TabIndex = 3;
-            this.radLabel2.Text = "Nombre del Servidor:";
+            this.lblNombreServidor.Location = new System.Drawing.Point(35, 84);
+            this.lblNombreServidor.Name = "lblNombreServidor";
+            this.lblNombreServidor.Size = new System.Drawing.Size(113, 18);
+            this.lblNombreServidor.TabIndex = 3;
+            this.lblNombreServidor.Text = "Nombre del Servidor:";
             // 
             // radGroupBox1
             // 
             this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
             this.radGroupBox1.Controls.Add(this.txtPassword);
             this.radGroupBox1.Controls.Add(this.txtUsuario);
-            this.radGroupBox1.Controls.Add(this.radLabel4);
-            this.radGroupBox1.Controls.Add(this.radLabel3);
+            this.radGroupBox1.Controls.Add(this.lblPassword);
+            this.radGroupBox1.Controls.Add(this.lblNombreUsuario);
             this.radGroupBox1.FooterImageIndex = -1;
             this.radGroupBox1.FooterImageKey = "";
             this.radGroupBox1.HeaderImageIndex = -1;
             this.radGroupBox1.HeaderImageKey = "";
             this.radGroupBox1.HeaderMargin = new System.Windows.Forms.Padding(0);
             this.radGroupBox1.HeaderText = "Conexión con el servidor";
-            this.radGroupBox1.Location = new System.Drawing.Point(12, 86);
+            this.radGroupBox1.Location = new System.Drawing.Point(35, 136);
             this.radGroupBox1.Name = "radGroupBox1";
             this.radGroupBox1.Padding = new System.Windows.Forms.Padding(2, 18, 2, 2);
             // 
@@ -124,25 +132,25 @@
             this.txtUsuario.TabIndex = 3;
             this.txtUsuario.TabStop = false;
             // 
-            // radLabel4
+            // lblPassword
             // 
-            this.radLabel4.Location = new System.Drawing.Point(5, 46);
-            this.radLabel4.Name = "radLabel4";
-            this.radLabel4.Size = new System.Drawing.Size(65, 18);
-            this.radLabel4.TabIndex = 1;
-            this.radLabel4.Text = "Contraseña:";
+            this.lblPassword.Location = new System.Drawing.Point(5, 46);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(65, 18);
+            this.lblPassword.TabIndex = 1;
+            this.lblPassword.Text = "Contraseña:";
             // 
-            // radLabel3
+            // lblNombreUsuario
             // 
-            this.radLabel3.Location = new System.Drawing.Point(5, 20);
-            this.radLabel3.Name = "radLabel3";
-            this.radLabel3.Size = new System.Drawing.Size(106, 18);
-            this.radLabel3.TabIndex = 0;
-            this.radLabel3.Text = "Nombre de usuario:";
+            this.lblNombreUsuario.Location = new System.Drawing.Point(5, 20);
+            this.lblNombreUsuario.Name = "lblNombreUsuario";
+            this.lblNombreUsuario.Size = new System.Drawing.Size(106, 18);
+            this.lblNombreUsuario.TabIndex = 0;
+            this.lblNombreUsuario.Text = "Nombre de usuario:";
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(221, 56);
+            this.btnActualizar.Location = new System.Drawing.Point(244, 106);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(103, 24);
             this.btnActualizar.TabIndex = 8;
@@ -152,7 +160,7 @@
             // cmbServidor
             // 
             this.cmbServidor.DropDownAnimationEnabled = true;
-            this.cmbServidor.Location = new System.Drawing.Point(12, 58);
+            this.cmbServidor.Location = new System.Drawing.Point(35, 108);
             this.cmbServidor.MaxDropDownItems = 4;
             this.cmbServidor.Name = "cmbServidor";
             this.cmbServidor.ShowImageInEditorArea = true;
@@ -161,7 +169,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(130, 263);
+            this.btnAceptar.Location = new System.Drawing.Point(153, 313);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(94, 24);
             this.btnAceptar.TabIndex = 6;
@@ -170,7 +178,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(230, 263);
+            this.btnCancelar.Location = new System.Drawing.Point(253, 313);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(94, 24);
             this.btnCancelar.TabIndex = 7;
@@ -181,14 +189,14 @@
             // 
             this.radGroupBox2.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
             this.radGroupBox2.Controls.Add(this.cmbBaseDeDatos);
-            this.radGroupBox2.Controls.Add(this.radLabel5);
+            this.radGroupBox2.Controls.Add(this.lblBaseDatos);
             this.radGroupBox2.FooterImageIndex = -1;
             this.radGroupBox2.FooterImageKey = "";
             this.radGroupBox2.HeaderImageIndex = -1;
             this.radGroupBox2.HeaderImageKey = "";
             this.radGroupBox2.HeaderMargin = new System.Windows.Forms.Padding(0);
             this.radGroupBox2.HeaderText = "Establecer conexión con una base de datos";
-            this.radGroupBox2.Location = new System.Drawing.Point(12, 174);
+            this.radGroupBox2.Location = new System.Drawing.Point(35, 224);
             this.radGroupBox2.Name = "radGroupBox2";
             this.radGroupBox2.Padding = new System.Windows.Forms.Padding(2, 18, 2, 2);
             // 
@@ -209,27 +217,28 @@
             this.cmbBaseDeDatos.TabIndex = 5;
             this.cmbBaseDeDatos.Click += new System.EventHandler(this.cmbBaseDeDatos_Click);
             // 
-            // radLabel5
+            // lblBaseDatos
             // 
-            this.radLabel5.Location = new System.Drawing.Point(7, 21);
-            this.radLabel5.Name = "radLabel5";
-            this.radLabel5.Size = new System.Drawing.Size(264, 18);
-            this.radLabel5.TabIndex = 1;
-            this.radLabel5.Text = "Seleccione o escriba el nombre de la base de datos:";
+            this.lblBaseDatos.Location = new System.Drawing.Point(7, 21);
+            this.lblBaseDatos.Name = "lblBaseDatos";
+            this.lblBaseDatos.Size = new System.Drawing.Size(264, 18);
+            this.lblBaseDatos.TabIndex = 1;
+            this.lblBaseDatos.Text = "Seleccione o escriba el nombre de la base de datos:";
             // 
             // DialogConexion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(343, 298);
+            this.ClientSize = new System.Drawing.Size(381, 343);
+            this.Controls.Add(this.lblNombreServidor);
             this.Controls.Add(this.radGroupBox2);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.radGroupBox1);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.cmbServidor);
-            this.Controls.Add(this.radLabel1);
+            this.Controls.Add(this.lblIntroduccion);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -243,17 +252,15 @@
             this.ThemeName = "ControlDefault";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DialogConexion_FormClosing);
             this.Load += new System.EventHandler(this.DialogConexion_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
-            this.radLabel1.ResumeLayout(false);
-            this.radLabel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblIntroduccion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblNombreServidor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);
             this.radGroupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtPassword)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUsuario)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblPassword)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblNombreUsuario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnActualizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbServidor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAceptar)).EndInit();
@@ -262,7 +269,7 @@
             this.radGroupBox2.ResumeLayout(false);
             this.radGroupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmbBaseDeDatos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblBaseDatos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -271,20 +278,20 @@
 
         #endregion
 
-        private Telerik.WinControls.UI.RadLabel radLabel1;
-        private Telerik.WinControls.UI.RadLabel radLabel2;
+        private Telerik.WinControls.UI.RadLabel lblIntroduccion;
+        private Telerik.WinControls.UI.RadLabel lblNombreServidor;
         private Telerik.WinControls.UI.RadGroupBox radGroupBox1;
         private Telerik.WinControls.UI.RadButton btnActualizar;
         private Telerik.WinControls.UI.RadDropDownList cmbServidor;
         private Telerik.WinControls.UI.RadTextBox txtPassword;
         private Telerik.WinControls.UI.RadTextBox txtUsuario;
-        private Telerik.WinControls.UI.RadLabel radLabel4;
-        private Telerik.WinControls.UI.RadLabel radLabel3;
+        private Telerik.WinControls.UI.RadLabel lblPassword;
+        private Telerik.WinControls.UI.RadLabel lblNombreUsuario;
         private Telerik.WinControls.UI.RadButton btnAceptar;
         private Telerik.WinControls.UI.RadButton btnCancelar;
         private Telerik.WinControls.UI.RadGroupBox radGroupBox2;
         private Telerik.WinControls.UI.RadDropDownList cmbBaseDeDatos;
-        private Telerik.WinControls.UI.RadLabel radLabel5;
+        private Telerik.WinControls.UI.RadLabel lblBaseDatos;
 
 
 

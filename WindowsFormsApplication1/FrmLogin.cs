@@ -30,7 +30,7 @@ namespace WindowsFormsApplication1
 
         private void FrmLogin_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Convertir.cifrarConfiguracion();
+            //Convertir.cifrarConfiguracion();
         }
         #endregion
 

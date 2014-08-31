@@ -30,12 +30,12 @@ namespace WindowsFormsApplication1
             //rpInvestigadoras.ButtonVisible = true;
             //rpPsicologa.ButtonVisible = true;
             //rpTrabajoSocial.ButtonVisible = true;
-            Convertir.cifrarConfiguracion();
+            //Convertir.cifrarConfiguracion();
         }
 
         private void FrmPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Convertir.cifrarConfiguracion();
+            //Convertir.cifrarConfiguracion();
         }
         #endregion
 

@@ -10,6 +10,28 @@
       <Association Name="usuario_asesoria_legal" Member="usuario" ThisKey="identificacion" OtherKey="identificacion" Type="usuario" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.victima" Member="victima">
+    <Type Name="victima">
+      <Column Name="id_victima" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="n_expediente" Type="System.String" DbType="NVarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="id_delegacion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombres" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Apellidos" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="edad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="sexo" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="nacionalidad" Type="System.String" DbType="NVarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="tipo_identificacion" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="n_identificacion" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="condicion_laboral" Type="System.String" DbType="NVarChar(29) NOT NULL" CanBeNull="false" />
+      <Column Name="nivel_escolar" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="discapacidades" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Association Name="victima_entrevista_complementaria" Member="entrevista_complementaria" ThisKey="id_victima" OtherKey="id_victima" Type="entrevista_complementaria" />
+      <Association Name="victima_estudio_social" Member="estudio_social" ThisKey="id_victima" OtherKey="id_victima" Type="estudio_social" />
+      <Association Name="victima_valoracion_psicologica" Member="valoracion_psicologica" ThisKey="id_victima" OtherKey="id_victima" Type="valoracion_psicologica" />
+      <Association Name="delegacion_victima" Member="delegacion" ThisKey="id_delegacion" OtherKey="id_delegacion" Type="delegacion" IsForeignKey="true" />
+      <Association Name="expediente_victima" Member="expediente" ThisKey="n_expediente" OtherKey="n_expediente" Type="expediente" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.barrios" Member="barrios">
     <Type Name="barrios">
       <Column Name="id_barrio" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -62,10 +84,10 @@
       <Column Name="nombre" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
       <Column Name="jefa_comisaria" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="codigo" Type="System.String" DbType="NVarChar(4)" CanBeNull="true" />
+      <Association Name="delegacion_victima" Member="victima" ThisKey="id_delegacion" OtherKey="id_delegacion" Type="victima" />
       <Association Name="delegacion_barrios" Member="barrios" ThisKey="id_delegacion" OtherKey="id_delegacion" Type="barrios" />
       <Association Name="delegacion_juzgados" Member="juzgados" ThisKey="id_delegacion" OtherKey="id_delegacion" Type="juzgados" />
       <Association Name="delegacion_usuario" Member="usuario" ThisKey="id_delegacion" OtherKey="id_delegacion" Type="usuario" />
-      <Association Name="delegacion_victima" Member="victima" ThisKey="id_delegacion" OtherKey="id_delegacion" Type="victima" />
     </Type>
   </Table>
   <Table Name="dbo.delitos" Member="delitos">
@@ -129,8 +151,8 @@
       <Column Name="nombres" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
       <Column Name="apellidos" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
       <Column Name="parentesco_victima" Type="System.String" DbType="NVarChar(25) NOT NULL" CanBeNull="false" />
-      <Association Name="usuario_entrevista_complementaria" Member="usuario" ThisKey="identificacion" OtherKey="identificacion" Type="usuario" IsForeignKey="true" />
       <Association Name="victima_entrevista_complementaria" Member="victima" ThisKey="id_victima" OtherKey="id_victima" Type="victima" IsForeignKey="true" />
+      <Association Name="usuario_entrevista_complementaria" Member="usuario" ThisKey="identificacion" OtherKey="identificacion" Type="usuario" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.estudio_social" Member="estudio_social">
@@ -145,9 +167,9 @@
       <Column Name="iTamaño" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="iDocumento" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="iGUID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="victima_estudio_social" Member="victima" ThisKey="id_victima" OtherKey="id_victima" Type="victima" IsForeignKey="true" />
       <Association Name="oficial_estudio_social" Member="oficial" ThisKey="n_chip" OtherKey="n_chip" Type="oficial" IsForeignKey="true" />
       <Association Name="usuario_estudio_social" Member="usuario" ThisKey="identificacion" OtherKey="identificacion" Type="usuario" IsForeignKey="true" />
-      <Association Name="victima_estudio_social" Member="victima" ThisKey="id_victima" OtherKey="id_victima" Type="victima" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.expediente" Member="expediente">
@@ -165,13 +187,15 @@
       <Column Name="lugar_ocurrencia" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="fecha_remision" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
       <Column Name="remitido" Type="System.String" DbType="NVarChar(21)" CanBeNull="true" />
+      <Column Name="excluir" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="observaciones" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Association Name="expediente_victima" Member="victima" ThisKey="n_expediente" OtherKey="n_expediente" Type="victima" />
       <Association Name="expediente_denunciante" Member="denunciante" ThisKey="n_expediente" OtherKey="n_expediente" Type="denunciante" />
       <Association Name="expediente_dictamen_medicoLegal" Member="dictamen_medicoLegal" ThisKey="n_expediente" OtherKey="n_expediente" Type="dictamen_medicoLegal" />
       <Association Name="expediente_diligencia" Member="diligencia" ThisKey="n_expediente" OtherKey="n_expediente" Type="diligencia" />
       <Association Name="expediente_fiscal" Member="fiscal" ThisKey="n_expediente" OtherKey="n_expediente" Type="fiscal" />
       <Association Name="expediente_medidas_precautelares" Member="medidas_precautelares" ThisKey="n_expediente" OtherKey="n_expediente" Type="medidas_precautelares" />
       <Association Name="expediente_presunto_agresor" Member="presunto_agresor" ThisKey="n_expediente" OtherKey="n_expediente" Type="presunto_agresor" />
-      <Association Name="expediente_victima" Member="victima" ThisKey="n_expediente" OtherKey="n_expediente" Type="victima" />
       <Association Name="usuario_expediente" Member="usuario" ThisKey="identificacion" OtherKey="identificacion" Type="usuario" IsForeignKey="true" />
     </Type>
   </Table>
@@ -297,36 +321,14 @@
       <Column Name="diagnostico" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="tipo_daño" Type="System.String" DbType="NVarChar(129)" CanBeNull="true" />
       <Column Name="n_chip" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="iExtension" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="iExtension" Type="System.String" DbType="NVarChar(6)" CanBeNull="true" />
       <Column Name="iTamaño" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="iDocumento" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="iDocumento" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="iGUID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
       <Column Name="fecha_entrega" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Association Name="oficial_valoracion_psicologica" Member="oficial" ThisKey="n_chip" OtherKey="n_chip" Type="oficial" IsForeignKey="true" />
       <Association Name="usuario_valoracion_psicologica" Member="usuario" ThisKey="identificacion" OtherKey="identificacion" Type="usuario" IsForeignKey="true" />
       <Association Name="victima_valoracion_psicologica" Member="victima" ThisKey="id_victima" OtherKey="id_victima" Type="victima" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.victima" Member="victima">
-    <Type Name="victima">
-      <Column Name="id_victima" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="n_expediente" Type="System.String" DbType="NVarChar(17) NOT NULL" CanBeNull="false" />
-      <Column Name="id_delegacion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Nombres" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="Apellidos" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="edad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="sexo" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="nacionalidad" Type="System.String" DbType="NVarChar(25) NOT NULL" CanBeNull="false" />
-      <Column Name="tipo_identificacion" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
-      <Column Name="n_identificacion" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-      <Column Name="condicion_laboral" Type="System.String" DbType="NVarChar(29) NOT NULL" CanBeNull="false" />
-      <Column Name="nivel_escolar" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="discapacidades" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
-      <Association Name="victima_entrevista_complementaria" Member="entrevista_complementaria" ThisKey="id_victima" OtherKey="id_victima" Type="entrevista_complementaria" />
-      <Association Name="victima_estudio_social" Member="estudio_social" ThisKey="id_victima" OtherKey="id_victima" Type="estudio_social" />
-      <Association Name="victima_valoracion_psicologica" Member="valoracion_psicologica" ThisKey="id_victima" OtherKey="id_victima" Type="valoracion_psicologica" />
-      <Association Name="delegacion_victima" Member="delegacion" ThisKey="id_delegacion" OtherKey="id_delegacion" Type="delegacion" IsForeignKey="true" />
-      <Association Name="expediente_victima" Member="expediente" ThisKey="n_expediente" OtherKey="n_expediente" Type="expediente" IsForeignKey="true" />
     </Type>
   </Table>
   <Function Name="dbo.contarUsuario" Method="contarUsuario">

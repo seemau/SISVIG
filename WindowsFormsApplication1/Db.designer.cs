@@ -33,6 +33,9 @@ namespace WindowsFormsApplication1
     partial void Insertasesoria_legal(asesoria_legal instance);
     partial void Updateasesoria_legal(asesoria_legal instance);
     partial void Deleteasesoria_legal(asesoria_legal instance);
+    partial void Insertvictima(victima instance);
+    partial void Updatevictima(victima instance);
+    partial void Deletevictima(victima instance);
     partial void Insertbarrios(barrios instance);
     partial void Updatebarrios(barrios instance);
     partial void Deletebarrios(barrios instance);
@@ -93,9 +96,6 @@ namespace WindowsFormsApplication1
     partial void Insertvaloracion_psicologica(valoracion_psicologica instance);
     partial void Updatevaloracion_psicologica(valoracion_psicologica instance);
     partial void Deletevaloracion_psicologica(valoracion_psicologica instance);
-    partial void Insertvictima(victima instance);
-    partial void Updatevictima(victima instance);
-    partial void Deletevictima(victima instance);
     #endregion
 		
 		public DbDataContext() : 
@@ -133,6 +133,14 @@ namespace WindowsFormsApplication1
 			get
 			{
 				return this.GetTable<asesoria_legal>();
+			}
+		}
+		
+		public System.Data.Linq.Table<victima> victima
+		{
+			get
+			{
+				return this.GetTable<victima>();
 			}
 		}
 		
@@ -309,14 +317,6 @@ namespace WindowsFormsApplication1
 			get
 			{
 				return this.GetTable<valoracion_psicologica>();
-			}
-		}
-		
-		public System.Data.Linq.Table<victima> victima
-		{
-			get
-			{
-				return this.GetTable<victima>();
 			}
 		}
 		
@@ -818,6 +818,522 @@ namespace WindowsFormsApplication1
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.victima")]
+	public partial class victima : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id_victima;
+		
+		private string _n_expediente;
+		
+		private int _id_delegacion;
+		
+		private string _Nombres;
+		
+		private string _Apellidos;
+		
+		private int _edad;
+		
+		private string _sexo;
+		
+		private string _nacionalidad;
+		
+		private string _tipo_identificacion;
+		
+		private string _n_identificacion;
+		
+		private string _condicion_laboral;
+		
+		private string _nivel_escolar;
+		
+		private string _discapacidades;
+		
+		private EntitySet<entrevista_complementaria> _entrevista_complementaria;
+		
+		private EntitySet<estudio_social> _estudio_social;
+		
+		private EntitySet<valoracion_psicologica> _valoracion_psicologica;
+		
+		private EntityRef<delegacion> _delegacion;
+		
+		private EntityRef<expediente> _expediente;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onid_victimaChanging(int value);
+    partial void Onid_victimaChanged();
+    partial void Onn_expedienteChanging(string value);
+    partial void Onn_expedienteChanged();
+    partial void Onid_delegacionChanging(int value);
+    partial void Onid_delegacionChanged();
+    partial void OnNombresChanging(string value);
+    partial void OnNombresChanged();
+    partial void OnApellidosChanging(string value);
+    partial void OnApellidosChanged();
+    partial void OnedadChanging(int value);
+    partial void OnedadChanged();
+    partial void OnsexoChanging(string value);
+    partial void OnsexoChanged();
+    partial void OnnacionalidadChanging(string value);
+    partial void OnnacionalidadChanged();
+    partial void Ontipo_identificacionChanging(string value);
+    partial void Ontipo_identificacionChanged();
+    partial void Onn_identificacionChanging(string value);
+    partial void Onn_identificacionChanged();
+    partial void Oncondicion_laboralChanging(string value);
+    partial void Oncondicion_laboralChanged();
+    partial void Onnivel_escolarChanging(string value);
+    partial void Onnivel_escolarChanged();
+    partial void OndiscapacidadesChanging(string value);
+    partial void OndiscapacidadesChanged();
+    #endregion
+		
+		public victima()
+		{
+			this._entrevista_complementaria = new EntitySet<entrevista_complementaria>(new Action<entrevista_complementaria>(this.attach_entrevista_complementaria), new Action<entrevista_complementaria>(this.detach_entrevista_complementaria));
+			this._estudio_social = new EntitySet<estudio_social>(new Action<estudio_social>(this.attach_estudio_social), new Action<estudio_social>(this.detach_estudio_social));
+			this._valoracion_psicologica = new EntitySet<valoracion_psicologica>(new Action<valoracion_psicologica>(this.attach_valoracion_psicologica), new Action<valoracion_psicologica>(this.detach_valoracion_psicologica));
+			this._delegacion = default(EntityRef<delegacion>);
+			this._expediente = default(EntityRef<expediente>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_victima", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id_victima
+		{
+			get
+			{
+				return this._id_victima;
+			}
+			set
+			{
+				if ((this._id_victima != value))
+				{
+					this.Onid_victimaChanging(value);
+					this.SendPropertyChanging();
+					this._id_victima = value;
+					this.SendPropertyChanged("id_victima");
+					this.Onid_victimaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_n_expediente", DbType="NVarChar(17) NOT NULL", CanBeNull=false)]
+		public string n_expediente
+		{
+			get
+			{
+				return this._n_expediente;
+			}
+			set
+			{
+				if ((this._n_expediente != value))
+				{
+					if (this._expediente.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onn_expedienteChanging(value);
+					this.SendPropertyChanging();
+					this._n_expediente = value;
+					this.SendPropertyChanged("n_expediente");
+					this.Onn_expedienteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_delegacion", DbType="Int NOT NULL")]
+		public int id_delegacion
+		{
+			get
+			{
+				return this._id_delegacion;
+			}
+			set
+			{
+				if ((this._id_delegacion != value))
+				{
+					if (this._delegacion.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onid_delegacionChanging(value);
+					this.SendPropertyChanging();
+					this._id_delegacion = value;
+					this.SendPropertyChanged("id_delegacion");
+					this.Onid_delegacionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombres", DbType="NVarChar(30) NOT NULL", CanBeNull=false)]
+		public string Nombres
+		{
+			get
+			{
+				return this._Nombres;
+			}
+			set
+			{
+				if ((this._Nombres != value))
+				{
+					this.OnNombresChanging(value);
+					this.SendPropertyChanging();
+					this._Nombres = value;
+					this.SendPropertyChanged("Nombres");
+					this.OnNombresChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Apellidos", DbType="NVarChar(30) NOT NULL", CanBeNull=false)]
+		public string Apellidos
+		{
+			get
+			{
+				return this._Apellidos;
+			}
+			set
+			{
+				if ((this._Apellidos != value))
+				{
+					this.OnApellidosChanging(value);
+					this.SendPropertyChanging();
+					this._Apellidos = value;
+					this.SendPropertyChanged("Apellidos");
+					this.OnApellidosChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_edad", DbType="Int NOT NULL")]
+		public int edad
+		{
+			get
+			{
+				return this._edad;
+			}
+			set
+			{
+				if ((this._edad != value))
+				{
+					this.OnedadChanging(value);
+					this.SendPropertyChanging();
+					this._edad = value;
+					this.SendPropertyChanged("edad");
+					this.OnedadChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sexo", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
+		public string sexo
+		{
+			get
+			{
+				return this._sexo;
+			}
+			set
+			{
+				if ((this._sexo != value))
+				{
+					this.OnsexoChanging(value);
+					this.SendPropertyChanging();
+					this._sexo = value;
+					this.SendPropertyChanged("sexo");
+					this.OnsexoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nacionalidad", DbType="NVarChar(25) NOT NULL", CanBeNull=false)]
+		public string nacionalidad
+		{
+			get
+			{
+				return this._nacionalidad;
+			}
+			set
+			{
+				if ((this._nacionalidad != value))
+				{
+					this.OnnacionalidadChanging(value);
+					this.SendPropertyChanging();
+					this._nacionalidad = value;
+					this.SendPropertyChanged("nacionalidad");
+					this.OnnacionalidadChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tipo_identificacion", DbType="NVarChar(15)")]
+		public string tipo_identificacion
+		{
+			get
+			{
+				return this._tipo_identificacion;
+			}
+			set
+			{
+				if ((this._tipo_identificacion != value))
+				{
+					this.Ontipo_identificacionChanging(value);
+					this.SendPropertyChanging();
+					this._tipo_identificacion = value;
+					this.SendPropertyChanged("tipo_identificacion");
+					this.Ontipo_identificacionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_n_identificacion", DbType="NVarChar(20)")]
+		public string n_identificacion
+		{
+			get
+			{
+				return this._n_identificacion;
+			}
+			set
+			{
+				if ((this._n_identificacion != value))
+				{
+					this.Onn_identificacionChanging(value);
+					this.SendPropertyChanging();
+					this._n_identificacion = value;
+					this.SendPropertyChanged("n_identificacion");
+					this.Onn_identificacionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_condicion_laboral", DbType="NVarChar(29) NOT NULL", CanBeNull=false)]
+		public string condicion_laboral
+		{
+			get
+			{
+				return this._condicion_laboral;
+			}
+			set
+			{
+				if ((this._condicion_laboral != value))
+				{
+					this.Oncondicion_laboralChanging(value);
+					this.SendPropertyChanging();
+					this._condicion_laboral = value;
+					this.SendPropertyChanged("condicion_laboral");
+					this.Oncondicion_laboralChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nivel_escolar", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
+		public string nivel_escolar
+		{
+			get
+			{
+				return this._nivel_escolar;
+			}
+			set
+			{
+				if ((this._nivel_escolar != value))
+				{
+					this.Onnivel_escolarChanging(value);
+					this.SendPropertyChanging();
+					this._nivel_escolar = value;
+					this.SendPropertyChanged("nivel_escolar");
+					this.Onnivel_escolarChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_discapacidades", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
+		public string discapacidades
+		{
+			get
+			{
+				return this._discapacidades;
+			}
+			set
+			{
+				if ((this._discapacidades != value))
+				{
+					this.OndiscapacidadesChanging(value);
+					this.SendPropertyChanging();
+					this._discapacidades = value;
+					this.SendPropertyChanged("discapacidades");
+					this.OndiscapacidadesChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="victima_entrevista_complementaria", Storage="_entrevista_complementaria", ThisKey="id_victima", OtherKey="id_victima")]
+		public EntitySet<entrevista_complementaria> entrevista_complementaria
+		{
+			get
+			{
+				return this._entrevista_complementaria;
+			}
+			set
+			{
+				this._entrevista_complementaria.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="victima_estudio_social", Storage="_estudio_social", ThisKey="id_victima", OtherKey="id_victima")]
+		public EntitySet<estudio_social> estudio_social
+		{
+			get
+			{
+				return this._estudio_social;
+			}
+			set
+			{
+				this._estudio_social.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="victima_valoracion_psicologica", Storage="_valoracion_psicologica", ThisKey="id_victima", OtherKey="id_victima")]
+		public EntitySet<valoracion_psicologica> valoracion_psicologica
+		{
+			get
+			{
+				return this._valoracion_psicologica;
+			}
+			set
+			{
+				this._valoracion_psicologica.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="delegacion_victima", Storage="_delegacion", ThisKey="id_delegacion", OtherKey="id_delegacion", IsForeignKey=true)]
+		public delegacion delegacion
+		{
+			get
+			{
+				return this._delegacion.Entity;
+			}
+			set
+			{
+				delegacion previousValue = this._delegacion.Entity;
+				if (((previousValue != value) 
+							|| (this._delegacion.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._delegacion.Entity = null;
+						previousValue.victima.Remove(this);
+					}
+					this._delegacion.Entity = value;
+					if ((value != null))
+					{
+						value.victima.Add(this);
+						this._id_delegacion = value.id_delegacion;
+					}
+					else
+					{
+						this._id_delegacion = default(int);
+					}
+					this.SendPropertyChanged("delegacion");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="expediente_victima", Storage="_expediente", ThisKey="n_expediente", OtherKey="n_expediente", IsForeignKey=true)]
+		public expediente expediente
+		{
+			get
+			{
+				return this._expediente.Entity;
+			}
+			set
+			{
+				expediente previousValue = this._expediente.Entity;
+				if (((previousValue != value) 
+							|| (this._expediente.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._expediente.Entity = null;
+						previousValue.victima.Remove(this);
+					}
+					this._expediente.Entity = value;
+					if ((value != null))
+					{
+						value.victima.Add(this);
+						this._n_expediente = value.n_expediente;
+					}
+					else
+					{
+						this._n_expediente = default(string);
+					}
+					this.SendPropertyChanged("expediente");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_entrevista_complementaria(entrevista_complementaria entity)
+		{
+			this.SendPropertyChanging();
+			entity.victima = this;
+		}
+		
+		private void detach_entrevista_complementaria(entrevista_complementaria entity)
+		{
+			this.SendPropertyChanging();
+			entity.victima = null;
+		}
+		
+		private void attach_estudio_social(estudio_social entity)
+		{
+			this.SendPropertyChanging();
+			entity.victima = this;
+		}
+		
+		private void detach_estudio_social(estudio_social entity)
+		{
+			this.SendPropertyChanging();
+			entity.victima = null;
+		}
+		
+		private void attach_valoracion_psicologica(valoracion_psicologica entity)
+		{
+			this.SendPropertyChanging();
+			entity.victima = this;
+		}
+		
+		private void detach_valoracion_psicologica(valoracion_psicologica entity)
+		{
+			this.SendPropertyChanging();
+			entity.victima = null;
 		}
 	}
 	
@@ -1734,13 +2250,13 @@ namespace WindowsFormsApplication1
 		
 		private string _codigo;
 		
+		private EntitySet<victima> _victima;
+		
 		private EntitySet<barrios> _barrios;
 		
 		private EntitySet<juzgados> _juzgados;
 		
 		private EntitySet<usuario> _usuario;
-		
-		private EntitySet<victima> _victima;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
@@ -1758,10 +2274,10 @@ namespace WindowsFormsApplication1
 		
 		public delegacion()
 		{
+			this._victima = new EntitySet<victima>(new Action<victima>(this.attach_victima), new Action<victima>(this.detach_victima));
 			this._barrios = new EntitySet<barrios>(new Action<barrios>(this.attach_barrios), new Action<barrios>(this.detach_barrios));
 			this._juzgados = new EntitySet<juzgados>(new Action<juzgados>(this.attach_juzgados), new Action<juzgados>(this.detach_juzgados));
 			this._usuario = new EntitySet<usuario>(new Action<usuario>(this.attach_usuario), new Action<usuario>(this.detach_usuario));
-			this._victima = new EntitySet<victima>(new Action<victima>(this.attach_victima), new Action<victima>(this.detach_victima));
 			OnCreated();
 		}
 		
@@ -1845,6 +2361,19 @@ namespace WindowsFormsApplication1
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="delegacion_victima", Storage="_victima", ThisKey="id_delegacion", OtherKey="id_delegacion")]
+		public EntitySet<victima> victima
+		{
+			get
+			{
+				return this._victima;
+			}
+			set
+			{
+				this._victima.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="delegacion_barrios", Storage="_barrios", ThisKey="id_delegacion", OtherKey="id_delegacion")]
 		public EntitySet<barrios> barrios
 		{
@@ -1884,19 +2413,6 @@ namespace WindowsFormsApplication1
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="delegacion_victima", Storage="_victima", ThisKey="id_delegacion", OtherKey="id_delegacion")]
-		public EntitySet<victima> victima
-		{
-			get
-			{
-				return this._victima;
-			}
-			set
-			{
-				this._victima.Assign(value);
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -1915,6 +2431,18 @@ namespace WindowsFormsApplication1
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_victima(victima entity)
+		{
+			this.SendPropertyChanging();
+			entity.delegacion = this;
+		}
+		
+		private void detach_victima(victima entity)
+		{
+			this.SendPropertyChanging();
+			entity.delegacion = null;
 		}
 		
 		private void attach_barrios(barrios entity)
@@ -1948,18 +2476,6 @@ namespace WindowsFormsApplication1
 		}
 		
 		private void detach_usuario(usuario entity)
-		{
-			this.SendPropertyChanging();
-			entity.delegacion = null;
-		}
-		
-		private void attach_victima(victima entity)
-		{
-			this.SendPropertyChanging();
-			entity.delegacion = this;
-		}
-		
-		private void detach_victima(victima entity)
 		{
 			this.SendPropertyChanging();
 			entity.delegacion = null;
@@ -3053,9 +3569,9 @@ namespace WindowsFormsApplication1
 		
 		private string _parentesco_victima;
 		
-		private EntityRef<usuario> _usuario;
-		
 		private EntityRef<victima> _victima;
+		
+		private EntityRef<usuario> _usuario;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
@@ -3079,8 +3595,8 @@ namespace WindowsFormsApplication1
 		
 		public entrevista_complementaria()
 		{
-			this._usuario = default(EntityRef<usuario>);
 			this._victima = default(EntityRef<victima>);
+			this._usuario = default(EntityRef<usuario>);
 			OnCreated();
 		}
 		
@@ -3232,40 +3748,6 @@ namespace WindowsFormsApplication1
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="usuario_entrevista_complementaria", Storage="_usuario", ThisKey="identificacion", OtherKey="identificacion", IsForeignKey=true)]
-		public usuario usuario
-		{
-			get
-			{
-				return this._usuario.Entity;
-			}
-			set
-			{
-				usuario previousValue = this._usuario.Entity;
-				if (((previousValue != value) 
-							|| (this._usuario.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._usuario.Entity = null;
-						previousValue.entrevista_complementaria.Remove(this);
-					}
-					this._usuario.Entity = value;
-					if ((value != null))
-					{
-						value.entrevista_complementaria.Add(this);
-						this._identificacion = value.identificacion;
-					}
-					else
-					{
-						this._identificacion = default(string);
-					}
-					this.SendPropertyChanged("usuario");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="victima_entrevista_complementaria", Storage="_victima", ThisKey="id_victima", OtherKey="id_victima", IsForeignKey=true)]
 		public victima victima
 		{
@@ -3296,6 +3778,40 @@ namespace WindowsFormsApplication1
 						this._id_victima = default(int);
 					}
 					this.SendPropertyChanged("victima");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="usuario_entrevista_complementaria", Storage="_usuario", ThisKey="identificacion", OtherKey="identificacion", IsForeignKey=true)]
+		public usuario usuario
+		{
+			get
+			{
+				return this._usuario.Entity;
+			}
+			set
+			{
+				usuario previousValue = this._usuario.Entity;
+				if (((previousValue != value) 
+							|| (this._usuario.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._usuario.Entity = null;
+						previousValue.entrevista_complementaria.Remove(this);
+					}
+					this._usuario.Entity = value;
+					if ((value != null))
+					{
+						value.entrevista_complementaria.Add(this);
+						this._identificacion = value.identificacion;
+					}
+					else
+					{
+						this._identificacion = default(string);
+					}
+					this.SendPropertyChanged("usuario");
 				}
 			}
 		}
@@ -3347,11 +3863,11 @@ namespace WindowsFormsApplication1
 		
 		private System.Guid _iGUID;
 		
+		private EntityRef<victima> _victima;
+		
 		private EntityRef<oficial> _oficial;
 		
 		private EntityRef<usuario> _usuario;
-		
-		private EntityRef<victima> _victima;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
@@ -3381,9 +3897,9 @@ namespace WindowsFormsApplication1
 		
 		public estudio_social()
 		{
+			this._victima = default(EntityRef<victima>);
 			this._oficial = default(EntityRef<oficial>);
 			this._usuario = default(EntityRef<usuario>);
-			this._victima = default(EntityRef<victima>);
 			OnCreated();
 		}
 		
@@ -3599,6 +4115,40 @@ namespace WindowsFormsApplication1
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="victima_estudio_social", Storage="_victima", ThisKey="id_victima", OtherKey="id_victima", IsForeignKey=true)]
+		public victima victima
+		{
+			get
+			{
+				return this._victima.Entity;
+			}
+			set
+			{
+				victima previousValue = this._victima.Entity;
+				if (((previousValue != value) 
+							|| (this._victima.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._victima.Entity = null;
+						previousValue.estudio_social.Remove(this);
+					}
+					this._victima.Entity = value;
+					if ((value != null))
+					{
+						value.estudio_social.Add(this);
+						this._id_victima = value.id_victima;
+					}
+					else
+					{
+						this._id_victima = default(int);
+					}
+					this.SendPropertyChanged("victima");
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="oficial_estudio_social", Storage="_oficial", ThisKey="n_chip", OtherKey="n_chip", IsForeignKey=true)]
 		public oficial oficial
 		{
@@ -3667,40 +4217,6 @@ namespace WindowsFormsApplication1
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="victima_estudio_social", Storage="_victima", ThisKey="id_victima", OtherKey="id_victima", IsForeignKey=true)]
-		public victima victima
-		{
-			get
-			{
-				return this._victima.Entity;
-			}
-			set
-			{
-				victima previousValue = this._victima.Entity;
-				if (((previousValue != value) 
-							|| (this._victima.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._victima.Entity = null;
-						previousValue.estudio_social.Remove(this);
-					}
-					this._victima.Entity = value;
-					if ((value != null))
-					{
-						value.estudio_social.Add(this);
-						this._id_victima = value.id_victima;
-					}
-					else
-					{
-						this._id_victima = default(int);
-					}
-					this.SendPropertyChanged("victima");
-				}
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -3754,6 +4270,12 @@ namespace WindowsFormsApplication1
 		
 		private string _remitido;
 		
+		private System.Nullable<bool> _excluir;
+		
+		private string _observaciones;
+		
+		private EntitySet<victima> _victima;
+		
 		private EntitySet<denunciante> _denunciante;
 		
 		private EntitySet<dictamen_medicoLegal> _dictamen_medicoLegal;
@@ -3765,8 +4287,6 @@ namespace WindowsFormsApplication1
 		private EntitySet<medidas_precautelares> _medidas_precautelares;
 		
 		private EntitySet<presunto_agresor> _presunto_agresor;
-		
-		private EntitySet<victima> _victima;
 		
 		private EntityRef<usuario> _usuario;
 		
@@ -3800,17 +4320,21 @@ namespace WindowsFormsApplication1
     partial void Onfecha_remisionChanged();
     partial void OnremitidoChanging(string value);
     partial void OnremitidoChanged();
+    partial void OnexcluirChanging(System.Nullable<bool> value);
+    partial void OnexcluirChanged();
+    partial void OnobservacionesChanging(string value);
+    partial void OnobservacionesChanged();
     #endregion
 		
 		public expediente()
 		{
+			this._victima = new EntitySet<victima>(new Action<victima>(this.attach_victima), new Action<victima>(this.detach_victima));
 			this._denunciante = new EntitySet<denunciante>(new Action<denunciante>(this.attach_denunciante), new Action<denunciante>(this.detach_denunciante));
 			this._dictamen_medicoLegal = new EntitySet<dictamen_medicoLegal>(new Action<dictamen_medicoLegal>(this.attach_dictamen_medicoLegal), new Action<dictamen_medicoLegal>(this.detach_dictamen_medicoLegal));
 			this._diligencia = new EntitySet<diligencia>(new Action<diligencia>(this.attach_diligencia), new Action<diligencia>(this.detach_diligencia));
 			this._fiscal = new EntitySet<fiscal>(new Action<fiscal>(this.attach_fiscal), new Action<fiscal>(this.detach_fiscal));
 			this._medidas_precautelares = new EntitySet<medidas_precautelares>(new Action<medidas_precautelares>(this.attach_medidas_precautelares), new Action<medidas_precautelares>(this.detach_medidas_precautelares));
 			this._presunto_agresor = new EntitySet<presunto_agresor>(new Action<presunto_agresor>(this.attach_presunto_agresor), new Action<presunto_agresor>(this.detach_presunto_agresor));
-			this._victima = new EntitySet<victima>(new Action<victima>(this.attach_victima), new Action<victima>(this.detach_victima));
 			this._usuario = default(EntityRef<usuario>);
 			OnCreated();
 		}
@@ -4079,6 +4603,59 @@ namespace WindowsFormsApplication1
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_excluir", DbType="Bit")]
+		public System.Nullable<bool> excluir
+		{
+			get
+			{
+				return this._excluir;
+			}
+			set
+			{
+				if ((this._excluir != value))
+				{
+					this.OnexcluirChanging(value);
+					this.SendPropertyChanging();
+					this._excluir = value;
+					this.SendPropertyChanged("excluir");
+					this.OnexcluirChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_observaciones", DbType="NVarChar(500)")]
+		public string observaciones
+		{
+			get
+			{
+				return this._observaciones;
+			}
+			set
+			{
+				if ((this._observaciones != value))
+				{
+					this.OnobservacionesChanging(value);
+					this.SendPropertyChanging();
+					this._observaciones = value;
+					this.SendPropertyChanged("observaciones");
+					this.OnobservacionesChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="expediente_victima", Storage="_victima", ThisKey="n_expediente", OtherKey="n_expediente")]
+		public EntitySet<victima> victima
+		{
+			get
+			{
+				return this._victima;
+			}
+			set
+			{
+				this._victima.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="expediente_denunciante", Storage="_denunciante", ThisKey="n_expediente", OtherKey="n_expediente")]
 		public EntitySet<denunciante> denunciante
 		{
@@ -4157,19 +4734,6 @@ namespace WindowsFormsApplication1
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="expediente_victima", Storage="_victima", ThisKey="n_expediente", OtherKey="n_expediente")]
-		public EntitySet<victima> victima
-		{
-			get
-			{
-				return this._victima;
-			}
-			set
-			{
-				this._victima.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="usuario_expediente", Storage="_usuario", ThisKey="identificacion", OtherKey="identificacion", IsForeignKey=true)]
 		public usuario usuario
 		{
@@ -4222,6 +4786,18 @@ namespace WindowsFormsApplication1
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_victima(victima entity)
+		{
+			this.SendPropertyChanging();
+			entity.expediente = this;
+		}
+		
+		private void detach_victima(victima entity)
+		{
+			this.SendPropertyChanging();
+			entity.expediente = null;
 		}
 		
 		private void attach_denunciante(denunciante entity)
@@ -4291,18 +4867,6 @@ namespace WindowsFormsApplication1
 		}
 		
 		private void detach_presunto_agresor(presunto_agresor entity)
-		{
-			this.SendPropertyChanging();
-			entity.expediente = null;
-		}
-		
-		private void attach_victima(victima entity)
-		{
-			this.SendPropertyChanging();
-			entity.expediente = this;
-		}
-		
-		private void detach_victima(victima entity)
 		{
 			this.SendPropertyChanging();
 			entity.expediente = null;
@@ -6686,7 +7250,7 @@ namespace WindowsFormsApplication1
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iExtension", DbType="NVarChar(6) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iExtension", DbType="NVarChar(6)")]
 		public string iExtension
 		{
 			get
@@ -6726,7 +7290,7 @@ namespace WindowsFormsApplication1
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iDocumento", DbType="VarBinary(MAX) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iDocumento", DbType="VarBinary(MAX)", UpdateCheck=UpdateCheck.Never)]
 		public System.Data.Linq.Binary iDocumento
 		{
 			get
@@ -6906,522 +7470,6 @@ namespace WindowsFormsApplication1
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.victima")]
-	public partial class victima : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _id_victima;
-		
-		private string _n_expediente;
-		
-		private int _id_delegacion;
-		
-		private string _Nombres;
-		
-		private string _Apellidos;
-		
-		private int _edad;
-		
-		private string _sexo;
-		
-		private string _nacionalidad;
-		
-		private string _tipo_identificacion;
-		
-		private string _n_identificacion;
-		
-		private string _condicion_laboral;
-		
-		private string _nivel_escolar;
-		
-		private string _discapacidades;
-		
-		private EntitySet<entrevista_complementaria> _entrevista_complementaria;
-		
-		private EntitySet<estudio_social> _estudio_social;
-		
-		private EntitySet<valoracion_psicologica> _valoracion_psicologica;
-		
-		private EntityRef<delegacion> _delegacion;
-		
-		private EntityRef<expediente> _expediente;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void Onid_victimaChanging(int value);
-    partial void Onid_victimaChanged();
-    partial void Onn_expedienteChanging(string value);
-    partial void Onn_expedienteChanged();
-    partial void Onid_delegacionChanging(int value);
-    partial void Onid_delegacionChanged();
-    partial void OnNombresChanging(string value);
-    partial void OnNombresChanged();
-    partial void OnApellidosChanging(string value);
-    partial void OnApellidosChanged();
-    partial void OnedadChanging(int value);
-    partial void OnedadChanged();
-    partial void OnsexoChanging(string value);
-    partial void OnsexoChanged();
-    partial void OnnacionalidadChanging(string value);
-    partial void OnnacionalidadChanged();
-    partial void Ontipo_identificacionChanging(string value);
-    partial void Ontipo_identificacionChanged();
-    partial void Onn_identificacionChanging(string value);
-    partial void Onn_identificacionChanged();
-    partial void Oncondicion_laboralChanging(string value);
-    partial void Oncondicion_laboralChanged();
-    partial void Onnivel_escolarChanging(string value);
-    partial void Onnivel_escolarChanged();
-    partial void OndiscapacidadesChanging(string value);
-    partial void OndiscapacidadesChanged();
-    #endregion
-		
-		public victima()
-		{
-			this._entrevista_complementaria = new EntitySet<entrevista_complementaria>(new Action<entrevista_complementaria>(this.attach_entrevista_complementaria), new Action<entrevista_complementaria>(this.detach_entrevista_complementaria));
-			this._estudio_social = new EntitySet<estudio_social>(new Action<estudio_social>(this.attach_estudio_social), new Action<estudio_social>(this.detach_estudio_social));
-			this._valoracion_psicologica = new EntitySet<valoracion_psicologica>(new Action<valoracion_psicologica>(this.attach_valoracion_psicologica), new Action<valoracion_psicologica>(this.detach_valoracion_psicologica));
-			this._delegacion = default(EntityRef<delegacion>);
-			this._expediente = default(EntityRef<expediente>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_victima", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id_victima
-		{
-			get
-			{
-				return this._id_victima;
-			}
-			set
-			{
-				if ((this._id_victima != value))
-				{
-					this.Onid_victimaChanging(value);
-					this.SendPropertyChanging();
-					this._id_victima = value;
-					this.SendPropertyChanged("id_victima");
-					this.Onid_victimaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_n_expediente", DbType="NVarChar(17) NOT NULL", CanBeNull=false)]
-		public string n_expediente
-		{
-			get
-			{
-				return this._n_expediente;
-			}
-			set
-			{
-				if ((this._n_expediente != value))
-				{
-					if (this._expediente.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Onn_expedienteChanging(value);
-					this.SendPropertyChanging();
-					this._n_expediente = value;
-					this.SendPropertyChanged("n_expediente");
-					this.Onn_expedienteChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_delegacion", DbType="Int NOT NULL")]
-		public int id_delegacion
-		{
-			get
-			{
-				return this._id_delegacion;
-			}
-			set
-			{
-				if ((this._id_delegacion != value))
-				{
-					if (this._delegacion.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Onid_delegacionChanging(value);
-					this.SendPropertyChanging();
-					this._id_delegacion = value;
-					this.SendPropertyChanged("id_delegacion");
-					this.Onid_delegacionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombres", DbType="NVarChar(30) NOT NULL", CanBeNull=false)]
-		public string Nombres
-		{
-			get
-			{
-				return this._Nombres;
-			}
-			set
-			{
-				if ((this._Nombres != value))
-				{
-					this.OnNombresChanging(value);
-					this.SendPropertyChanging();
-					this._Nombres = value;
-					this.SendPropertyChanged("Nombres");
-					this.OnNombresChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Apellidos", DbType="NVarChar(30) NOT NULL", CanBeNull=false)]
-		public string Apellidos
-		{
-			get
-			{
-				return this._Apellidos;
-			}
-			set
-			{
-				if ((this._Apellidos != value))
-				{
-					this.OnApellidosChanging(value);
-					this.SendPropertyChanging();
-					this._Apellidos = value;
-					this.SendPropertyChanged("Apellidos");
-					this.OnApellidosChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_edad", DbType="Int NOT NULL")]
-		public int edad
-		{
-			get
-			{
-				return this._edad;
-			}
-			set
-			{
-				if ((this._edad != value))
-				{
-					this.OnedadChanging(value);
-					this.SendPropertyChanging();
-					this._edad = value;
-					this.SendPropertyChanged("edad");
-					this.OnedadChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sexo", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
-		public string sexo
-		{
-			get
-			{
-				return this._sexo;
-			}
-			set
-			{
-				if ((this._sexo != value))
-				{
-					this.OnsexoChanging(value);
-					this.SendPropertyChanging();
-					this._sexo = value;
-					this.SendPropertyChanged("sexo");
-					this.OnsexoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nacionalidad", DbType="NVarChar(25) NOT NULL", CanBeNull=false)]
-		public string nacionalidad
-		{
-			get
-			{
-				return this._nacionalidad;
-			}
-			set
-			{
-				if ((this._nacionalidad != value))
-				{
-					this.OnnacionalidadChanging(value);
-					this.SendPropertyChanging();
-					this._nacionalidad = value;
-					this.SendPropertyChanged("nacionalidad");
-					this.OnnacionalidadChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tipo_identificacion", DbType="NVarChar(15)")]
-		public string tipo_identificacion
-		{
-			get
-			{
-				return this._tipo_identificacion;
-			}
-			set
-			{
-				if ((this._tipo_identificacion != value))
-				{
-					this.Ontipo_identificacionChanging(value);
-					this.SendPropertyChanging();
-					this._tipo_identificacion = value;
-					this.SendPropertyChanged("tipo_identificacion");
-					this.Ontipo_identificacionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_n_identificacion", DbType="NVarChar(20)")]
-		public string n_identificacion
-		{
-			get
-			{
-				return this._n_identificacion;
-			}
-			set
-			{
-				if ((this._n_identificacion != value))
-				{
-					this.Onn_identificacionChanging(value);
-					this.SendPropertyChanging();
-					this._n_identificacion = value;
-					this.SendPropertyChanged("n_identificacion");
-					this.Onn_identificacionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_condicion_laboral", DbType="NVarChar(29) NOT NULL", CanBeNull=false)]
-		public string condicion_laboral
-		{
-			get
-			{
-				return this._condicion_laboral;
-			}
-			set
-			{
-				if ((this._condicion_laboral != value))
-				{
-					this.Oncondicion_laboralChanging(value);
-					this.SendPropertyChanging();
-					this._condicion_laboral = value;
-					this.SendPropertyChanged("condicion_laboral");
-					this.Oncondicion_laboralChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nivel_escolar", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
-		public string nivel_escolar
-		{
-			get
-			{
-				return this._nivel_escolar;
-			}
-			set
-			{
-				if ((this._nivel_escolar != value))
-				{
-					this.Onnivel_escolarChanging(value);
-					this.SendPropertyChanging();
-					this._nivel_escolar = value;
-					this.SendPropertyChanged("nivel_escolar");
-					this.Onnivel_escolarChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_discapacidades", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
-		public string discapacidades
-		{
-			get
-			{
-				return this._discapacidades;
-			}
-			set
-			{
-				if ((this._discapacidades != value))
-				{
-					this.OndiscapacidadesChanging(value);
-					this.SendPropertyChanging();
-					this._discapacidades = value;
-					this.SendPropertyChanged("discapacidades");
-					this.OndiscapacidadesChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="victima_entrevista_complementaria", Storage="_entrevista_complementaria", ThisKey="id_victima", OtherKey="id_victima")]
-		public EntitySet<entrevista_complementaria> entrevista_complementaria
-		{
-			get
-			{
-				return this._entrevista_complementaria;
-			}
-			set
-			{
-				this._entrevista_complementaria.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="victima_estudio_social", Storage="_estudio_social", ThisKey="id_victima", OtherKey="id_victima")]
-		public EntitySet<estudio_social> estudio_social
-		{
-			get
-			{
-				return this._estudio_social;
-			}
-			set
-			{
-				this._estudio_social.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="victima_valoracion_psicologica", Storage="_valoracion_psicologica", ThisKey="id_victima", OtherKey="id_victima")]
-		public EntitySet<valoracion_psicologica> valoracion_psicologica
-		{
-			get
-			{
-				return this._valoracion_psicologica;
-			}
-			set
-			{
-				this._valoracion_psicologica.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="delegacion_victima", Storage="_delegacion", ThisKey="id_delegacion", OtherKey="id_delegacion", IsForeignKey=true)]
-		public delegacion delegacion
-		{
-			get
-			{
-				return this._delegacion.Entity;
-			}
-			set
-			{
-				delegacion previousValue = this._delegacion.Entity;
-				if (((previousValue != value) 
-							|| (this._delegacion.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._delegacion.Entity = null;
-						previousValue.victima.Remove(this);
-					}
-					this._delegacion.Entity = value;
-					if ((value != null))
-					{
-						value.victima.Add(this);
-						this._id_delegacion = value.id_delegacion;
-					}
-					else
-					{
-						this._id_delegacion = default(int);
-					}
-					this.SendPropertyChanged("delegacion");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="expediente_victima", Storage="_expediente", ThisKey="n_expediente", OtherKey="n_expediente", IsForeignKey=true)]
-		public expediente expediente
-		{
-			get
-			{
-				return this._expediente.Entity;
-			}
-			set
-			{
-				expediente previousValue = this._expediente.Entity;
-				if (((previousValue != value) 
-							|| (this._expediente.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._expediente.Entity = null;
-						previousValue.victima.Remove(this);
-					}
-					this._expediente.Entity = value;
-					if ((value != null))
-					{
-						value.victima.Add(this);
-						this._n_expediente = value.n_expediente;
-					}
-					else
-					{
-						this._n_expediente = default(string);
-					}
-					this.SendPropertyChanged("expediente");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_entrevista_complementaria(entrevista_complementaria entity)
-		{
-			this.SendPropertyChanging();
-			entity.victima = this;
-		}
-		
-		private void detach_entrevista_complementaria(entrevista_complementaria entity)
-		{
-			this.SendPropertyChanging();
-			entity.victima = null;
-		}
-		
-		private void attach_estudio_social(estudio_social entity)
-		{
-			this.SendPropertyChanging();
-			entity.victima = this;
-		}
-		
-		private void detach_estudio_social(estudio_social entity)
-		{
-			this.SendPropertyChanging();
-			entity.victima = null;
-		}
-		
-		private void attach_valoracion_psicologica(valoracion_psicologica entity)
-		{
-			this.SendPropertyChanging();
-			entity.victima = this;
-		}
-		
-		private void detach_valoracion_psicologica(valoracion_psicologica entity)
-		{
-			this.SendPropertyChanging();
-			entity.victima = null;
 		}
 	}
 	
