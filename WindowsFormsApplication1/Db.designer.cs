@@ -607,18 +607,25 @@ namespace WindowsFormsApplication1
 			return ((ISingleResult<mostrarValoracionesResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.mostrarExpedientes")]
-		public ISingleResult<mostrarExpedientesResult> mostrarExpedientes([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(MAX)")] string cadena, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> fechaInicial, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> fechaFinal, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> mes, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> tipoBusqueda, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idDelegacion)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cadena, fechaInicial, fechaFinal, mes, tipoBusqueda, idDelegacion);
-			return ((ISingleResult<mostrarExpedientesResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.mostrarVictimasValoracion")]
 		public ISingleResult<mostrarVictimasValoracionResult> mostrarVictimasValoracion([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idDelegacion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> tipoBusqueda, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(100)")] string cadena, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="SmallDateTime")] System.Nullable<System.DateTime> fechaInicio, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="SmallDateTime")] System.Nullable<System.DateTime> fechaFin, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> mes, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> year)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idDelegacion, tipoBusqueda, cadena, fechaInicio, fechaFin, mes, year);
 			return ((ISingleResult<mostrarVictimasValoracionResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.obtenerSubDelegaciones")]
+		public ISingleResult<obtenerSubDelegacionesResult> obtenerSubDelegaciones([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idDelegacion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="SmallDateTime")] System.Nullable<System.DateTime> fechaInicio, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="SmallDateTime")] System.Nullable<System.DateTime> fechaFin)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idDelegacion, fechaInicio, fechaFin);
+			return ((ISingleResult<obtenerSubDelegacionesResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.mostrarExpedientes")]
+		public ISingleResult<mostrarExpedientesResult> mostrarExpedientes([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(MAX)")] string cadena, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="SmallDateTime")] System.Nullable<System.DateTime> fechaInicial, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="SmallDateTime")] System.Nullable<System.DateTime> fechaFinal, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> mes, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> tipoBusqueda, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idDelegacion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(8)")] string subDelegacion)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cadena, fechaInicial, fechaFinal, mes, tipoBusqueda, idDelegacion, subDelegacion);
+			return ((ISingleResult<mostrarExpedientesResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -11493,104 +11500,6 @@ namespace WindowsFormsApplication1
 		}
 	}
 	
-	public partial class mostrarExpedientesResult
-	{
-		
-		private string _numeroDenuncia;
-		
-		private string _numeroExpediente;
-		
-		private string _delito;
-		
-		private string _nombreDenunciante;
-		
-		private string _nombreInvestigador;
-		
-		public mostrarExpedientesResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_numeroDenuncia", DbType="NVarChar(17) NOT NULL", CanBeNull=false)]
-		public string numeroDenuncia
-		{
-			get
-			{
-				return this._numeroDenuncia;
-			}
-			set
-			{
-				if ((this._numeroDenuncia != value))
-				{
-					this._numeroDenuncia = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_numeroExpediente", DbType="NVarChar(17)")]
-		public string numeroExpediente
-		{
-			get
-			{
-				return this._numeroExpediente;
-			}
-			set
-			{
-				if ((this._numeroExpediente != value))
-				{
-					this._numeroExpediente = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_delito", DbType="NVarChar(102) NOT NULL", CanBeNull=false)]
-		public string delito
-		{
-			get
-			{
-				return this._delito;
-			}
-			set
-			{
-				if ((this._delito != value))
-				{
-					this._delito = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombreDenunciante", DbType="NVarChar(61) NOT NULL", CanBeNull=false)]
-		public string nombreDenunciante
-		{
-			get
-			{
-				return this._nombreDenunciante;
-			}
-			set
-			{
-				if ((this._nombreDenunciante != value))
-				{
-					this._nombreDenunciante = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombreInvestigador", DbType="NVarChar(61) NOT NULL", CanBeNull=false)]
-		public string nombreInvestigador
-		{
-			get
-			{
-				return this._nombreInvestigador;
-			}
-			set
-			{
-				if ((this._nombreInvestigador != value))
-				{
-					this._nombreInvestigador = value;
-				}
-			}
-		}
-	}
-	
 	public partial class mostrarVictimasValoracionResult
 	{
 		
@@ -11756,6 +11665,130 @@ namespace WindowsFormsApplication1
 				if ((this._delito != value))
 				{
 					this._delito = value;
+				}
+			}
+		}
+	}
+	
+	public partial class obtenerSubDelegacionesResult
+	{
+		
+		private string _subDelegacion;
+		
+		public obtenerSubDelegacionesResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_subDelegacion", DbType="NVarChar(4)")]
+		public string subDelegacion
+		{
+			get
+			{
+				return this._subDelegacion;
+			}
+			set
+			{
+				if ((this._subDelegacion != value))
+				{
+					this._subDelegacion = value;
+				}
+			}
+		}
+	}
+	
+	public partial class mostrarExpedientesResult
+	{
+		
+		private string _numeroDenuncia;
+		
+		private string _numeroExpediente;
+		
+		private string _delito;
+		
+		private string _nombreDenunciante;
+		
+		private string _nombreInvestigador;
+		
+		public mostrarExpedientesResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_numeroDenuncia", DbType="NVarChar(17) NOT NULL", CanBeNull=false)]
+		public string numeroDenuncia
+		{
+			get
+			{
+				return this._numeroDenuncia;
+			}
+			set
+			{
+				if ((this._numeroDenuncia != value))
+				{
+					this._numeroDenuncia = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_numeroExpediente", DbType="NVarChar(17)")]
+		public string numeroExpediente
+		{
+			get
+			{
+				return this._numeroExpediente;
+			}
+			set
+			{
+				if ((this._numeroExpediente != value))
+				{
+					this._numeroExpediente = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_delito", DbType="NVarChar(102) NOT NULL", CanBeNull=false)]
+		public string delito
+		{
+			get
+			{
+				return this._delito;
+			}
+			set
+			{
+				if ((this._delito != value))
+				{
+					this._delito = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombreDenunciante", DbType="NVarChar(61) NOT NULL", CanBeNull=false)]
+		public string nombreDenunciante
+		{
+			get
+			{
+				return this._nombreDenunciante;
+			}
+			set
+			{
+				if ((this._nombreDenunciante != value))
+				{
+					this._nombreDenunciante = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombreInvestigador", DbType="NVarChar(61) NOT NULL", CanBeNull=false)]
+		public string nombreInvestigador
+		{
+			get
+			{
+				return this._nombreInvestigador;
+			}
+			set
+			{
+				if ((this._nombreInvestigador != value))
+				{
+					this._nombreInvestigador = value;
 				}
 			}
 		}

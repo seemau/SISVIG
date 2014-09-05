@@ -30,6 +30,7 @@
         {
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DialogUsuariosInvestigadoras));
             this.gvInvestigadoras = new Telerik.WinControls.UI.RadGridView();
             this.btnBuscar = new Telerik.WinControls.UI.RadButton();
             this.txtBuscar = new Telerik.WinControls.UI.RadTextBox();
@@ -158,6 +159,7 @@
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DialogUsuariosInvestigadoras";
             // 
             // 

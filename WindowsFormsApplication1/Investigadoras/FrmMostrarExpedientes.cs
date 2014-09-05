@@ -24,6 +24,9 @@ namespace WindowsFormsApplication1.Investigadoras
             this.dtpDesde.Value = DateTime.Now;
             //this.dtpHasta.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 23, 59, 59);
             this.dtpHasta.Value = DateTime.Now;
+            this.cmbSubDelegaciones.DataSource = Propiedades.SubDelegaciones;
+            this.cmbSubDelegaciones.SelectedIndex = this.cmbSubDelegaciones.Items.Count - 1;
+            this.cmbSubDelegaciones.Enabled = false;
             this.cmbBuscarPor.SelectedIndex = 1;
             this.setDatosExpedientes();
         }
@@ -46,12 +49,16 @@ namespace WindowsFormsApplication1.Investigadoras
                     this.dtpDesde.Enabled = false;
                     this.dtpHasta.Enabled = false;
                     this.txtBuscar.Enabled = true;
+                    if (this.cmbSubDelegaciones.Items.Count > 2)
+                        this.cmbSubDelegaciones.Enabled = false;
                     this.txtBuscar.Select();
                     break;
                 case 1:
                     this.dtpDesde.Enabled = true;
                     this.dtpHasta.Enabled = true;
                     this.txtBuscar.Enabled = false;
+                    if(this.cmbSubDelegaciones.Items.Count > 2)
+                        this.cmbSubDelegaciones.Enabled = true;
                     this.dtpDesde.Select();
                     break;
             }
@@ -120,7 +127,8 @@ namespace WindowsFormsApplication1.Investigadoras
                     if (this.txtBuscar.Text != "%")
                     {
                         DbDataContext varLinq = new DbDataContext();
-                        this.gvExpedientes.DataSource = varLinq.mostrarExpedientes(this.txtBuscar.Text, this.dtpDesde.Value, this.dtpHasta.Value, 0, this.cmbBuscarPor.SelectedIndex,Properties.Settings.Default.idDelegacionPredeterminada);
+                        string sd = (this.cmbSubDelegaciones.SelectedIndex == (this.cmbSubDelegaciones.Items.Count -1))? "%":"%-"+this.cmbSubDelegaciones.SelectedItem.Text + "-%";
+                        this.gvExpedientes.DataSource = varLinq.mostrarExpedientes(this.txtBuscar.Text, this.dtpDesde.Value, this.dtpHasta.Value, 0, this.cmbBuscarPor.SelectedIndex,Properties.Settings.Default.idDelegacionPredeterminada,sd);
                         this.lblResultados.Text = "<html><strong> " + this.gvExpedientes.RowCount + " </strong> Resultados</html>"; 
                         this.setDatosGenerales();
                     }
@@ -131,6 +139,7 @@ namespace WindowsFormsApplication1.Investigadoras
                 Mensaje.error(ex.Message);
             }
         }
+
 
         public void setDatosGenerales()
         {

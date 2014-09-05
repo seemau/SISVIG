@@ -21,6 +21,9 @@ namespace WindowsFormsApplication1.Fiscal
         #region Eventos del Formulario
         private void FrmExpedientesPoliciales_Load(object sender, EventArgs e)
         {
+            this.cmbSubDelegaciones.DataSource = Propiedades.SubDelegaciones;
+            this.cmbSubDelegaciones.SelectedIndex = this.cmbSubDelegaciones.Items.Count - 1;
+            this.cmbSubDelegaciones.Enabled = false;
             this.cmbBuscarPor.SelectedIndex = 2;
             this.dtpDesde.Value = DateTime.Now.Date;
             //this.dtpHasta.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 23, 59, 59);
@@ -38,6 +41,8 @@ namespace WindowsFormsApplication1.Fiscal
                 case 0:
                     this.lblBuscar.Enabled = true;
                     this.txtBuscar.Enabled = true;
+                    if (this.cmbSubDelegaciones.Items.Count > 2)
+                        this.cmbSubDelegaciones.Enabled = false;
                     this.flowLayoutPanel2.Enabled = false;
                     break;
                 case 1:
@@ -48,6 +53,8 @@ namespace WindowsFormsApplication1.Fiscal
                     this.dtpDesde.Visible = true;
                     this.lblHasta.Visible = true;
                     this.dtpHasta.Visible = true;
+                    if (this.cmbSubDelegaciones.Items.Count > 2)
+                        this.cmbSubDelegaciones.Enabled = true;
                     this.lblMes.Visible = false;
                     this.cmbMes.Visible = false;
                     break;
@@ -59,6 +66,8 @@ namespace WindowsFormsApplication1.Fiscal
                     this.dtpDesde.Visible = false;
                     this.lblHasta.Visible = false;
                     this.dtpHasta.Visible = false;
+                    if (this.cmbSubDelegaciones.Items.Count > 2)
+                        this.cmbSubDelegaciones.Enabled = false;
                     this.lblMes.Visible = true;
                     this.cmbMes.Visible = true;
                     break;
@@ -92,10 +101,14 @@ namespace WindowsFormsApplication1.Fiscal
             {
                 if (this.cmbBuscarPor.SelectedIndex != 0 || this.txtBuscar.Text != string.Empty)
                 {
-                    DbDataContext varLinq = new DbDataContext();
-                    this.gvExpedientes.DataSource = varLinq.mostrarExpedientes(this.txtBuscar.Text, this.dtpDesde.Value, this.dtpHasta.Value, this.cmbMes.SelectedIndex + 1, this.cmbBuscarPor.SelectedIndex,Properties.Settings.Default.idDelegacionPredeterminada);
-                    this.setDatosGenerales();
-                    this.lblResultados.Text = "<html>Se encontraron <strong>  " + this.gvExpedientes.RowCount + " </strong> resultados</html>";
+                    if (this.txtBuscar.Text != "%")
+                    {
+                        DbDataContext varLinq = new DbDataContext();
+                        string sd = (this.cmbSubDelegaciones.SelectedIndex == (this.cmbSubDelegaciones.Items.Count - 1)) ? "%" : "%-" + this.cmbSubDelegaciones.SelectedItem.Text + "-%";
+                        this.gvExpedientes.DataSource = varLinq.mostrarExpedientes(this.txtBuscar.Text, this.dtpDesde.Value, this.dtpHasta.Value, this.cmbMes.SelectedIndex + 1, this.cmbBuscarPor.SelectedIndex, Properties.Settings.Default.idDelegacionPredeterminada,sd);
+                        this.setDatosGenerales();
+                        this.lblResultados.Text = "<html>Se encontraron <strong>  " + this.gvExpedientes.RowCount + " </strong> resultados</html>";
+                    }
                 }
             }
             catch (Exception ex)

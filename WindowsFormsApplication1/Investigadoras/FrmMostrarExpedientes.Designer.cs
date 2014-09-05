@@ -57,6 +57,7 @@
             this.qBalloon1 = new Qios.DevSuite.Components.QBalloon();
             this.btnModificar = new Telerik.WinControls.UI.RadButton();
             this.lblResultados = new Telerik.WinControls.UI.RadLabel();
+            this.cmbSubDelegaciones = new Telerik.WinControls.UI.RadDropDownList();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvExpedientes)).BeginInit();
@@ -82,6 +83,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnAsignar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnModificar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblResultados)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbSubDelegaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -432,11 +434,22 @@
             this.lblResultados.TabIndex = 29;
             this.lblResultados.Text = "<html><strong>9</strong> Resultados</html>";
             // 
+            // cmbSubDelegaciones
+            // 
+            this.cmbSubDelegaciones.DropDownAnimationEnabled = true;
+            this.cmbSubDelegaciones.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
+            this.cmbSubDelegaciones.Location = new System.Drawing.Point(196, 31);
+            this.cmbSubDelegaciones.Name = "cmbSubDelegaciones";
+            this.cmbSubDelegaciones.ShowImageInEditorArea = true;
+            this.cmbSubDelegaciones.Size = new System.Drawing.Size(86, 20);
+            this.cmbSubDelegaciones.TabIndex = 30;
+            // 
             // FrmMostrarExpedientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1031, 382);
+            this.Controls.Add(this.cmbSubDelegaciones);
             this.Controls.Add(this.lblResultados);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnCancelar);
@@ -488,6 +501,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnAsignar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnModificar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblResultados)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbSubDelegaciones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -516,5 +530,6 @@
         private Qios.DevSuite.Components.QBalloon qBalloon1;
         private Telerik.WinControls.UI.RadButton btnModificar;
         private Telerik.WinControls.UI.RadLabel lblResultados;
+        private Telerik.WinControls.UI.RadDropDownList cmbSubDelegaciones;
     }
 }

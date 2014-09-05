@@ -16,6 +16,7 @@ namespace WindowsFormsApplication1
         private static String _rol = null;
         private static List<String> _juzgados;
         private static List<string> _delitos;
+        private static List<string> _subDelegaciones;
 
         /// <summary>
         /// Obtiene o Establece el nombre del usuario.
@@ -88,6 +89,18 @@ namespace WindowsFormsApplication1
             get
             {
                 return _delitos;
+            }
+        }
+
+        public static List<string> SubDelegaciones
+        {
+            set
+            {
+                _subDelegaciones = value;
+            }
+            get
+            {
+                return _subDelegaciones;
             }
         }
     }

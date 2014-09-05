@@ -180,6 +180,17 @@ namespace WindowsFormsApplication1.Investigadoras
 
         #region Eventos KeyDown 
         //Expediente
+        private void txtSufijoDenuncia_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                this.txtSufijoExpediente.Select();
+        }
+
+        private void txtSufijoExpediente_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                this.txtNumeroDenuncia.Select();
+        }
         private void txtNumeroDenuncia_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -935,12 +946,12 @@ namespace WindowsFormsApplication1.Investigadoras
                         {
                             this.insertar();
                             nuevaTransaccion.Complete();
-                            Mensaje.informacion("Los datos se han guardado correctamente");
-                            this._finalizadoCorrectamente = true;
-                            this.Close();
                         }
                     }
                 }
+                Mensaje.informacion("Los datos se han guardado correctamente");
+                this._finalizadoCorrectamente = true;
+                this.Close();
             }
             catch (Exception excepcion)
             {
@@ -1728,10 +1739,10 @@ namespace WindowsFormsApplication1.Investigadoras
             }
         }
 
-        #region Codigo defasado
+        #region establecer el prefijo de la especialidad
         private void txtSufijoDenuncia_TextChanged(object sender, EventArgs e)
         {
-            if ((this.txtSufijoDenuncia.Text[0] != 'C') && (this.txtSufijoDenuncia.Text[0] != 'A') && (this.txtSufijoExpediente.Text[0] != 'D') && (this.txtSufijoDenuncia.Text[0] != '_'))
+            if ((this.txtSufijoDenuncia.Text[0] != 'C') && (this.txtSufijoDenuncia.Text[0] != 'A') && (this.txtSufijoDenuncia.Text[0] != 'D') && (this.txtSufijoDenuncia.Text[0] != '_'))
             {
                 System.Text.StringBuilder cadenaTemp = new System.Text.StringBuilder(this.txtSufijoDenuncia.Text);
                 cadenaTemp[0] = 'C';
@@ -1739,7 +1750,7 @@ namespace WindowsFormsApplication1.Investigadoras
             }
         }
 
-        private void txtSufijoExpediente_Click(object sender, EventArgs e)
+        private void txtSufijoExpediente_TextChanged(object sender, EventArgs e)
         {
             if ((this.txtSufijoExpediente.Text[0] != 'C') && (this.txtSufijoExpediente.Text[0] != 'A') && (this.txtSufijoExpediente.Text[0] != 'D') && (this.txtSufijoExpediente.Text[0] != '_'))
             {

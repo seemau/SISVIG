@@ -165,10 +165,14 @@
             this.gvAgresor = new Telerik.WinControls.UI.RadGridView();
             this.radPageViewPage4 = new Telerik.WinControls.UI.RadPageViewPage();
             this.txtSintesisHechos = new System.Windows.Forms.RichTextBox();
+            this.radPageViewPage5 = new Telerik.WinControls.UI.RadPageViewPage();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.txtObservaciones = new System.Windows.Forms.RichTextBox();
             this.btnGuardar = new Telerik.WinControls.UI.RadButton();
             this.btnCancelar = new Telerik.WinControls.UI.RadButton();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.wbCargando = new Telerik.WinControls.UI.RadWaitingBar();
+            this.chkExcluir = new Telerik.WinControls.UI.RadCheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnExaminarBarrios)).BeginInit();
@@ -217,9 +221,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvAgresor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvAgresor.MasterTemplate)).BeginInit();
             this.radPageViewPage4.SuspendLayout();
+            this.radPageViewPage5.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnGuardar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancelar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wbCargando)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkExcluir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -752,6 +759,7 @@
             this.radPageView1.Controls.Add(this.radPageViewPage2);
             this.radPageView1.Controls.Add(this.radPageViewPage3);
             this.radPageView1.Controls.Add(this.radPageViewPage4);
+            this.radPageView1.Controls.Add(this.radPageViewPage5);
             this.radPageView1.Location = new System.Drawing.Point(3, 220);
             this.radPageView1.Name = "radPageView1";
             this.radPageView1.SelectedPage = this.radPageViewPage1;
@@ -945,7 +953,7 @@
             this.gvVictima.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.gvVictima.Location = new System.Drawing.Point(8, 8);
             // 
-            // gvVictima
+            // 
             // 
             this.gvVictima.MasterTemplate.AddNewRowPosition = Telerik.WinControls.UI.SystemRowPosition.Bottom;
             this.gvVictima.MasterTemplate.AllowAddNewRow = false;
@@ -1039,7 +1047,7 @@
             this.gvAgresor.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.gvAgresor.Location = new System.Drawing.Point(8, 8);
             // 
-            // gvAgresor
+            // 
             // 
             this.gvAgresor.MasterTemplate.AddNewRowPosition = Telerik.WinControls.UI.SystemRowPosition.Bottom;
             this.gvAgresor.MasterTemplate.AllowAddNewRow = false;
@@ -1116,6 +1124,38 @@
             this.txtSintesisHechos.Tag = "Relatos de los Hechos";
             this.txtSintesisHechos.Text = "";
             // 
+            // radPageViewPage5
+            // 
+            this.radPageViewPage5.Controls.Add(this.tableLayoutPanel1);
+            this.radPageViewPage5.Location = new System.Drawing.Point(10, 37);
+            this.radPageViewPage5.Name = "radPageViewPage5";
+            this.radPageViewPage5.Size = new System.Drawing.Size(647, 141);
+            this.radPageViewPage5.Text = "Observaciones";
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.chkExcluir, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.txtObservaciones, 0, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.60284F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 84.39716F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(647, 141);
+            this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // txtObservaciones
+            // 
+            this.txtObservaciones.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtObservaciones.Location = new System.Drawing.Point(3, 25);
+            this.txtObservaciones.Name = "txtObservaciones";
+            this.txtObservaciones.Size = new System.Drawing.Size(641, 113);
+            this.txtObservaciones.TabIndex = 0;
+            this.txtObservaciones.Text = "";
+            // 
             // btnGuardar
             // 
             this.btnGuardar.Location = new System.Drawing.Point(502, 415);
@@ -1149,6 +1189,14 @@
             this.wbCargando.Visible = false;
             this.wbCargando.WaitingIndicatorSize = new System.Drawing.Size(50, 30);
             this.wbCargando.WaitingStyle = Telerik.WinControls.Enumerations.WaitingBarStyles.Throbber;
+            // 
+            // chkExcluir
+            // 
+            this.chkExcluir.Location = new System.Drawing.Point(3, 3);
+            this.chkExcluir.Name = "chkExcluir";
+            this.chkExcluir.Size = new System.Drawing.Size(52, 18);
+            this.chkExcluir.TabIndex = 4;
+            this.chkExcluir.Text = "Excluir";
             // 
             // FrmModificarExpediente
             // 
@@ -1221,9 +1269,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvAgresor.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvAgresor)).EndInit();
             this.radPageViewPage4.ResumeLayout(false);
+            this.radPageViewPage5.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnGuardar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancelar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wbCargando)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkExcluir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -1280,5 +1332,9 @@
         private Telerik.WinControls.UI.RadButton btnNuevoAgresor;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private Telerik.WinControls.UI.RadWaitingBar wbCargando;
+        private Telerik.WinControls.UI.RadPageViewPage radPageViewPage5;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.RichTextBox txtObservaciones;
+        private Telerik.WinControls.UI.RadCheckBox chkExcluir;
     }
 }

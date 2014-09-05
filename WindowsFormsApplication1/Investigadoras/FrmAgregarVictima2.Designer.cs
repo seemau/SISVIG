@@ -257,6 +257,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBoxExpediente = new Telerik.WinControls.UI.RadGroupBox();
+            this.txtNumeroExpediente = new Telerik.WinControls.UI.RadMaskedEditBox();
+            this.txtNumeroDenuncia = new Telerik.WinControls.UI.RadMaskedEditBox();
             this.txtSufijoExpediente = new Telerik.WinControls.UI.RadMaskedEditBox();
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cambiarEspecialidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -267,8 +269,6 @@
             this.btnExaminarInvestigadoras = new Telerik.WinControls.UI.RadButton();
             this.txtInvestigadora = new Telerik.WinControls.UI.RadTextBox();
             this.lblInvestigadora = new Telerik.WinControls.UI.RadLabel();
-            this.txtNumeroExpediente = new Telerik.WinControls.UI.RadMaskedEditBox();
-            this.txtNumeroDenuncia = new Telerik.WinControls.UI.RadMaskedEditBox();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.cmbLugarAfectado = new Telerik.WinControls.UI.RadDropDownList();
             this.lblLugarAfectado = new Telerik.WinControls.UI.RadLabel();
@@ -382,6 +382,8 @@
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupBoxExpediente)).BeginInit();
             this.groupBoxExpediente.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNumeroExpediente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNumeroDenuncia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSufijoExpediente)).BeginInit();
             this.contextMenuStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtSufijoDenuncia)).BeginInit();
@@ -391,8 +393,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnExaminarInvestigadoras)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtInvestigadora)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblInvestigadora)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNumeroExpediente)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNumeroDenuncia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbLugarAfectado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblLugarAfectado)).BeginInit();
@@ -1321,6 +1321,42 @@
             this.groupBoxExpediente.TabIndex = 59;
             this.groupBoxExpediente.Text = "Expediente";
             // 
+            // txtNumeroExpediente
+            // 
+            this.txtNumeroExpediente.AllowPromptAsInput = false;
+            this.txtNumeroExpediente.AutoSize = true;
+            this.txtNumeroExpediente.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumeroExpediente.Location = new System.Drawing.Point(264, 52);
+            this.txtNumeroExpediente.Mask = "00000";
+            this.txtNumeroExpediente.MaskType = Telerik.WinControls.UI.MaskType.Standard;
+            this.txtNumeroExpediente.MaxLength = 5;
+            this.txtNumeroExpediente.Name = "txtNumeroExpediente";
+            this.txtNumeroExpediente.NullText = "Obligatorio";
+            this.txtNumeroExpediente.Size = new System.Drawing.Size(89, 25);
+            this.txtNumeroExpediente.TabIndex = 2;
+            this.txtNumeroExpediente.TabStop = false;
+            this.txtNumeroExpediente.Tag = "Expediente";
+            this.txtNumeroExpediente.Text = "_____";
+            this.txtNumeroExpediente.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNumeroExpediente_KeyDown);
+            // 
+            // txtNumeroDenuncia
+            // 
+            this.txtNumeroDenuncia.AllowPromptAsInput = false;
+            this.txtNumeroDenuncia.AutoSize = true;
+            this.txtNumeroDenuncia.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumeroDenuncia.Location = new System.Drawing.Point(264, 21);
+            this.txtNumeroDenuncia.Mask = "00000";
+            this.txtNumeroDenuncia.MaskType = Telerik.WinControls.UI.MaskType.Standard;
+            this.txtNumeroDenuncia.MaxLength = 5;
+            this.txtNumeroDenuncia.Name = "txtNumeroDenuncia";
+            this.txtNumeroDenuncia.NullText = "Obligatorio";
+            this.txtNumeroDenuncia.Size = new System.Drawing.Size(89, 25);
+            this.txtNumeroDenuncia.TabIndex = 1;
+            this.txtNumeroDenuncia.TabStop = false;
+            this.txtNumeroDenuncia.Tag = "Denuncia";
+            this.txtNumeroDenuncia.Text = "_____";
+            this.txtNumeroDenuncia.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNumeroDenuncia_KeyDown);
+            // 
             // txtSufijoExpediente
             // 
             this.txtSufijoExpediente.AllowPromptAsInput = false;
@@ -1328,7 +1364,7 @@
             this.txtSufijoExpediente.ContextMenuStrip = this.contextMenuStrip2;
             this.txtSufijoExpediente.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSufijoExpediente.Location = new System.Drawing.Point(144, 52);
-            this.txtSufijoExpediente.Mask = "L-0000-0000-";
+            this.txtSufijoExpediente.Mask = ">L-0000-0000-";
             this.txtSufijoExpediente.MaskType = Telerik.WinControls.UI.MaskType.Standard;
             this.txtSufijoExpediente.MaxLength = 5;
             this.txtSufijoExpediente.Name = "txtSufijoExpediente";
@@ -1339,7 +1375,8 @@
             this.txtSufijoExpediente.Tag = "Sufijo Expediente";
             this.txtSufijoExpediente.Text = "_-____-____-";
             this.txtSufijoExpediente.Value = " -    -    -";
-            this.txtSufijoExpediente.Click += new System.EventHandler(this.txtSufijoExpediente_Click);
+            this.txtSufijoExpediente.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSufijoExpediente_KeyDown);
+            this.txtSufijoExpediente.TextChanged += new System.EventHandler(this.txtSufijoExpediente_TextChanged);
             // 
             // contextMenuStrip2
             // 
@@ -1374,6 +1411,7 @@
             this.txtSufijoDenuncia.Tag = "Sufijo Denuncia";
             this.txtSufijoDenuncia.Text = "_-____-____-";
             this.txtSufijoDenuncia.Value = " -    -    -";
+            this.txtSufijoDenuncia.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSufijoDenuncia_KeyDown);
             this.txtSufijoDenuncia.TextChanged += new System.EventHandler(this.txtSufijoDenuncia_TextChanged);
             // 
             // btnExaminarBarrios
@@ -1443,42 +1481,6 @@
             this.lblInvestigadora.Size = new System.Drawing.Size(90, 21);
             this.lblInvestigadora.TabIndex = 92;
             this.lblInvestigadora.Text = "Investigadora:";
-            // 
-            // txtNumeroExpediente
-            // 
-            this.txtNumeroExpediente.AllowPromptAsInput = false;
-            this.txtNumeroExpediente.AutoSize = true;
-            this.txtNumeroExpediente.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumeroExpediente.Location = new System.Drawing.Point(264, 52);
-            this.txtNumeroExpediente.Mask = "00000";
-            this.txtNumeroExpediente.MaskType = Telerik.WinControls.UI.MaskType.Standard;
-            this.txtNumeroExpediente.MaxLength = 5;
-            this.txtNumeroExpediente.Name = "txtNumeroExpediente";
-            this.txtNumeroExpediente.NullText = "Obligatorio";
-            this.txtNumeroExpediente.Size = new System.Drawing.Size(89, 25);
-            this.txtNumeroExpediente.TabIndex = 2;
-            this.txtNumeroExpediente.TabStop = false;
-            this.txtNumeroExpediente.Tag = "Expediente";
-            this.txtNumeroExpediente.Text = "_____";
-            this.txtNumeroExpediente.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNumeroExpediente_KeyDown);
-            // 
-            // txtNumeroDenuncia
-            // 
-            this.txtNumeroDenuncia.AllowPromptAsInput = false;
-            this.txtNumeroDenuncia.AutoSize = true;
-            this.txtNumeroDenuncia.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumeroDenuncia.Location = new System.Drawing.Point(264, 21);
-            this.txtNumeroDenuncia.Mask = "00000";
-            this.txtNumeroDenuncia.MaskType = Telerik.WinControls.UI.MaskType.Standard;
-            this.txtNumeroDenuncia.MaxLength = 5;
-            this.txtNumeroDenuncia.Name = "txtNumeroDenuncia";
-            this.txtNumeroDenuncia.NullText = "Obligatorio";
-            this.txtNumeroDenuncia.Size = new System.Drawing.Size(89, 25);
-            this.txtNumeroDenuncia.TabIndex = 1;
-            this.txtNumeroDenuncia.TabStop = false;
-            this.txtNumeroDenuncia.Tag = "Denuncia";
-            this.txtNumeroDenuncia.Text = "_____";
-            this.txtNumeroDenuncia.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNumeroDenuncia_KeyDown);
             // 
             // radLabel1
             // 
@@ -2636,6 +2638,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupBoxExpediente)).EndInit();
             this.groupBoxExpediente.ResumeLayout(false);
             this.groupBoxExpediente.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNumeroExpediente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNumeroDenuncia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSufijoExpediente)).EndInit();
             this.contextMenuStrip2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtSufijoDenuncia)).EndInit();
@@ -2645,8 +2649,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnExaminarInvestigadoras)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtInvestigadora)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblInvestigadora)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNumeroExpediente)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNumeroDenuncia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbLugarAfectado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblLugarAfectado)).EndInit();

@@ -868,21 +868,6 @@
       <Column Name="investigadora" Type="System.String" DbType="NVarChar(61) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="dbo.mostrarExpedientes" Method="mostrarExpedientes">
-    <Parameter Name="cadena" Type="System.String" DbType="NVarChar(MAX)" />
-    <Parameter Name="fechaInicial" Type="System.DateTime" DbType="Date" />
-    <Parameter Name="fechaFinal" Type="System.DateTime" DbType="Date" />
-    <Parameter Name="mes" Type="System.Int32" DbType="Int" />
-    <Parameter Name="tipoBusqueda" Type="System.Int32" DbType="Int" />
-    <Parameter Name="idDelegacion" Type="System.Int32" DbType="Int" />
-    <ElementType Name="mostrarExpedientesResult">
-      <Column Name="numeroDenuncia" Type="System.String" DbType="NVarChar(17) NOT NULL" CanBeNull="false" />
-      <Column Name="numeroExpediente" Type="System.String" DbType="NVarChar(17)" CanBeNull="true" />
-      <Column Name="delito" Type="System.String" DbType="NVarChar(102) NOT NULL" CanBeNull="false" />
-      <Column Name="nombreDenunciante" Type="System.String" DbType="NVarChar(61) NOT NULL" CanBeNull="false" />
-      <Column Name="nombreInvestigador" Type="System.String" DbType="NVarChar(61) NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.mostrarVictimasValoracion" Method="mostrarVictimasValoracion">
     <Parameter Name="idDelegacion" Type="System.Int32" DbType="Int" />
     <Parameter Name="tipoBusqueda" Type="System.Int32" DbType="Int" />
@@ -901,6 +886,30 @@
       <Column Name="numeroChip" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="idVictima" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="delito" Type="System.String" DbType="NVarChar(102) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.obtenerSubDelegaciones" Method="obtenerSubDelegaciones">
+    <Parameter Name="idDelegacion" Type="System.Int32" DbType="Int" />
+    <Parameter Name="fechaInicio" Type="System.DateTime" DbType="SmallDateTime" />
+    <Parameter Name="fechaFin" Type="System.DateTime" DbType="SmallDateTime" />
+    <ElementType Name="obtenerSubDelegacionesResult">
+      <Column Name="subDelegacion" Type="System.String" DbType="NVarChar(4)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.mostrarExpedientes" Method="mostrarExpedientes">
+    <Parameter Name="cadena" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="fechaInicial" Type="System.DateTime" DbType="SmallDateTime" />
+    <Parameter Name="fechaFinal" Type="System.DateTime" DbType="SmallDateTime" />
+    <Parameter Name="mes" Type="System.Int32" DbType="Int" />
+    <Parameter Name="tipoBusqueda" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idDelegacion" Type="System.Int32" DbType="Int" />
+    <Parameter Name="subDelegacion" Type="System.String" DbType="NVarChar(8)" />
+    <ElementType Name="mostrarExpedientesResult">
+      <Column Name="numeroDenuncia" Type="System.String" DbType="NVarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="numeroExpediente" Type="System.String" DbType="NVarChar(17)" CanBeNull="true" />
+      <Column Name="delito" Type="System.String" DbType="NVarChar(102) NOT NULL" CanBeNull="false" />
+      <Column Name="nombreDenunciante" Type="System.String" DbType="NVarChar(61) NOT NULL" CanBeNull="false" />
+      <Column Name="nombreInvestigador" Type="System.String" DbType="NVarChar(61) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
 </Database>

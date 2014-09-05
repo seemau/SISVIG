@@ -28,15 +28,16 @@ namespace WindowsFormsApplication1.psicologa
                 this.cmbBuscarPor.SelectedIndex = 2;
                 this.cmbMes.SelectedIndex = DateTime.Now.Month - 1;
                 this.spinYear.Value = DateTime.Now.Year;
-                this.iniciarValoraciones(
-                                        Propiedades.Usuario,
-                                        string.Empty,
-                                        DateTime.Now,
-                                        DateTime.Now,
-                                        0,
-                                        0,
-                                        this.cmbBuscarPor.SelectedIndex
-                                        );
+                this.btnBuscar_Click(sender, e);
+                //this.iniciarValoraciones(
+                //                        Propiedades.Usuario,
+                //                        string.Empty,
+                //                        DateTime.Now,
+                //                        DateTime.Now,
+                //                        0,
+                //                        0,
+                //                        this.cmbBuscarPor.SelectedIndex
+                //                        );
             }catch(Exception excepcion){
                 Mensaje.error(excepcion.Message);
             }
@@ -159,12 +160,20 @@ namespace WindowsFormsApplication1.psicologa
             var resultado = from variable in varLinq.valoracion_psicologica
                            where variable.expediente == numeroExpediente
                            select variable;
-            byte[] documento = resultado.First().iDocumento.ToArray();
-            string extension = resultado.First().iExtension;
-            string nombre = resultado.First().expediente;
-            filePath = System.IO.Path.GetTempFileName().Replace(".tmp", extension);
-            System.IO.File.WriteAllBytes(filePath, documento);
-            return filePath;
+            if (resultado.FirstOrDefault().iDocumento != null)
+            {
+                byte[] documento = resultado.First().iDocumento.ToArray();
+                string extension = resultado.First().iExtension;
+                string nombre = resultado.First().expediente;
+                filePath = System.IO.Path.GetTempFileName().Replace(".tmp", extension);
+                System.IO.File.WriteAllBytes(filePath, documento);
+                return filePath;
+            }
+            else
+            {
+                Mensaje.alerta("Usted no ha adjuntado ningun archivo");
+                return null;
+            }
         }
 
         /// <summary>
@@ -180,14 +189,21 @@ namespace WindowsFormsApplication1.psicologa
             var resultado = from variable in varLinq.valoracion_psicologica
                             where variable.expediente == fileName
                             select variable;
-            byte[] documento = resultado.First().iDocumento.ToArray();
-            string extension = resultado.First().iExtension;
-            string nombre = resultado.First().expediente;
-            System.IO.File.WriteAllBytes(informacion.DirectoryName + "\\" + fileName + extension, documento);
+            if (resultado.FirstOrDefault().iDocumento != null)
+            {
+                byte[] documento = resultado.First().iDocumento.ToArray();
+                string extension = resultado.First().iExtension;
+                string nombre = resultado.First().expediente;
+                System.IO.File.WriteAllBytes(informacion.DirectoryName + "\\" + fileName + extension, documento);
+            }
+            else
+            {
+                Mensaje.alerta("Usted no ha adjuntado ningun archivo");
+            }
         }
 
         /// <summary>
-        /// Abre un documento temporal
+        /// Abre un documento temporal en el cual se refleja la valoracion psicologica
         /// </summary>
         /// <param name="nExpediente"></param> 
 
@@ -197,12 +213,19 @@ namespace WindowsFormsApplication1.psicologa
             var resultado = from variable in varLinq.valoracion_psicologica
                             where variable.expediente == nExpediente
                             select variable;
-            byte[] documento = resultado.First().iDocumento.ToArray();
-            string extension = resultado.First().iExtension;
-            DialogShowFile abrirDocumento = new DialogShowFile();
-            abrirDocumento.Input = documento;
-            abrirDocumento.Text = nExpediente;
-            abrirDocumento.ShowDialog();
+            if (resultado.FirstOrDefault().iDocumento != null)
+            {
+                byte[] documento = resultado.First().iDocumento.ToArray();
+                string extension = resultado.First().iExtension;
+                DialogShowFile abrirDocumento = new DialogShowFile();
+                abrirDocumento.Input = documento;
+                abrirDocumento.Text = nExpediente;
+                abrirDocumento.ShowDialog();
+            }
+            else
+            {
+                Mensaje.alerta("Usted no ha adjuntado ningun archivo");
+            }
         }
 
         //public void abrirDocumento(string nExpediente)
@@ -353,22 +376,25 @@ namespace WindowsFormsApplication1.psicologa
                 if (gvValoraciones.SelectedRows.Count != 0)
                 {
                     int selectedIndex = gvValoraciones.CurrentRow.Index;
-                    word.Application wordApp = new word.Application();
-                    wordApp.Visible = true;
                     string filePath = this.obtenerArchivoTemp(gvValoraciones.Rows[selectedIndex].Cells["expediente"].Value.ToString());
-                    word.Document doc = wordApp.Documents.Add(filePath);
-                    word.Dialog dialogo = wordApp.Dialogs[word.WdWordDialog.wdDialogFilePrint];
-                    dialogo.Show();
-                    //wordApp.PrintPreview = true;
-                    //wordApp.ActiveDocument.PrintOut();
-                    //wordApp.ActiveDocument.PrintPreview();
-                    doc.Close(SaveChanges: false);
-                    doc = null;
-                    wordApp.Quit(SaveChanges: false);
-                    wordApp = null;
-                    System.IO.FileInfo informacionArchivo = new System.IO.FileInfo(filePath);
-                    System.IO.File.Delete(filePath);
-                    System.IO.File.Delete(informacionArchivo.DirectoryName + "\\" + informacionArchivo.Name.Replace(informacionArchivo.Extension, ".tmp"));
+                    if (filePath != null)
+                    {
+                        word.Application wordApp = new word.Application();
+                        wordApp.Visible = true;
+                        word.Document doc = wordApp.Documents.Add(filePath);
+                        word.Dialog dialogo = wordApp.Dialogs[word.WdWordDialog.wdDialogFilePrint];
+                        dialogo.Show();
+                        //wordApp.PrintPreview = true;
+                        //wordApp.ActiveDocument.PrintOut();
+                        //wordApp.ActiveDocument.PrintPreview();
+                        doc.Close(SaveChanges: false);
+                        doc = null;
+                        wordApp.Quit(SaveChanges: false);
+                        wordApp = null;
+                        System.IO.FileInfo informacionArchivo = new System.IO.FileInfo(filePath);
+                        System.IO.File.Delete(filePath);
+                        System.IO.File.Delete(informacionArchivo.DirectoryName + "\\" + informacionArchivo.Name.Replace(informacionArchivo.Extension, ".tmp"));
+                    }
                 }
             }
             catch (Exception excepcion)

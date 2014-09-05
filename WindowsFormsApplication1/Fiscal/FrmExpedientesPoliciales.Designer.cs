@@ -73,6 +73,7 @@
             this.btnDatos = new Telerik.WinControls.UI.RadButton();
             this.btnBuscar = new Telerik.WinControls.UI.RadButton();
             this.lblResultados = new Telerik.WinControls.UI.RadLabel();
+            this.cmbSubDelegaciones = new Telerik.WinControls.UI.RadDropDownList();
             ((System.ComponentModel.ISupportInitialize)(this.gbExpediente)).BeginInit();
             this.gbExpediente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvExpedientes)).BeginInit();
@@ -100,6 +101,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnDatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnBuscar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblResultados)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbSubDelegaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -512,11 +514,22 @@
             this.lblResultados.TabIndex = 71;
             this.lblResultados.Text = "<html>Se encontraron <strong>0</strong> resultados</html>";
             // 
+            // cmbSubDelegaciones
+            // 
+            this.cmbSubDelegaciones.DropDownAnimationEnabled = true;
+            this.cmbSubDelegaciones.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
+            this.cmbSubDelegaciones.Location = new System.Drawing.Point(199, 28);
+            this.cmbSubDelegaciones.Name = "cmbSubDelegaciones";
+            this.cmbSubDelegaciones.ShowImageInEditorArea = true;
+            this.cmbSubDelegaciones.Size = new System.Drawing.Size(86, 20);
+            this.cmbSubDelegaciones.TabIndex = 72;
+            // 
             // FrmExpedientesPoliciales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1031, 415);
+            this.Controls.Add(this.cmbSubDelegaciones);
             this.Controls.Add(this.lblResultados);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnDatos);
@@ -568,6 +581,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnDatos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnBuscar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblResultados)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbSubDelegaciones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -597,5 +611,6 @@
         private Telerik.WinControls.UI.RadButton btnDatos;
         private Telerik.WinControls.UI.RadButton btnBuscar;
         private Telerik.WinControls.UI.RadLabel lblResultados;
+        private Telerik.WinControls.UI.RadDropDownList cmbSubDelegaciones;
     }
 }

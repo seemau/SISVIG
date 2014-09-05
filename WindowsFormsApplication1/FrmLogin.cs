@@ -211,6 +211,7 @@ namespace WindowsFormsApplication1
             DbDataContext varLinq = new DbDataContext();
             List<string> delitosTemp = new List<string>();
             List<string> juzgadosTemp = new List<string>();
+            List<string> subDelegaciones = new List<string>();
 
             var items = from variable in varLinq.delitos
                         select variable;
@@ -220,6 +221,7 @@ namespace WindowsFormsApplication1
                        {
                            NombreJuzgados = variable.nombre
                        });
+            var resultSetSubDelegaciones = varLinq.obtenerSubDelegaciones(Properties.Settings.Default.idDelegacionPredeterminada, new DateTime(DateTime.Now.Year, 1, 1, 0, 0, 0), new DateTime(DateTime.Now.Year, 12, 31, 23, 59, 59));
             foreach (delitos tmp in items)
             {
                 delitosTemp.Add(tmp.nombre);
@@ -231,6 +233,13 @@ namespace WindowsFormsApplication1
                 juzgadosTemp.Add(tmp.NombreJuzgados);
             }
             Propiedades.Juzgados = juzgadosTemp;
+
+            foreach (var temp in resultSetSubDelegaciones)
+            {
+                subDelegaciones.Add(temp.subDelegacion);
+            }
+            subDelegaciones.Add("Todas");
+            Propiedades.SubDelegaciones=subDelegaciones;
         }
         #endregion
     }      

@@ -55,6 +55,8 @@
             Telerik.WinControls.UI.RadListDataItem radListDataItem16 = new Telerik.WinControls.UI.RadListDataItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.gvValoraciones = new Telerik.WinControls.UI.RadGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.mostrarEntrevistasComplementariasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnAbrir = new Telerik.WinControls.UI.RadButton();
             this.btnGuardar = new Telerik.WinControls.UI.RadButton();
             this.btnNuevaEntrevistaCompl = new Telerik.WinControls.UI.RadButton();
@@ -75,13 +77,12 @@
             this.toolTipText = new Qios.DevSuite.Components.QBalloon();
             this.btnImprimir = new Telerik.WinControls.UI.RadButton();
             this.dbDataContextBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.mostrarEntrevistasComplementariasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblTotal = new Telerik.WinControls.UI.RadLabel();
             this.spinTotal = new Telerik.WinControls.UI.RadSpinEditor();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvValoraciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvValoraciones.MasterTemplate)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnAbrir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGuardar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnNuevaEntrevistaCompl)).BeginInit();
@@ -101,7 +102,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.lblBuscar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnImprimir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbDataContextBindingSource)).BeginInit();
-            this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lblTotal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinTotal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -201,6 +201,20 @@
             this.gvValoraciones.Size = new System.Drawing.Size(960, 277);
             this.gvValoraciones.TabIndex = 0;
             this.gvValoraciones.Text = "radGridView1";
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mostrarEntrevistasComplementariasToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(272, 26);
+            // 
+            // mostrarEntrevistasComplementariasToolStripMenuItem
+            // 
+            this.mostrarEntrevistasComplementariasToolStripMenuItem.Name = "mostrarEntrevistasComplementariasToolStripMenuItem";
+            this.mostrarEntrevistasComplementariasToolStripMenuItem.Size = new System.Drawing.Size(271, 22);
+            this.mostrarEntrevistasComplementariasToolStripMenuItem.Text = "Mostrar Entrevistas Complementarias";
+            this.mostrarEntrevistasComplementariasToolStripMenuItem.Click += new System.EventHandler(this.mostrarEntrevistasComplementariasToolStripMenuItem_Click);
             // 
             // btnAbrir
             // 
@@ -465,20 +479,6 @@
             // 
             this.dbDataContextBindingSource.DataSource = typeof(WindowsFormsApplication1.DbDataContext);
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mostrarEntrevistasComplementariasToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(272, 26);
-            // 
-            // mostrarEntrevistasComplementariasToolStripMenuItem
-            // 
-            this.mostrarEntrevistasComplementariasToolStripMenuItem.Name = "mostrarEntrevistasComplementariasToolStripMenuItem";
-            this.mostrarEntrevistasComplementariasToolStripMenuItem.Size = new System.Drawing.Size(271, 22);
-            this.mostrarEntrevistasComplementariasToolStripMenuItem.Text = "Mostrar Entrevistas Complementarias";
-            this.mostrarEntrevistasComplementariasToolStripMenuItem.Click += new System.EventHandler(this.mostrarEntrevistasComplementariasToolStripMenuItem_Click);
-            // 
             // lblTotal
             // 
             this.lblTotal.Location = new System.Drawing.Point(889, 322);
@@ -541,6 +541,7 @@
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gvValoraciones.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvValoraciones)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnAbrir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGuardar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnNuevaEntrevistaCompl)).EndInit();
@@ -561,7 +562,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.lblBuscar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnImprimir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbDataContextBindingSource)).EndInit();
-            this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lblTotal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinTotal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();

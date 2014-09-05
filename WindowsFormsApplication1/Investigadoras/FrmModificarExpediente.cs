@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
+using Telerik.WinControls.Enumerations;
 using WindowsFormsApplication1.biblioteca;
 using System.Linq;
 using System.Diagnostics;
@@ -106,6 +107,9 @@ namespace WindowsFormsApplication1.Investigadoras
             this.gvVictima.DataSource = this._modificarVictimas;
             this.gvAgresor.DataSource = this._modificarAgresor;
             this.txtSintesisHechos.Text = this._modificarExpediente.sintesis_hechos;
+            this.txtObservaciones.Text = this._modificarExpediente.observaciones;
+            if (this._modificarExpediente.excluir != null)
+                this.chkExcluir.Checked = (bool)this._modificarExpediente.excluir;
         }
         #endregion
 
@@ -201,6 +205,9 @@ namespace WindowsFormsApplication1.Investigadoras
                     this._modificarExpediente.Lugar_afectado = this.cmbLugarAfectado.SelectedItem.Text;
                     this._modificarExpediente.lugar_ocurrencia = this.txtLugarOcurrencia.Text;
                     this._modificarExpediente.delito = this.cmbDelito.SelectedItem.Text;
+                    this._modificarExpediente.sintesis_hechos = this.txtSintesisHechos.Text;
+                    this._modificarExpediente.observaciones = this.txtObservaciones.Text;
+                    this._modificarExpediente.excluir = this.chkExcluir.Checked;
                     this._modificarDenunciante.nombres = this.txtNombreDenunciante.Text;
                     this._modificarDenunciante.apellidos = this.txtApellidoDenunciante.Text;
                     this._modificarDenunciante.edad = (int) this.spinEdadDenunciante.Value;
@@ -297,5 +304,7 @@ namespace WindowsFormsApplication1.Investigadoras
             }
         }
         #endregion
+
+       
     }
 }
